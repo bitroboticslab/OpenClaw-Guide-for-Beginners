@@ -23,6 +23,9 @@ wechat_articles/
 PHASE*.md
 STAGE*.md
 
+# 内部工具和策略（不上传到GitHub）
+.internal/
+
 # 分发输出目录（自动生成，不提交）
 dist/
 scripts/dist/

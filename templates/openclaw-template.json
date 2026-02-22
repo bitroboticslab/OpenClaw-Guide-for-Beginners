@@ -1,7 +1,7 @@
 {
   "_comment": [
     "OpenClaw 配置模板 - 完整版",
-    "复制此文件到 ~/.openclaw/openclaw.json 并填写你的配置",
+    "复制此文件关键内容到 ~/.openclaw/openclaw.json 并填写你的配置",
     "详细教程: https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners"
   ],
   "models": {

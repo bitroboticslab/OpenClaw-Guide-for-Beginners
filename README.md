@@ -119,6 +119,7 @@ OpenClaw 支持对接多种消息平台：
 ```
 OpenClaw-Guide-for-Beginners/
 ├── README.md                    # 项目首页（本文件）
+├── AUTHORS.md                   # 作者信息
 ├── FAQ.md                       # 常见问题解答
 ├── RESOURCES.md                 # 资源汇总
 ├── docs/                        # 教程文档目录
@@ -126,13 +127,23 @@ OpenClaw-Guide-for-Beginners/
 │   │   └── quickstart.md        # 5分钟快速上手
 │   ├── windows/                 # Windows 相关教程
 │   │   └── windows-install-guide.md
+│   ├── wsl/                     # WSL 相关教程
+│   │   ├── wsl-setup.md         # WSL 安装配置
+│   │   ├── wsl-troubleshooting.md
+│   │   └── wsl-advanced.md      # WSL 高级配置
 │   ├── macos/                   # macOS 相关教程
 │   │   └── macos-install-guide.md
 │   ├── linux/                   # Linux 相关教程
 │   │   └── linux-install-guide.md
+│   ├── docker/                  # Docker 部署教程
+│   │   ├── docker-deployment.md      # Docker 基础部署
+│   │   ├── docker-production.md      # Docker 生产部署
+│   │   ├── docker-cloud-deployment.md # Docker Cloud 部署
+│   │   └── docker-troubleshooting.md
 │   ├── cloud/                   # 云服务器相关教程
 │   │   ├── cloud-deployment-guide.md
-│   │   └── aliyun-guide.md     # 阿里云专属教程
+│   │   ├── aliyun-guide.md      # 阿里云专属教程
+│   │   └── tencent-guide.md    # 腾讯云教程
 │   ├── android/                 # Android 相关教程
 │   │   └── android-deployment-guide.md
 │   ├── api-config/              # API 配置教程
@@ -146,32 +157,21 @@ OpenClaw-Guide-for-Beginners/
 │   │   ├── telegram-integration.md
 │   │   └── wechat-integration.md
 │   └── advanced/                # 进阶主题
-│       ├── security.md         # 安全配置指南
-│       ├── skills.md           # 技能开发与使用
-│       └── troubleshooting.md  # 故障排除
-├── scripts/                     # 一键脚本
-│   ├── install-windows.bat
-│   └── install-linux.sh
+│       ├── security.md          # 安全配置指南
+│       ├── skills.md            # 技能开发与使用
+│       └── troubleshooting.md   # 故障排除
+├── scripts/                     # 安装脚本
+│   ├── install-windows.bat      # Windows 安装脚本
+│   ├── install-wsl.ps1          # WSL 安装脚本
+│   ├── install-linux.sh         # Linux 安装脚本
+│   ├── install-macos.sh         # macOS 安装脚本
+│   └── install-docker.sh        # Docker 安装脚本
 ├── images/                      # 教程图片
 └── templates/                   # 配置模板
-    └── openclaw-template.json
+    ├── README.md                # 模板使用指南
+    ├── openclaw-template.json   # 主配置模板
+    └── env-template.txt         # 环境变量模板
 ```
-
-## ❓ 常见问题
-
-<details>
-<summary><b>Q: OpenClaw 和 ChatGPT 有什么区别？</b></summary>
-
-OpenClaw 不是简单的聊天机器人，而是一个可以真正"动手"的 AI Agent。它能够：
-- 执行终端命令
-- 操作文件系统
-- 控制浏览器
-- 发送邮件、管理日历
-- 对接各种消息平台
-
-这使得它能够完成复杂的多步骤任务，而不仅仅是回答问题。
-</details>
-
 <details>
 <summary><b>Q: 哪个 API 平台最推荐？</b></summary>
 
