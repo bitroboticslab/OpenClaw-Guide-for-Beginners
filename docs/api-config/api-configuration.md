@@ -316,7 +316,7 @@ MiniMax 专注于 Agent 场景优化：
 
 1. **访问官网**
    
-   👉 [MiniMax Coding Plan](https://www.minimaxi.com/models/text)
+   👉 [MiniMax Coding Plan](https://platform.minimaxi.com/subscribe/coding-plan)
 
 2. **订阅 Coding Plan**
 

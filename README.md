@@ -184,6 +184,82 @@ OpenClaw-Guide-for-Beginners/
 - **阿里生态用户**：阿里百炼（与阿里云整合好）
 </details>
 
+## ⚙️ 配置模板和脚本
+
+### 配置模板
+
+为了方便新手快速上手，项目提供了完整的配置模板：
+
+| 模板文件 | 说明 | 使用场景 |
+|---------|------|---------|
+| `templates/openclaw-template.json` | 主配置模板 | 复制到 `~/.openclaw/openclaw.json` |
+| `templates/env-template.txt` | 环境变量模板 | 复制到 `~/.openclaw/.env` |
+
+**使用方法**:
+
+```bash
+# 1. 复制配置模板
+cp templates/openclaw-template.json ~/.openclaw/openclaw.json
+cp templates/env-template.txt ~/.openclaw/.env
+
+# 2. 设置文件权限（安全设置）
+chmod 600 ~/.openclaw/openclaw.json
+chmod 600 ~/.openclaw/.env
+
+# 3. 编辑配置，填写你的 API Key
+nano ~/.openclaw/.env
+
+# 4. 验证配置
+openclaw doctor
+```
+
+**模板特性**:
+- ✅ 预配置了硅基流动、火山引擎、阿里百炼的模型
+- ✅ 包含 18 个模型别名配置
+- ✅ 支持向量搜索（memorySearch）
+- ✅ 完整的安全配置示例
+- ✅ 所有敏感（信息使用占位符（YOUR_*）
+
+详细使用说明：[查看模板使用指南](templates/README.md)
+
+### 一键安装脚本
+
+项目提供了各平台的一键安装脚本，方便快速部署：
+
+| 脚本 | 平台 | 下载方式 |
+|------|------|---------|
+| `install-windows.bat` | Windows | [下载](https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-windows.bat) |
+| `install-wsl.ps1` | WSL | [下载](https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-wsl.ps1) |
+| `install-linux.sh` | Linux | [下载](https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh) |
+| `install-macos.sh` | macOS | [下载](https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-macos.sh) |
+| `install-docker.sh` | Docker | [下载](https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-docker.sh) |
+
+**使用方法（以Linux为例）**:
+
+```bash
+# 1. 下载安装脚本
+curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
+
+# 2. 添加执行权限
+chmod +x install-linux.sh
+
+# 3. 运行安装脚本
+./install-linux.sh
+
+# 或直接一行命令
+curl -fsSL https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh | bash
+```
+
+**脚本特性**:
+- ✅ 自动检测系统环境
+- ✅ 安装 Node.js（如未安装）
+- ✅ 安装 OpenClaw
+- ✅ 下载配置模板
+- ✅ 提供后续配置指导
+- ✅ 详细的错误提示
+
+---
+
 <details>
 <summary><b>Q: 云服务器配置要求是什么？</b></summary>
 
