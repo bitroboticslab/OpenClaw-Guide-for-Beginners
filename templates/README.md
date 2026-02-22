@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 📋 配置模板使用指南
 
 > OpenClaw 配置文件模板 - 快速开始配置
@@ -300,3 +302,5 @@ chmod 600 openclaw.json  # ✅ 仅所有者可读写
 
 **最后更新**: 2026-02-22
 **OpenClaw 版本**: 2026.2.19+
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

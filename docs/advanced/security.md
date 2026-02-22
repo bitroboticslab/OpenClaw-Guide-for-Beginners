@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 安全配置指南
 
 > 保护你的OpenClClaw实例，确保数据和API密钥安全
@@ -500,3 +502,5 @@ grep "Failed password" /var/log/auth.log
 
 **创建时间**: 2026-02-22
 **版本**: 1.0
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

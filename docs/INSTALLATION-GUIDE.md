@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # OpenClaw 完整安装指南
 
 > 详细的安装步骤和故障排除
@@ -669,3 +671,5 @@ docker ps -a | grep openclaw  # 应无输出
 **创建时间**: 2026-02-22 15:10 UTC
 **版本**: 1.0
 **Phase**: Phase 4+ - 阶段5
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

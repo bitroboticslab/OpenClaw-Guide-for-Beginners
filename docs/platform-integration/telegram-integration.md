@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # Telegram 对接教程
 
 > 将 OpenClaw 接入 Telegram，配置最简单的消息平台对接
@@ -333,3 +335,5 @@ curl "https://api.telegram.org/bot你的TOKEN/deleteWebhook"
 ---
 
 **上一页**：[钉钉对接教程](dingtalk-integration.md) | **下一页**：[微信对接教程](wechat-integration.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

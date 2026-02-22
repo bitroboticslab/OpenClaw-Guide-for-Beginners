@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # Docker 故障排除
 
 > Docker部署OpenClaw时的常见问题及解决方案
@@ -970,3 +972,5 @@ docker logs --tail 100 openclaw > docker-logs.txt
 **最后更新**: 2026-02-22
 **版本**: 1.0
 **适用版本**: Docker 20.10+
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # Android 部署指南
 
 > 在 Android 手机上通过 Termux 部署 OpenClaw，随时随地使用 AI 助手
@@ -284,3 +286,5 @@ Android 部署存在以下限制：
 ---
 
 **上一页**：[云服务器部署指南](../cloud/cloud-deployment-guide.md) | **下一页**：[API 配置详解](../api-config/api-configuration.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

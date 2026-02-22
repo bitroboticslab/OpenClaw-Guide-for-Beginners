@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # WSL 安装配置教程
 
 > 在Windows Subsystem for Linux中部署OpenClaw，享受Windows和Linux的双重视角
@@ -631,3 +633,5 @@ pageReporting=false    # 禁用页面报告
 **最后更新**: 2026-02-22
 **版本**: 1.0
 **适用版本**: WSL 2.0.9+
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

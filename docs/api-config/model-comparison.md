@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 模型选择指南
 
 > 选择最适合你的AI模型，提升效率和节省成本
@@ -230,3 +232,5 @@
 
 **创建时间**: 2026-02-22
 **版本**: 1.0
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

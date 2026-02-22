@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 常见问题 (FAQ)
 
 > OpenClaw使用中的常见问题和解答
@@ -813,3 +815,5 @@ openclaw logs --follow
 **最后更新**: 2026-02-22 (视觉优化 v2.0)
 **版本**: 2.0
 **维护者**: OpenClaw社区
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

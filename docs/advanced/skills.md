@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 技能开发与使用
 
 > 扩展OpenClaw的能力，安装、使用和开发自定义技能
@@ -561,3 +563,5 @@ my-skill/
 
 **创建时间**: 2026-02-22
 **版本**: 1.0
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

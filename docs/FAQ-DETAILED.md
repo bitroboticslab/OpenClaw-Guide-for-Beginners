@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # OpenClaw 常见问题解答 (FAQ)
 
 > 新手常见问题快速解答
@@ -858,3 +860,5 @@ A: 报告 Bug：
 **创建时间**: 2026-02-22 15:20 UTC
 **版本**: 1.0
 **Phase**: Phase 4+ - 阶段5
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
