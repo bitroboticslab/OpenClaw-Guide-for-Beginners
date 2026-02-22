@@ -1,306 +1,426 @@
-<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+# 配置模板使用指南
 
-# 📋 配置模板使用指南
-
-> OpenClaw 配置文件模板 - 快速开始配置
+> ⚠️ **重要提示**: 本章节的模板文件仅作为参考，请勿直接覆盖你的配置文件！
 
 ---
 
-## 🎯 模板说明
+## 📋 模板文件说明
 
-本目录包含 OpenClaw 配置文件模板，帮助新手快速完成配置。
-
-| 文件 | 说明 | 用途 |
-|------|------|------|
-| `openclaw-template.json` | OpenClaw 主配置模板 | 模型配置、Gateway 配置 |
-| `env-template.txt` | 环境变量模板 | API Key、消息平台配置 |
+| 模板文件 | 说明 | 用途 |
+|---------|------|------|
+| `openclaw-template.json` | 主配置参考模板 | 了解配置结构，提取配置片段 |
+| `env-template.txt` | 环境变量模板 | 参考环境变量配置格式 |
 
 ---
 
-## 🚀 快速开始
+## ⚠️ 为什么不能直接覆盖？
 
-### 方法1: 使用配置向导（推荐）
+### 模板文件缺少系统配置
+
+**模板文件包含**:
+- ✅ `models` - 模型提供商配置
+- ✅ `agents` - Agent 默认配置
+- ✅ `gateway` - Gateway 配置
+- ✅ `channels` - 消息平台配置
+- ✅ `session` - 会话配置
+- ✅ `plugins` - 插件配置
+- ✅ `skills` - 技能配置
+
+**模板文件缺少**（由OpenClaw自动管理）:
+- ❌ `meta` - 版本信息和最后修改时间
+- ❌ `wizard` - 配置向导状态
+- ❌ `browser` - 浏览器配置（如已启用）
+- ❌ `auth` - 认证配置（如已配置）
+
+### 直接覆盖的后果
+
+如果你直接用模板文件覆盖 `openclaw.json`，会导致：
+
+1. **版本信息丢失**
+   ```json
+   "meta": {
+     "lastTouchedVersion": "2026.2.19-2",
+     "lastTouchedAt": "2026-02-22T02:44:58.515Z"
+   }
+   ```
+   OpenClaw 无法识别配置文件版本
+
+2. **浏览器配置丢失**
+   ```json
+   "browser": {
+     "enabled": true,
+     "executablePath": "/root/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome"
+   }
+   ```
+   需要重新配置浏览器
+
+3. **认证配置丢失**
+   ```json
+   "auth": {
+     "profiles": {
+       "qwen-portal:default": {...}
+     }
+   }
+   ```
+   需要重新登录或配置认证
+
+4. **错误示例**
+   ```bash
+   $ openclaw doctor
+   ❌ 配置文件格式错误: 缺少 meta 字段
+   ❌ Gateway 启动失败
+   ```
+
+---
+
+## ✅ 正确的使用方法
+
+### 方法1: 使用OpenClaw配置向导（推荐新手）
+
+这是最安全、最简单的方法：
 
 ```bash
-# 运行配置向导
+# 启动配置向导
 openclaw onboard --install-daemon
-
-# 向导会自动创建配置文件
 ```
 
-### 方法2: 手动使用模板
+按照提示：
+1. 选择 API 平台
+2. 输入 API Key
+3. 选择默认模型
+4. 配置消息平台（可选）
 
-```bash
-# 1. 进入 OpenClaw 目录
-cd ~/.openclaw
-
-# 2. 复制模板文件
-cp openclaw-template.json openclaw.json
-cp env-template.txt .env
-
-# 3. 设置文件权限（重要！）
-chmod 600 openclaw.json
-chmod 600 .env
-
-# 4. 编辑配置文件
-nano openclaw.json
-nano .env
-```
+OpenClaw 会自动生成正确的配置，包括所有系统字段。
 
 ---
 
-## 🔧 配置步骤
+### 方法2: 使用命令行配置
 
-### 步骤1: 选择 API 提供商
-
-至少需要配置一个 API 提供商：
-
-| 平台 | 推荐度 | 免费额度 | 获取地址 |
-|------|--------|---------|---------|
-| 硅基流动 | ⭐⭐⭐⭐⭐ | 2000万 Tokens | https://cloud.siliconflow.cn/ |
-| 火山引擎 | ⭐⭐⭐⭐⭐ | Coding Plan 套餐 | https://www.volcengine.com/activity/codingplan |
-| 阿里百炼 | ⭐⭐⭐⭐ | 有免费试用 | https://bailian.console.aliyun.com/ |
-
-**新手推荐**:
-- 测试学习 → 硅基流动（完全免费）
-- 长期使用 → 火山引擎 Coding Plan（首月8.91元）
-
----
-
-### 步骤2: 填写配置
-
-#### 配置 `openclaw.json`
-
-```json
-{
-  "models": {
-    "providers": {
-      "siliconflow": {
-        "baseUrl": "https://api.siliconflow.cn/v1",
-        "apiKey": "sk-your-api-key-here",  // ← 填写你的 API Key
-        "api": "openai-completions",
-        "models": [...]
-      }
-    }
-  }
-}
-```
-
-#### 配置 `.env`
+配置单个提供商，不影响其他配置：
 
 ```bash
-# 填写你的 API Key
-SILICONFLOW_API_KEY=sk-your-api-key-here
-```
+# 设置提供商
+openclaw config set provider siliconflow
 
----
+# 设置 API Key
+openclaw config set api_key sk-xxxxxxxxxxxxxxxxxxxx
 
-### 步骤3: 验证配置
-
-```bash
-# 检查配置
+# 验证配置
 openclaw doctor
-
-# 测试 API 连接
-openclaw validate
-
-# 查看 Gateway 状态
-openclaw status
 ```
 
 ---
 
-## 📝 配置示例
+### 方法3: 手动编辑配置文件
 
-### 硅基流动配置
+**适用于**：需要精细配置，或添加多个提供商
 
-```json
-{
-  "models": {
-    "providers": {
-      "siliconflow": {
-        "baseUrl": "https://api.siliconflow.cn/v1",
-        "apiKey": "sk-xxxxxxxxxxxxxxxxxxxx",
-        "api": "openai-completions",
-        "models": [
-          {
-            "id": "Pro/zai-org/GLM-4.7",
-            "name": "GLM-4.7",
-            "input": ["text"],
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
----
-
-### 火山引擎配置
-
-```json
-{
-  "models": {
-    "providers": {
-      "volcengine": {
-        "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
-        "apiKey": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        "api": "openai-completions",
-        "models": [
-          {
-            "id": "glm-4.7",
-            "name": "GLM-4.7",
-            "input": ["text"],
-            "contextWindow": 200000,
-            "maxTokens": 65536
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
----
-
-## 🔒 安全配置
-
-### 文件权限
+#### 步骤1: 备份现有配置
 
 ```bash
-# 设置正确的权限（仅所有者可读写）
-chmod 600 ~/.openclaw/openclaw.json
+# 备份现有配置（安全第一！）
+cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.backup.$(date +%Y%m%d)
+
+# 验证备份
+ls -lh ~/.openclaw/openclaw.json.backup.*
+```
+
+#### 步骤2: 查看模板文件
+
+```bash
+# 查看模板文件内容
+cat templates/openclaw-template.json
+
+# 或使用编辑器
+nano templates/openclaw-template.json
+```
+
+#### 步骤3: 编辑你的配置文件
+
+```bash
+# 使用 nano 编辑配置文件
+nano ~/.openclaw/openclaw.json
+
+# 或使用 VS Code
+code ~/.openclaw/openclaw.json
+```
+
+**编辑建议**:
+- ✅ 只添加或修改需要的字段
+- ✅ 保持 JSON 格式正确（逗号、引号、大括号）
+- ✅ 不要删除或修改 `meta`、`wizard`、`browser`、`auth` 等系统字段
+- ✅ 使用 `openclaw doctor` 验证配置
+
+---
+
+### 方法4: 提取配置片段（高级用户）
+
+**适用场景**:
+- 了解配置结构
+- 提取模型配置片段
+- 参考环境变量配置
+
+**操作步骤**:
+
+```bash
+# 1. 打开模板文件
+nano templates/openclaw-template.json
+
+# 2. 找到你需要的配置（例如：火山引擎模型配置）
+#    在 models.providers.volcengine 部分
+
+# 3. 复制该配置块
+
+# 4. 打开你的配置文件
+nano ~/.openclaw/openclaw.json
+
+# 5. 粘贴到 models.providers 中（不要覆盖其他提供商）
+
+# 6. 修改 apiKey 为你的实际值
+#     "apiKey": "YOUR_VOL_VOLCENGINE_API_KEY"
+#     改为:
+#     "apiKey": "AK-xxxxxxxxxxxxxxxx"
+
+# 7. 保存并验证
+openclaw doctor
+```
+
+**示例：添加阿里百炼提供商**
+
+1. 打开 `templates/openclaw-template.json`
+2. 找到 `bailian` 配置块（约第120行）
+3. 复制整个 `bailian` 对象
+4. 打开 `~/.openclaw/openclaw.json`
+5. 定位到 `models.providers` 部分
+6. 粘贴 `bailian` 配置
+7. 修改 `apiKey` 为你的实际值
+8. 保存并运行 `openclaw doctor` 验证
+
+---
+
+## 🔐 环境变量配置
+
+推荐使用环境变量存储敏感信息（API Key、Token等）。
+
+### 创建 .env 文件
+
+```bash
+# 创建 .env 文件
+touch ~/.openclaw/.env
+
+# 设置文件权限（仅自己可读写）
 chmod 600 ~/.openclaw/.env
 
-# 验证权限
-ls -la ~/.openclaw/openclaw.json
-ls -la ~/.openclaw/.env
+# 编辑 .env 文件
+nano ~/.openclaw/.env
 ```
 
-**正确权限**: `-rw-------` (600)  
-**错误权限**: `-rw-r--r--` (644)
+### .env 文件示例
 
----
+参考 `env-template.txt` 文件：
 
-### 环境变量
+```bash
+# ========================================
+# OpenClaw 环境变量配置
+# ========================================
 
-在 `openclaw.json` 中引用环境变量：
+# 硅基流动 API Key
+SILICONFLOW_API_KEY=sk-your-siliconflow-api-key-here
+
+# 火山引擎 API Key
+VOLCENGINE_API_KEY=AK-your-volcengine-api-key-here
+
+# 阿里百炼 API Key
+BAILIAN_API_KEY=sk-your-bailian-api-key-here
+
+# Gateway 认证 Token（用于访问 Gateway UI）
+OPENCLAW_GATEWAY_TOKEN=your-gateway-token-here
+
+# DingTalk 应用凭证
+DINGTALK_CLIENT_ID=your-dingtalk-client-id
+DINGTALK_CLIENT_SECRET=your-dingtalk-client-secret
+
+# Telegram Bot Token
+TELEGRAM_BOT_TOKEN=your-telegram-bot-token
+
+# 智谱 GLM API Key
+ZHIPU_API_KEY=your-zhipu-api-key
+```
+
+### 在配置文件中使用环境变量
 
 ```json
 {
   "models": {
     "providers": {
       "siliconflow": {
-        "apiKey": "${SILICONFLOW_API_KEY}",  // ← 从环境变量读取
+        "baseUrl": "https://api.siliconflow.cn/v1",
+        "apiKey": "${SILICONFLOW_API_KEY}",
+        "api": "openai-completions"
+      },
+      "bailian": {
+        "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "apiKey": "${BAILIAN_API_KEY}",
         "api": "openai-completions"
       }
     }
+  },
+  "gateway": {
+    "auth": {
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    }
   }
 }
 ```
 
+**优势**:
+- ✅ 敏感信息与配置分离
+- ✅ 不同环境使用不同的 .env 文件
+- ✅ 可以安全地分享配置文件（不包含 .env）
+- ✅ 使用 `${VARIABLE}` 格式引用
+
 ---
 
-## ⚠️ 常见错误
+## 📋 配置验证
 
-### 错误1: 权限配置错误
+无论使用哪种方法配置，最后都要验证配置：
 
 ```bash
-# 错误
-chmod 644 openclaw.json  # ❌ 其他用户可读取
+# 运行诊断
+openclaw doctor
 
-# 正确
-chmod 600 openclaw.json  # ✅ 仅所有者可读写
+# 检查配置
+openclaw config list
+
+# 检查模型配置
+openclaw models list
+
+# 检查 Gateway 状态
+openclaw gateway status
 ```
 
-### 错误2: API Key 填写错误
+**预期输出**:
 
-```json
-// 错误
-"apiKey": "YOUR_API_KEY",  // ❌ 未替换
-
-// 正确
-"apiKey": "sk-xxxxxxxxxx",  // ✅ 填写真实的 Key
-```
-
-### 错误3: baseUrl 配置错误
-
-```json
-// 错误
-"baseUrl": "https://api.siliconflow.com/v1",  // ❌ 域名错误
-
-// 正确
-"baseUrl": "https://api.siliconflow.cn/v1",  // ✅ 正确域名
+```bash
+✅ OpenClaw CLI: 已安装 v2026.2.19
+✅ Node.js: 已安装 v22.22.0
+✅ Gateway: 运行中 (PID: 12345)
+✅ 模型配置: 正常
+✅ 提供商: siliconflow (已配置)
+✅ 向量搜索: 已启用
 ```
 
 ---
 
-## 🔧 高级配置
+## ❓ 常见问题
 
-### 多提供商配置
+### Q: 配置文件在哪里？
 
-```json
-{
-  "models": {
-    "providers": {
-      "siliconflow": {...},
-      "volcengine": {...},
-      "bailian": {...}
-    }
-  },
-  "agents": {
-    "defaults": {
-      "model": {
-        "primary": "siliconflow/Pro/zai-org/GLM-4.7",  // 主模型
-        "fallbacks": [  // 备用模型
-          "volcengine/glm-4.7",
-          "bailian/qwen-plus-latest"
-        ]
-      }
-    }
-  }
-}
+**A:**
+- 主配置: `~/.openclaw/openclaw.json`
+- 环境变量: `~/.openclaw/.env`
+- 工作空间: `~/.openclaw/workspace`
+- 日志: `~/.openclaw/logs/`
+
+### Q: 如何重置配置？
+
+**A:**
+```bash
+# 1. 备份现有配置
+cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.backup
+
+# 2. 删除配置文件
+rm ~/.openclaw/openclaw.json
+
+# 3. 重新运行配置向导
+openclaw onboard --install-daemon
 ```
 
-### 消息平台配置
+### Q: 如何备份配置？
 
-```json
-{
-  "channels": {
-    "ddingtalk": {
-      "enabled": true,
-      "clientId": "your-client-id",
-      "clientSecret": "your-client-secret",
-      "allowFrom": ["*"]
-    }
-  }
-}
+**A:**
+```bash
+# 备份到当前目录
+cp ~/.openclaw/openclaw.json ./openclaw-backup.json
+cp ~/.openclaw/.env ./env-backup.txt 2>/dev/null || true
+
+# 或创建备份目录
+mkdir -p ~/openclaw-backup
+cp -r ~/.openclaw/* ~/openclaw-backup/
+
+# 或创建时间戳备份
+cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.backup.$(date +%Y%m%d_%H%M%S)
+```
+
+### Q: 配置文件格式错误怎么办？
+
+**A:**
+```bash
+# 1. 使用 openclaw doctor 诊断
+openclaw doctor
+
+# 2. 使用 JSON 验证工具
+cat ~/.openclaw/openclaw.json | python3 -m json.tool
+
+# 3. 如果无法修复，恢复备份
+cp ~/.openclaw/openclaw.json.backup ~/.openclaw/openclaw.json
+
+# 4. 或重新初始化
+cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.broken
+openclaw onboard --install-daemon
+```
+
+### Q: 为什么模板文件不能直接使用？
+
+**A:**
+
+模板文件是**参考模板**，不是完整的配置文件：
+
+1. **缺少系统字段**: `meta`、`wizard`、`browser`、`auth`
+2. **由OpenClaw自动管理**: 这些字段不应手动修改
+3. **直接覆盖会导致错误**: 配置文件格式错误，Gateway 启动失败
+
+**正确做法**:
+- 新手 → 使用 `openclaw onboard` 配置向导
+- 高级用户 → 参考模板，手动编辑现有配置文件
+- 提取片段 → 只复制需要的配置，不要覆盖整个文件
+
+---
+
+## 🚀 快速参考
+
+### 新手推荐流程
+
+```bash
+# 1. 启动配置向导
+openclaw onboard --install-daemon
+
+# 2. 验证配置
+openclaw doctor
+
+# 3. 启动 Gateway
+openclaw gateway start
+
+# 4. 连接消息平台（如钉钉）
+#    按照 docs/platform-integration/dingtalk-integration.md 操作
+```
+
+### 高级用户流程
+
+```bash
+# 1. 备份配置
+cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.backup
+
+# 2. 编辑配置
+nano ~/.openclaw/openclaw.json
+
+# 3. 验证配置
+openclaw doctor
+
+# 4. 重启 Gateway
+openclaw gateway restart
 ```
 
 ---
 
-## 📚 相关文档
-
-- [API 配置完整指南](../docs/API-CONFIG-GUIDE.md)
-- [模型选择指南](../docs/api-config/model-comparison.md)
-- [成本优化指南](../docs/api-config/cost-optimization.md)
-- [故障排除](../docs/advanced/troubleshooting.md)
-
----
-
-## 💡 提示
-
-1. **备份配置**: 定期备份配置文件
-2. **测试配置**: 修改配置后运行 `openclaw validate`
-3. **查看日志**: `tail -f ~/.openclaw/logs/gateway.log`
-4. **获取帮助**: `openclaw doctor`
-
----
-
-**最后更新**: 2026-02-22
-**OpenClaw 版本**: 2026.2.19+
-
-<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+**详细教程**: [API配置教程](../docs/api-config/api-configuration.md) | [快速上手](../docs/start/quickstart.md)
