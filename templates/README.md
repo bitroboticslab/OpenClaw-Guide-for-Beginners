@@ -1,6 +1,6 @@
 # 配置模板使用指南
 
-> ⚠️ **重要提示**: 本章节的模板文件仅作为参考，请勿直接覆盖你的配置文件！
+> ⚠️ **重要提示**: 模板文件仅供参考，请勿直接覆盖你的配置文件！
 
 ---
 
@@ -81,7 +81,7 @@
 
 ```bash
 # 启动配置向导
-openclaw onboard --install-daemon
+openopenclaw onboard --install-daemon
 ```
 
 按照提示：
@@ -385,6 +385,42 @@ openclaw onboard --install-daemon
 - 高级用户 → 参考模板，手动编辑现有配置文件
 - 提取片段 → 只复制需要的配置，不要覆盖整个文件
 
+### Q: 如何检查配置是否正确？
+
+**A:**
+```bash
+# 1. 使用 openclaw doctor 全面诊断
+openclaw doctor
+
+# 2. 检查 JSON 格式是否正确
+cat ~/.openclaw/openclaw.json | python3 -m json.tool
+
+# 3. 检查 Gateway 是否正常启动
+openclaw gateway status
+
+# 4. 测试模型是否可用
+openclaw models list
+```
+
+### Q: 配置文件中有哪些关键字段？
+
+**A:**
+
+**系统字段（不要删除）**:
+- `meta`: 版本信息和最后修改时间
+- `wizard`: 配置向导状态
+- `browser`: 浏览器配置（如已启用）
+- `auth`: 认证配置（如已配置）
+
+**用户字段（可以修改）**:
+- `models`: 模型提供商配置
+- `agents`: Agent 默认配置
+- `gateway`: Gateway 配置
+- `channels`: 消息平台配置
+- `session`: 会话配置
+- `plugins`: 插件配置
+- `skills`: 技能配置
+
 ---
 
 ## 🚀 快速参考
@@ -421,6 +457,53 @@ openclaw doctor
 openclaw gateway restart
 ```
 
+### 添加新的提供商
+
+```bash
+# 1. 备份配置
+cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.backup
+
+# 2. 编辑配置
+nano ~/.openclaw/openclaw.json
+
+# 3. 在 models.providers 中添加新提供商
+#    从 templates/openclaw-template.json 复制配置
+
+# 4. 验证配置
+openclaw doctor
+
+# 5. 重启 Gateway
+openclaw gateway restart
+```
+
+### 使用环境变量
+
+```bash
+# 1. 创建 .env 文件
+touch ~/.openclaw/.env
+chmod 600 ~/.openclaw/.env
+
+# 2. 编辑 .env 文件
+nano ~/.openclaw/.env
+# 添加: SILICONFLOW_API_KEY=sk-xxxxxx
+
+# 3. 在配置文件中使用 ${VARIABLE}
+nano ~/.openclaw/openclaw.json
+# 修改: "apiKey": "${SILICONFLOW_API_KEY}"
+
+# 4. 验证配置
+openclaw doctor
+```
+
 ---
 
-**详细教程**: [API配置教程](../docs/api-config/api-configuration.md) | [快速上手](../docs/start/quickstart.md)
+## 📚 相关文档
+
+- [API配置教程](../docs/api-config/api-configuration.md) - 详细的API提供商配置
+- [快速上手](../docs/start/quickstart.md) - 5分钟快速上手
+- [Docker部署](../docs/docker/docker-deployment.md) - Docker容器化部署
+- [常见问题](../FAQ.md) - 教程常见问题解答
+
+---
+
+**提示**: 如果遇到配置问题，首先运行 `openclaw doctor` 诊断，然后参考本指南或相关文档。
