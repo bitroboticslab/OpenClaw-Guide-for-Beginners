@@ -15,3 +15,10 @@ pdfs/
 # 但如果某些 PDF 确实要公开，可以用 ! 强制包含
 # !public-doc.pdf
 wechat_articles/
+
+# 内部工作文档（不上传到GitHub）
+*REPORT*.md
+*SUMMARY*.md
+*PLAN*.md
+PHASE*.md
+STAGE*.md
