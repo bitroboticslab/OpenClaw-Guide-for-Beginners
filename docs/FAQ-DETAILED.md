@@ -179,13 +179,13 @@ A: **最推荐（新手）**:
 ### Q: 如何获取 API Key？
 
 A: **硅基流动**:
-1. 访问 https://cloud.siliconflow.cn
+1. 访问 [硅基流动](https://cloud.siliconflow.cn/i/lva59yow)
 2. 注册账号
 3. 进入「API Keys」页面
 4. 创建并复制 API Key
 
 **火山方舟**:
-1. 访问 https://www.volcengine.com/activity/codingplan
+1. 访问 [火山引擎方舟](https://volcengine.com/L/tHxxM_WwYp4/) 
 2. 订阅 Coding Plan（首月8.91元）
 3. 进入「访问控制」→「API密钥管理」
 4. 创建并复制 Access Key

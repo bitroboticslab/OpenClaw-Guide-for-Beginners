@@ -29,8 +29,8 @@
 | **硅基流动** | 2000万 Tokens ⭐ | ⭐⭐⭐⭐⭐ | 50+ |
 | **火山方舟** | 首月8.91元 | ⭐⭐⭐⭐⭐ | 30+ |
 | **阿里百炼** | 按量付费 | ⭐⭐⭐⭐ | 20+ |
-| **智谱 GLM** | 新用户免费 | ⭐⭐⭐ | 10+ |
-| **MiniMax** | 新用户免费 | ⭐⭐⭐ | 8+ |
+| **智谱 GLM** | 新用户免费额度 | ⭐⭐⭐ | 10+ |
+| **MiniMax** | 新用户免费额度 | ⭐⭐⭐ | 8+ |
 
 ---
 
@@ -68,7 +68,7 @@ openclaw validate
 
 #### 注册账号
 
-1. 访问 https://cloud.siliconflow.cn
+1. 访问 [硅基流动](https://cloud.siliconflow.cn/i/lva59yow)
 2. 点击「注册」
 3. 完成邮箱验证
 4. 登录账号
@@ -106,7 +106,19 @@ openclaw config set model.primary siliconflow/Pro/MiniMaxAI/MiniMax-M2.5
       "siliconflow": {
         "baseUrl": "https://api.siliconflow.cn/v1",
         "apiKey": "sk sk-xxxxxxxxxxxxxxxxxxxx",
-        "api": "openai-completions"
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "Pro/MiniMaxAI/MiniMax-M2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": {"input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0},
+            "contextWindow": 200000,
+            "maxTokens": 8192,
+            "compat": {"supportsStore": false}
+          }
+        ]
       }
     }
   },
@@ -114,7 +126,19 @@ openclaw config set model.primary siliconflow/Pro/MiniMaxAI/MiniMax-M2.5
     "defaults": {
       "model": {
         "primary": "siliconflow/Pro/MiniMaxAI/MiniMax-M2.5"
-      }
+      },
+      "models": {
+        "_comment_siliconflow_models": "硅基流动模型别名配置",
+        "siliconflow/Pro/zai-org/GLM-4.7": {
+          "alias": "sili-GLM-4.7"
+        },
+        "siliconflow/Pro/MiniMaxAI/MiniMax-M2.5": {
+          "alias": "sili-MiniMax-M2.5"
+        },
+        "siliconflow/Pro/moonshotai/Kimi-K2.5": {
+          "alias": "sili-moonshot-Kimi-K2.5"
+        }
+      } 
     }
   }
 }
@@ -141,7 +165,7 @@ openclaw config set model.primary siliconflow/Pro/MiniMaxAI/MiniMax-M2.5
 
 #### 注册账号
 
-1. 访问 https://www.volcengine.com/activity/codingplan
+1. 访问 [火山引擎方舟](https://volcengine.com/L/tHxxM_WwYp4/) 
 2. 点击「立即订阅」
 3. 完成实名认证
 4. 选择套餐（Coding Plan 首月8.91元）
@@ -179,7 +203,19 @@ openclaw config set model.primary volcengine/glm-4.7
       "volcengine": {
         "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
         "apiKey": "YOUR_ACCESS_KEY_ID:YOUR_ACCESS_KEY_SECRET",
-        "api": "openai-completions"
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "glm-4.7",
+            "name": "GLM-4.7",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": {"input": 4, "output": 16, "cacheRead": 0.8, "cacheWrite": 0.017},
+            "contextWindow": 200000,
+            "maxTokens": 65536,
+            "compat": {"supportsStore": false}
+          }
+        ]
       }
     }
   },
@@ -187,6 +223,12 @@ openclaw config set model.primary volcengine/glm-4.7
     "defaults": {
       "model": {
         "primary": "volcengine/glm-4.7"
+      },
+      "models": {
+        "_comment_volcengine_models": "火山引擎模型别名配置",
+        "volcengine/glm-4.7": {
+          "alias": "volcengine-glm-4.7"
+        }
       }
     }
   }
@@ -262,7 +304,7 @@ openclaw config set model.primary bailian/qwen-plus-latest
 
 #### 注册账号
 
-1. 访问 https://z.ai/subscribe
+1. 访问 [智谱 GLM Coding](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH)
 2. 点击「注册」
 3. 完成手机验证
 4. 登录账号
