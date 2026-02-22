@@ -26,7 +26,7 @@ echo ""
 
 # 检测 macOS 版本
 check_macos_version() {
-    if [[ $(uname) != "Darwin" ]]; ]]; then
+    if [[ $(uname) != "Darwin" ]]; then
         echo -e "${RED}[错误] 本脚本仅适用于 macOS${NC}"
         exit 1
     fi

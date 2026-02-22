@@ -204,7 +204,7 @@ start_container() {
             --restart unless-stopped \
             -p 18789:18789 \
             -v $(pwd)/data:/home/openclaw/.openclaw/data \
-'            openclaw/openclaw:latest
+            openclaw/openclaw:latest
     fi
 
     # 等待容器启动
