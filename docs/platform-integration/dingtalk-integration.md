@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 钉钉对接教程
 
 > 将 OpenClaw 接入钉钉，打造企业级 AI 助手
@@ -266,3 +268,5 @@ openclaw test --ai
 ---
 
 **上一页**：[平台对接总览](platform-integration-overview.md) | **下一页**：[Telegram 对接教程](telegram-integration.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

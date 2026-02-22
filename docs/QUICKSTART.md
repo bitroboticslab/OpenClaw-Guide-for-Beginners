@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # OpenClaw 快速开始指南
 
 > 5分钟快速上手 OpenClaw AI 助手
@@ -484,3 +486,5 @@ A:
 **创建时间**: 2026-02-22 15:05 UTC
 **版本**: 1.0
 **Phase**: Phase 4+ - 阶段5
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

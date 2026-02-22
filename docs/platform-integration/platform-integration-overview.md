@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 平台对接教程
 
 > OpenClaw 支持多种消息平台对接，选择你需要的平台进行配置
@@ -248,3 +250,5 @@ openclaw onboard --install-daemon --add-channel
 ---
 
 **上一页**：[API 配置详解](../api-config/api-configuration.md) | **下一页**：[飞书对接教程](feishu-integration.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

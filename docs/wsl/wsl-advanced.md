@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # WSL 高级配置
 
 > 深入配置WSL，提升性能和功能
@@ -674,3 +676,5 @@ nameserver 8.8.4.4
 **最后更新**: 2026-02-22
 **版本**: 1.0
 **适用版本**: WSL 2.0.0+
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

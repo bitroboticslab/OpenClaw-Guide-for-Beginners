@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # API 配置详解
 
 > OpenClaw 需要配置大模型 API 才能运行，本文详细介绍各平台的配置方法
@@ -399,3 +401,5 @@ A: 可以配置多个提供商，通过环境变量或配置文件切换。
 ---
 
 **上一页**：[云服务器部署指南](../cloud/cloud-deployment-guide.md) | **下一页**：[平台对接教程](../platform-integration/platform-integration-overview.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

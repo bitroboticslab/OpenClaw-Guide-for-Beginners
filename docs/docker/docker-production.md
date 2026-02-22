@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # Docker 生产部署
 
 > 生产环境最佳实践、安全配置和性能优化
@@ -882,3 +884,5 @@ docker system df
 **最后更新**: 2026-02-22
 **版本**: 1.0
 **适用版本**: Docker 20.10+, Docker Compose 2.0+
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

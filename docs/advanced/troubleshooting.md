@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 故障排除指南
 
 > 诊断和解决OpenClaw的常见问题
@@ -532,3 +534,5 @@ openclaw logs > logs.log
 **创建时间**: 2026-02-21
 **最后更新**: 2026-02-22 (应用写作最佳实践)
 **版本**: v2.0
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

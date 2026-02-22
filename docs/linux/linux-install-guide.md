@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # Linux 安装指南
 
 > 本教程适用于 Ubuntu/Debian/CentOS 等 Linux 发行版用户
@@ -288,3 +290,5 @@ sudo firewall-cmd --reload
 ---
 
 **上一页**：[macOS 安装指南](../macos/README.md) | **下一页**：[云服务器部署指南](../cloud/cloud-deployment-guide.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

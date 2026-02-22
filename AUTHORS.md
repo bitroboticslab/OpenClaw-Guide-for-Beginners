@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 作者信息
 
 ## 主要作者
@@ -33,3 +35,5 @@
 
 **最后更新**: 2026-02-22
 **教程版本**: v2.0
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
