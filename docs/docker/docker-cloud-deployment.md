@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # Docker Cloud 部署
 
 > 将OpenClaw部署到云平台，实现24小时在线服务
@@ -792,3 +794,5 @@ ls -lh backups/
 **最后更新**: 2026-02-22
 **版本**: 1.0
 **适用版本**: Docker 20.10+
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

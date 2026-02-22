@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # Docker 部署教程
 
 > 使用Docker快速部署OpenClaw，实现环境隔离和轻松迁移
@@ -757,3 +759,5 @@ docker top openclaw
 **最后更新**: 2026-02-22
 **版本**: 1.0
 **适用版本**: Docker 20.10+, Docker Compose 2.0+
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

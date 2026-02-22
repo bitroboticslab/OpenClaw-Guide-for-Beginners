@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 云服务器部署指南
 
 > 24小时在线的 AI 助手，云服务器部署完全指南
@@ -279,3 +281,5 @@ systemctl start openclaw
 ---
 
 **上一页**：[Linux 安装指南](../linux/README.md) | **下一页**：[API 配置详解](../api-config/api-configuration.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

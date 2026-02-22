@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # OpenClaw API 配置指南
 
 > 配置 AI 模型提供商的详细指南
@@ -614,3 +616,5 @@ openclaw config set quota.alert.enabled true
 **创建时间**: 2026-02-22 15:15 UTC
 **版本**: 1.0
 **Phase**: Phase 4+ - 阶段5
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

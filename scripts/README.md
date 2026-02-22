@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # OpenClaw 安装脚本文档
 
 > 一键安装脚本使用指南
@@ -468,3 +470,5 @@ export https_proxy=http://proxy.example.com:8080
 **创建时间**: 2026-02-22
 **最后更新**: 2026-02-22
 **版本**: 1.0
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # OpenClaw 新手完全指南
 
 > 从零开始，手把手教你部署属于自己的 24 小时在线 AI 助手
@@ -226,3 +228,5 @@ OpenClaw-Guide-for-Beginners/
 *本教程包含推荐链接，通过链接注册可享受额外优惠，同时也支持作者持续产出优质内容。*
 
 *作者: junhang lai | 最后更新: 2026-02-22*
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

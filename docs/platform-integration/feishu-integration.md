@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 飞书对接教程
 
 > 一步步教你将 OpenClaw 接入飞书，实现随时随地与 AI 助手对话
@@ -240,3 +242,5 @@ ufw status
 ---
 
 **上一页**：[API 配置详解](../api-config/api-configuration.md) | **下一页**：[钉钉对接教程](dingtalk-integration.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

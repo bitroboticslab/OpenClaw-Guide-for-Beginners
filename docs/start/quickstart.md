@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 5分钟快速上手
 
 > 在5分钟内完成OpenClaw的安装和配置，开始你的AI助手之旅
@@ -476,3 +478,5 @@ openclaw telegram init
 **最后更新**: 2026-02-22 (视觉优化 v2.0)
 **版本**: 2.0
 **适用版本**: OpenClaw 2026.2.x
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

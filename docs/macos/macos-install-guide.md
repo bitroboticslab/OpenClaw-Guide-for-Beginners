@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # macOS 安装指南
 
 > 本教程适用于 macOS 用户，从零开始完成 OpenClaw 的安装和配置
@@ -279,3 +281,5 @@ arch -arm64 brew install node@22
 ---
 
 **上一页**：[Windows 安装指南](../windows/README.md) | **下一页**：[Linux 安装指南](../linux/README.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

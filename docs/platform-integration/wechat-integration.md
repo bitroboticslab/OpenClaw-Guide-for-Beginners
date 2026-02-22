@@ -1,3 +1,5 @@
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
 # 微信对接教程
 
 > 将 OpenClaw 接入微信，覆盖最广泛的用户群体
@@ -295,3 +297,5 @@ openclaw logs -f
 ---
 
 **上一页**：[Telegram 对接教程](telegram-integration.md) | **返回**：[平台对接总览](platform-integration-overview.md)
+
+<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
