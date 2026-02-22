@@ -30,7 +30,7 @@
 | 火山引擎 | 折上9折，低至8.9元 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
 | 智谱GLM Coding | 限时惊喜价 | [开拼](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | MiniMax | 9折优惠 | [订阅](https://platform.minimaxi.com/subscribe/coding-plan) |
-| 智谱GLM | 新用户10%优惠 | [订阅](https://z.ai/subscribe) |
+| 智谱GLM | 新用户10%优惠 | [订阅](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 
 ---
 
@@ -44,8 +44,8 @@
 | 2 | 火山引擎 | Coding Plan | 8.9元起 | ⭐⭐⭐⭐⭐ | [🔗](https://volcengine.com/L/tHxxM_WwYp4/) |
 | 3 | 智谱GLM Coding | 超值订阅 | 限时价 | ⭐⭐⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | 4 | MiniMax | Starter | 9.9元 | ⭐⭐⭐ | [🔗](https://platform.minimaxi.com/subscribe/coding-plan) |
-| 5 | 智谱GLM | Lite(年) | 22.75元/月 | ⭐⭐⭐⭐ | [🔗](https://z.ai/subscribe) |
-| 6 | 智谱GLM | Lite | 39元 | ⭐⭐⭐ | [🔗](https://z.ai/subscribe) |
+| 5 | 智谱GLM | Lite(年) | 22.75元/月 | ⭐⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
+| 6 | 智谱GLM | Lite | 39元 | ⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 
 ---
 
@@ -86,7 +86,7 @@
 - ✅ 年付7折优惠
 - ✅ 长文本处理能力强
 
-[🔗 订阅](https://z.ai/subscribe)
+[🔗 订阅](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH)
 
 **价格**:
 - Lite月付：39元

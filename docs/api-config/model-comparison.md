@@ -15,7 +15,7 @@
 | 🆕 新手体验 | 硅基流动 | 免费额度 | 0元 | [注册](https://cloud.siliconflow.cn/i/lva59yow) |
 | 💻 编程辅助 | 火山引擎方舟 | Coding Plan | 8.9元起 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
 | 🔧 开发工具 | 智谱GLM Coding | 超值订阅 | 限时价 | [开拼](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
-| 🧠 长文本 | 智谱GLM | Pro | 129元 | [订阅](https://z.ai/subscribe) |
+| 🧠 长文本 | 智谱GLM | Pro | 129元 | [订阅](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | 🤖 Agent开发 | MiniMax | Pro | - | [订阅](https://platform.minimaxi.com/subscribe/coding-plan) |
 | 💰 性价比 | 火山引擎 | 多购折扣 | 折上9折 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
 
@@ -61,7 +61,7 @@
 | 2 | 火山引擎 | Coding Plan | 8.9元起 | ⭐⭐⭐⭐⭐ | [🔗](https://volcengine.com/L/tHxxM_WwYp4/) |
 | 3 | 智谱GLM Coding | 超值订阅 | 限时价 | ⭐⭐⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | 4 | MiniMax | Starter | 9.9元 | ⭐⭐⭐ | [🔗](https://platform.minimaxi.com/subscribe/coding-plan) |
-| 5 | 智谱GLM | Lite | 39元 | ⭐⭐⭐ | [🔗](https://z.ai/subscribe) |
+| 5 | 智谱GLM | Lite | 39元 | ⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 
 ---
 
@@ -146,7 +146,7 @@
 
 智谱GLM年付7折，长期使用更划算
 
-[🔗 订阅](https://z.ai/subscribe)
+[🔗 订阅](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH)
 
 ---
 

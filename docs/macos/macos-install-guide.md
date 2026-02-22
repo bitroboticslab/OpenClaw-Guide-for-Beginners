@@ -113,7 +113,7 @@ openclaw onboard --install-daemon
 |------|------|----------|
 | 阿里百炼 | 新人免费额度 | [开通](https://bailian.console.aliyun.com) |
 | 火山方舟 | Coding Plan 首月 8.91元 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
-| 智谱 GLM | 年付 7 折 | [订阅](https://z.ai/subscribe) |
+| 智谱 GLM | 年付 7 折 | [订阅](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 
 ---
 
@@ -274,7 +274,7 @@ arch -arm64 brew install node@22
 | 硅基流动 | [注册链接](https://cloud.siliconflow.cn/i/lva59yow) | 注册送 2000万 Tokens |
 | 阿里百炼 | [开通链接](https://bailian.console.aliyun.com) | 新人免费额度 |
 | 火山方舟 | [Coding Plan](https://volcengine.com/L/tHxxM_WwYp4/) | 首月 8.91 元起 |
-| 智谱 GLM | [订阅链接](https://z.ai/subscribe) | 年付 7 折优惠 |
+| 智谱 GLM | [订阅链接](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) | 年付 7 折优惠 |
 
 > 通过以上链接注册可享受额外优惠，同时支持作者持续更新教程 ❤️
 
