@@ -75,7 +75,7 @@ node --version  # 应该是 v22.x.x
 
 2. **检查网络连接**
 ```bash
-curl -Iv https://get.openclaw.ai
+curl -Iv https://openclaw.ai/
 ```
 
 3. **检查权限**

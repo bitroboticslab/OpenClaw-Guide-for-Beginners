@@ -54,7 +54,7 @@ node -v
 
 ```powershell
 # 运行官方安装脚本
-iwr https://get.openclaw.ai | iex
+iwr -useb https://openclaw.ai/install.ps1 | iex
 ```
 
 安装过程约 2-5 分钟，会自动完成：

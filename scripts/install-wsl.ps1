@@ -148,7 +148,7 @@ if ! command -v node &> /dev/null; then
 fi
 
 # 安装 OpenClaw
-curl -fsSL https://get.openclaw.ai | sh
+curl -fsSL https://openclaw.ai/install.sh | bash
 
 # 添加到 PATH
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
@@ -197,7 +197,7 @@ function Configure-OpenClaw-WSL {
         }
         "2" {
             Write-Host ""
-            Write-Host "[!] 请先在 https://bailian.console.aliyun.com 开通服务" -ForegroundColor Yellow
+            Write-Host "[!] 请先在 https://www.aliyun.com/benefit/ai/aistar?userCode=yyzsc1al&clubBiz=subTask..12385059..10263.. 开通服务" -ForegroundColor Yellow
             $apiKey = Read-Host "请输入阿里百炼 API Key"
 
             wsl -d $UbuntuName -- bash -c "openclaw config set provider bailian && openclaw config set api_key $apiKey"

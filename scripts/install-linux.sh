@@ -90,7 +90,7 @@ install_openclaw() {
     fi
     
     echo -e "${YELLOW}[!] 正在下载并安装 OpenClaw...${NC}"
-    curl -fsSL https://get.openclaw.ai | sh
+    curl -fsSL https://openclaw.ai/install.sh | bash
     
     # 添加到 PATH
     export PATH="$HOME/.local/bin:$PATH"

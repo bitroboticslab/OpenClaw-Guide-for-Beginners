@@ -66,7 +66,7 @@ if %errorlevel% equ 0 (
     echo [√] OpenClaw 已安装
 ) else (
     echo [!] 正在下载并安装 OpenClaw...
-    powershell -Command "iwr https://get.openclaw.ai | iex"
+    powershell -Command "iwr -useb https://openclaw.ai/install.ps1 | iex"
 )
 
 :: 配置向导
