@@ -359,7 +359,8 @@ openclaw onboard --install-daemon
 - GitHub: [Mr. Tooth](https://github.com/Mr-tooth)
 - 教程仓库: [OpenClaw-Guide-for-Beginners](https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners)
 - 作者信息: [查看 AUTHORS.md](AUTHORS.md)
-- 欢迎关注微信公众号, 后续会输出更多实战教程！ 
+- 欢迎关注微信公众号, 后续会输出更多实战教程！
+
 ![微信公众号二维码](assets/wechat_oa.jpg)
 
 ---
