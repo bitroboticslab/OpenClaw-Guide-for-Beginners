@@ -11,7 +11,7 @@
 | 平台 | 官网文档 | 优惠活动 | 推荐指数 |
 |------|---------|---------|----------|
 | 硅基流动 | [文档](https://docs.siliconflow.cn) | [注册送2000万Tokens](https://cloud.siliconflow.cn/i/lva59yow) | ⭐⭐⭐⭐⭐ |
-| 火山引擎 | [文档](https://docs.volcengine.com) | [折上9折，低至8.9元](https://volcengine.com/L/tHxxM_WwYp4/) | ⭐⭐⭐⭐⭐ |
+| 火山引擎 | [文档](https://docs.volcengine.com) | [折上9折，低至8.9元](https://volcengine.com/L/oqijuWrltl0/  ) | ⭐⭐⭐⭐⭐ |
 | 智谱AI | [文档](https://docs.bigmodel.cn) | [GLM Coding限时价](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) | ⭐⭐⭐⭐ |
 | MiniMax | [文档](https://platform.minimaxi.com/docs) | [9折优惠](https://platform.minimaxi.com/subscribe/coding-plan) | ⭐⭐⭐⭐ |
 

@@ -325,7 +325,7 @@ openclaw init
 | 平台 | 新用户福利 | 链接 |
 |------|-----------|------|
 | ![推荐](https://img.shields.io/badge/推荐-新手-green) | 硅基流动 | 2000万Tokens免费 | [注册](https://cloud.siliconflow.cn/i/lva59yow) |
-| ![高性价比](https://img.shields.io/badge/高性价比-blue) | 火山引擎 | 首月8.9元 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
+| ![高性价比](https://img.shields.io/badge/高性价比-blue) | 火山引擎 | 首月8.9元 | [订阅](https://volcengine.com/L/oqijuWrltl0/  ) |
 
 </details>
 

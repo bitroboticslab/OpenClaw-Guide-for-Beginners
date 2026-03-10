@@ -329,7 +329,7 @@ curl "https://api.telegram.org/bot你的TOKEN/deleteWebhook"
 | 平台 | 链接 | 优惠 |
 |------|------|------|
 | 硅基流动 | [注册链接](https://cloud.siliconflow.cn/i/lva59yow) | 注册送 2000万 Tokens |
-| 火山方舟 | [Coding Plan](https://volcengine.com/L/tHxxM_WwYp4/) | 首月 8.91 元起 |
+| 火山方舟 | [Coding Plan](https://volcengine.com/L/oqijuWrltl0/  ) | 首月 8.91 元起 |
 | 智谱 GLM | [订阅链接](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) | 年付 7 折 |
 
 ---

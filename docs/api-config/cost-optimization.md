@@ -27,7 +27,7 @@
 | 平台 | 新用户福利 | 领取链接 |
 |------|-----------|----------|
 | 硅基流动 | 2000万 Tokens | [注册](https://cloud.siliconflow.cn/i/lva59yow) |
-| 火山引擎 | 折上9折，低至8.9元 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
+| 火山引擎 | 折上9折，低至8.9元 | [订阅](https://volcengine.com/L/oqijuWrltl0/  ) |
 | 智谱GLM Coding | 限时惊喜价 | [开拼](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | MiniMax | 9折优惠 | [订阅](https://platform.minimaxi.com/subscribe/coding-plan) |
 | 智谱GLM | 新用户10%优惠 | [订阅](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
@@ -41,7 +41,7 @@
 | 排名 | 平台 | 套餐 | 月费 | 性价比 | 链接 |
 |------|------|------|------|--------|------|
 | 1 | 硅基流动 | 免费额度 | 0元 | ⭐⭐⭐⭐⭐ | [🔗](https://cloud.siliconflow.cn/i/lva59yow) |
-| 2 | 火山引擎 | Coding Plan | 8.9元起 | ⭐⭐⭐⭐⭐ | [🔗](https://volcengine.com/L/tHxxM_WwYp4/) |
+| 2 | 火山引擎 | Coding Plan | 8.9元起 | ⭐⭐⭐⭐⭐ | [🔗](https://volcengine.com/L/oqijuWrltl0/  ) |
 | 3 | 智谱GLM Coding | 超值订阅 | 限时价 | ⭐⭐⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | 4 | MiniMax | Starter | 9.9元 | ⭐⭐⭐ | [🔗](https://platform.minimaxi.com/subscribe/coding-plan) |
 | 5 | 智谱GLM | Lite(年) | 22.75元/月 | ⭐⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
@@ -58,7 +58,7 @@
 - ✅ 工具不限：Claude Code、Cline等20+编程工具
 - ✅ 折上9折，订阅越多越划算
 
-[🔗 立即订阅](https://volcengine.com/L/tHxxM_WwYp4/)
+[🔗 立即订阅](https://volcengine.com/L/oqijuWrltl0/  )
 **邀请码**: `XCWPZTHW`
 
 **价格**:

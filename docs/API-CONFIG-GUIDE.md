@@ -165,7 +165,7 @@ openclaw config set model.primary siliconflow/Pro/MiniMaxAI/MiniMax-M2.5
 
 #### 注册账号
 
-1. 访问 [火山引擎方舟](https://volcengine.com/L/tHxxM_WwYp4/) 
+1. 访问 [火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/  ) 
 2. 点击「立即订阅」
 3. 完成实名认证
 4. 选择套餐（Coding Plan 首月8.91元）

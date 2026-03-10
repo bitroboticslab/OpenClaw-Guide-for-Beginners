@@ -195,7 +195,7 @@ openclaw init
 
 **快速获取API Key**:
 - [硅基流动](https://cloud.siliconflow.cn/i/lva59yow) - 2000万Tokens免费，实名认证得16元任意模型抵扣代金券
-- [火山引擎方舟](https://volcengine.com/L/tHxxM_WwYp4/) - 折上9折低至8.9元（量大管饱 性价比首选！）
+- [火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/  ) - 折上9折低至8.9元（量大管饱 性价比首选！）
 - [智谱GLM Coding](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) - 限时惊喜价
 
 ---

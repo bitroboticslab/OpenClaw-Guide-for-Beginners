@@ -114,7 +114,7 @@ openclaw onboard --install-daemon
 
 **优势**：Lite 套餐首月仅 8.91 元，支持多款顶级模型
 
-1. 访问 [火山方舟 Coding Plan](https://volcengine.com/L/tHxxM_WwYp4/)
+1. 访问 [火山方舟 Coding Plan](https://volcengine.com/L/oqijuWrltl0/  )
 2. 选择套餐（Lite/Pro），使用邀请码可享 9 折
 3. 获取 API Key
 4. 配置 OpenClaw
@@ -209,7 +209,7 @@ openclaw logs
 |------|------|----------|
 | 硅基流动 | [注册链接](https://cloud.siliconflow.cn/i/lva59yow) | 注册送 2000万 Tokens |
 | 阿里百炼 | [开通链接](https://bailian.console.aliyun.com) | 新人免费额度 |
-| 火山方舟 | [Coding Plan](https://volcengine.com/L/tHxxM_WwYp4/) | 首月 8.91 元起 |
+| 火山方舟 | [Coding Plan](https://volcengine.com/L/oqijuWrltl0/  ) | 首月 8.91 元起 |
 | 智谱 GLM | [订阅链接](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) | 年付优惠 |
 
 > 通过以上链接注册可享受额外优惠，同时支持作者持续更新教程 ❤️

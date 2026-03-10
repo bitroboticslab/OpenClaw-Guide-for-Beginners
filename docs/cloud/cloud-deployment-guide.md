@@ -274,7 +274,7 @@ systemctl start openclaw
 | 阿里云轻量服务器 | [购买链接](https://www.aliyun.com/activity/ecs/clawdbot?userCode=yyzsc1al) | 2核2G 68 元/年起 |
 | 腾讯云轻量服务器 | [购买链接](https://cloud.tencent.com/act/cps/redirect?redirect=1079&cps_key=d427af70c58018a013008ba30489f688&from=console&cps_promotion_id=102390) | 4核4G3M 79 元/年起 |
 | 阿里百炼 | [开通链接](https://bailian.console.aliyun.com) | 新人多个模型免费额度1M |
-| 火山方舟 Coding Plan | [订阅链接](https://volcengine.com/L/tHxxM_WwYp4/) | 首月 8.91 元 （量大管饱） |
+| 火山方舟 Coding Plan | [订阅链接](https://volcengine.com/L/oqijuWrltl0/  ) | 首月 8.91 元 （量大管饱） |
 
 > 通过以上链接购买可支持作者持续更新教程 ❤️
 

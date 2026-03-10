@@ -166,7 +166,7 @@ OpenClaw 需要 AI 模型提供商的 API Key 才能工作。
 | 平台 |  免费额度 | 说明 |
 |------|---------|------|
 | [**硅基流动**](https://cloud.siliconflow.cn/i/lva59yow) | 2000万 Tokens ⭐ | 2000万免费Token，支持多个开源模型 |
-| [**火山方舟**](https://volcengine.com/L/tHxxM_WwYp4/)| 首月8.91元 | 宽松套餐，适合长期使用 |
+| [**火山方舟**](https://volcengine.com/L/oqijuWrltl0/  )| 首月8.91元 | 宽松套餐，适合长期使用 |
 | [**阿里百炼**](https://www.aliyun.com/benefit/ai/aistar?userCode=yyzsc1al&clubBiz=subTask..12385059..10263..) | 首月7.9元 | 阿里云AI服务，稳定可靠 |
 
 ### 配置命令

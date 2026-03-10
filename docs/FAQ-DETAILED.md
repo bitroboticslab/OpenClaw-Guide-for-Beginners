@@ -185,7 +185,7 @@ A: **硅基流动**:
 4. 创建并复制 API Key
 
 **火山方舟**:
-1. 访问 [火山引擎方舟](https://volcengine.com/L/tHxxM_WwYp4/) 
+1. 访问 [火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/  ) 
 2. 订阅 Coding Plan（首月8.91元）
 3. 进入「访问控制」→「API密钥管理」
 4. 创建并复制 Access Key

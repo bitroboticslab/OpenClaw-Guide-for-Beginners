@@ -13,11 +13,11 @@
 | 使用场景 | 推荐平台 | 套餐 | 月费 | 优惠链接 |
 |---------|---------|------|------|----------|
 | 🆕 新手体验 | 硅基流动 | 免费额度 | 0元 | [注册](https://cloud.siliconflow.cn/i/lva59yow) |
-| 💻 编程辅助 | 火山引擎方舟 | Coding Plan | 8.9元起 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
+| 💻 编程辅助 | 火山引擎方舟 | Coding Plan | 8.9元起 | [订阅](https://volcengine.com/L/oqijuWrltl0/  ) |
 | 🔧 开发工具 | 智谱GLM Coding | 超值订阅 | 限时价 | [开拼](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | 🧠 长文本 | 智谱GLM | Pro | 129元 | [订阅](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | 🤖 Agent开发 | MiniMax | Pro | - | [订阅](https://platform.minimaxi.com/subscribe/coding-plan) |
-| 💰 性价比 | 火山引擎 | 多购折扣 | 折上9折 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
+| 💰 性价比 | 火山引擎 | 多购折扣 | 折上9折 | [订阅](https://volcengine.com/L/oqijuWrltl0/  ) |
 
 ---
 
@@ -31,7 +31,7 @@
 - ✅ 折上9折：低至8.9元起
 - ✅ 订阅越多越划算
 
-[🔗 立即订阅](https://volcengine.com/L/tHxxM_WwYp4/)
+[🔗 立即订阅](https://volcengine.com/L/oqijuWrltl0/  )
 **邀请码**: `XCWPZTHW`
 
 | 套餐 | 价格 | 特点 |
@@ -58,7 +58,7 @@
 | 排名 | 平台 | 套餐 | 月费 | 性价比 | 链接 |
 |------|------|------|------|--------|------|
 | 1 | 硅基流动 | 免费额度 | 0元 | ⭐⭐⭐⭐⭐ | [🔗](https://cloud.siliconflow.cn/i/lva59yow) |
-| 2 | 火山引擎 | Coding Plan | 8.9元起 | ⭐⭐⭐⭐⭐ | [🔗](https://volcengine.com/L/tHxxM_WwYp4/) |
+| 2 | 火山引擎 | Coding Plan | 8.9元起 | ⭐⭐⭐⭐⭐ | [🔗](https://volcengine.com/L/oqijuWrltl0/  ) |
 | 3 | 智谱GLM Coding | 超值订阅 | 限时价 | ⭐⭐⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 | 4 | MiniMax | Starter | 9.9元 | ⭐⭐⭐ | [🔗](https://platform.minimaxi.com/subscribe/coding-plan) |
 | 5 | 智谱GLM | Lite | 39元 | ⭐⭐⭐ | [🔗](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
@@ -137,7 +137,7 @@
 
 | 平台 | 优惠 | 链接 |
 |------|------|------|
-| 火山引擎 | 折上9折，低至8.9元 | [订阅](https://volcengine.com/L/tHxxM_WwYp4/) |
+| 火山引擎 | 折上9折，低至8.9元 | [订阅](https://volcengine.com/L/oqijuWrltl0/  ) |
 | 智谱GLM Coding | 限时惊喜价 | [开拼](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) |
 
 ---
