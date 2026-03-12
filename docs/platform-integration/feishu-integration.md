@@ -12,6 +12,26 @@
 
 ---
 
+## 最新方法 飞书官方Openclaw插件超方便！
+- 检查 OpenClaw 版本限制：
+- Linux/MacOS：openclaw 2026.2.26 及以上；
+- Windows：openclaw 2026.3.2 及以上
+- 可通过openclaw -v命令查看；如果低于该版本可能出现异常
+- 执行这个命令升级：npm install -g openclaw
+- 其它升级方式可参考：https://docs.openclaw.ai/install/development-channels#switching-channels
+
+然后一行命令搞定, 会自动禁用其他飞书插件，无需额外处理：
+
+```bash
+npx -y https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8ab6e7a04c17db1becfcbda8ca35f091_1rCCFRWlRV.tgz install
+```
+
+执行过程中通过飞书客户端 扫描二维码，可以一键创建飞书机器人！
+
+如果想进一步查看配置详情和细节，可直接查看[飞书官网插件教程](http://feishu.cn/content/article/7613711414611463386)
+
+## 以下是旧教程，需要手动配置
+
 ## 第一步：创建飞书应用
 
 ### 1.1 进入飞书开放平台

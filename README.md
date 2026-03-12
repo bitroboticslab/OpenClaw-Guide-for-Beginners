@@ -54,7 +54,8 @@ OpenClaw 需要接入大模型 API 才能运行。以下是各平台的优惠信
 
 我个人正在使用以下两个API平台，性价比都很高，感兴趣可以试试：
 
-硅基流动邀请码：lva59yow
+[硅基流动](https://cloud.siliconflow.cn/i/lva59yow)邀请码：lva59yow
+
 [火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/)邀请码(Coding Plan)：XCWPZTHW
 
 ## ☁️ 云服务器推荐
