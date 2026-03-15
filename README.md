@@ -43,7 +43,7 @@ OpenClaw 需要接入大模型 API 才能运行。以下是各平台的优惠信
 | [硅基流动](https://cloud.siliconflow.cn/i/lva59yow) | 注册送 2000万 Tokens |注册+活动可得70元代金券| 受邀16元代金券 | ⭐⭐⭐⭐⭐ |
 | [火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/) | 数亿token, 支持Doubao/MiniMax/GLM/DeepSeek/Kimi旗舰| lite套餐首月9.9元 | 受邀9折 | ⭐⭐⭐⭐⭐ |
 | [阿里百炼套餐](https://www.aliyun.com/benefit/scene/codingplan) | 量大管饱, 已限量，需准点抢购 | lite套餐首月7.9元 |邀请活动结束 | ⭐⭐⭐⭐
-| [智谱 GLM Coding](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) | 量大管饱，Claude Code、Cline等20+工具无缝支持 |lite套餐折后44元/月| 受邀9折 | ⭐⭐⭐⭐ |
+| [智谱 GLM Coding](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) | 量大管饱，Claude Code、Cline等20+工具无缝支持 |lite套餐折后44元/月| 受邀95折 | ⭐⭐⭐⭐ |
 | [MiniMax](https://platform.minimaxi.com/subscribe/coding-plan) | 注册送百万token体验 |lite套餐29元/月 |受邀9折 | ⭐⭐⭐ |
 
 💡 **新手建议**：先注册[硅基流动](https://cloud.siliconflow.cn/i/lva59yow)体验免费额度，再根据需求选择其他平台。
@@ -56,7 +56,11 @@ OpenClaw 需要接入大模型 API 才能运行。以下是各平台的优惠信
 
 [硅基流动](https://cloud.siliconflow.cn/i/lva59yow)邀请码：lva59yow
 
-[火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/)邀请码(Coding Plan)：XCWPZTHW
+2026-03-15
+[火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/)邀请码(Coding Plan)：XCWPZTHW， 也限量了，每天早上十点半抢购。
+
+2026-03-15
+[智谱Coding Plan](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH)更新了，从9折变成了95折！有需要也可以每天上午十点限量抢购，可以配置MCP。
 
 ## ☁️ 云服务器推荐
 
