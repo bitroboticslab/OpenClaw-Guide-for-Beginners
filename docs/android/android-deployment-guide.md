@@ -127,7 +127,7 @@ openclaw task "帮我整理一下最近的待办事项"
 
 ```bash
 # 启动 Web 服务
-openclaw start
+openclaw gateway start
 
 # 在手机浏览器访问
 # http://localhost:3000
@@ -149,7 +149,7 @@ mkdir -p ~/.termux/boot
 cat > ~/.termux/boot/openclaw.sh << 'EOF'
 #!/data/data/com.termux/files/usr/bin/sh
 sleep 10
-openclaw start
+openclaw gateway start
 EOF
 
 # 添加执行权限
@@ -163,7 +163,7 @@ chmod +x ~/.termux/boot/openclaw.sh
 pkg install tmux
 
 # 创建新会话并启动
-tmux new -s openclaw -d "openclaw start"
+tmux new -s openclaw -d "openclaw gateway start"
 
 # 查看会话
 tmux ls

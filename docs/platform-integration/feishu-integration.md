@@ -14,7 +14,7 @@
 
 ## 最新方法 飞书官方Openclaw插件超方便！
 - 检查 OpenClaw 版本限制：
-- Linux/MacOS：openclaw 2026.2.26 及以上；
+- Linux/MacOS：openclaw 2026.3.2 及以上；
 - Windows：openclaw 2026.3.2 及以上
 - 可通过openclaw -v命令查看；如果低于该版本可能出现异常
 - 执行这个命令升级：npm install -g openclaw

@@ -39,7 +39,7 @@
 1. **版本信息丢失**
    ```json
    "meta": {
-     "lastTouchedVersion": "2026.2.19-2",
+     "lastTouchedVersion": "2026.3.23",
      "lastTouchedAt": "2026-02-22T02:44:58.515Z"
    }
    ```
@@ -302,7 +302,7 @@ openclaw gateway status
 **预期输出**:
 
 ```bash
-✅ OpenClaw CLI: 已安装 v2026.2.19
+✅ OpenClaw CLI: 已安装 v2026.3.23
 ✅ Node.js: 已安装 v22.22.0
 ✅ Gateway: 运行中 (PID: 12345)
 ✅ 模型配置: 正常

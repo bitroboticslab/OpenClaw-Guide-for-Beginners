@@ -144,7 +144,7 @@ openclaw onboard --install-daemon
 
 ```bash
 # 启动 OpenClaw
-openclaw start
+openclaw gateway start
 
 # 查看状态
 openclaw status
@@ -153,7 +153,7 @@ openclaw status
 openclaw logs -f
 
 # 停止服务
-openclaw stop
+openclaw gateway stop
 ```
 
 ---
@@ -173,7 +173,7 @@ After=network.target
 Type=simple
 User=$USER
 WorkingDirectory=/home/$USER/.openclaw
-ExecStart=/usr/local/bin/openclaw start
+ExecStart=/usr/local/bin/openclaw gateway start
 Restart=on-failure
 RestartSec=10
 
@@ -205,7 +205,7 @@ sudo systemctl status openclaw
 sudo chown -R $USER:$USER ~/.openclaw
 
 # 或使用 sudo 运行（不推荐）
-sudo openclaw start
+sudo openclaw gateway start
 ```
 
 ### 问题2：Node.js 版本过低
@@ -230,7 +230,7 @@ sudo lsof -i :3000
 sudo kill -9 <PID>
 
 # 或更改端口
-openclaw start --port 3001
+openclaw gateway start --port 3001
 ```
 
 ### 问题4：网络连接问题

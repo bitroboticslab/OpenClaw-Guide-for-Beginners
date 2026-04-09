@@ -47,14 +47,14 @@ A: 推荐使用一键安装脚本：
 
 **Linux**:
 ```bash
-curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
+curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
 chmod +x install-linux.sh
 sudo ./install-linux.sh
 ```
 
 **macOS**:
 ```bash
-curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-macos.sh
+curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-macos.sh
 chmod +x install-macos.sh
 ./install-macos.sh
 ```
@@ -101,7 +101,7 @@ bash -x install-linux.sh
 A: **Linux/macOS**:
 ```bash
 # 停止服务
-openclaw stop
+openclaw gateway stop
 
 # 删除 OpenClaw
 rm -rf ~/.local/bin/openclaw
@@ -112,7 +112,7 @@ rm -rf ~/.openclaw
 
 **Windows**:
 ```powershell
-openclaw stop
+openclaw gateway stop
 Remove-Item -Path "$env:LOCALAPPDATA\openclaw" -Recurse -Force
 Remove-Item -Path "$env:USERPROFILE\.openclaw" -Recurse -Force
 ```
@@ -233,7 +233,7 @@ openclaw config get model.primary
 A:
 ```bash
 # 前台启动
-openclaw start
+openclaw gateway start
 
 # 后台启动
 openclaw gateway start --background
@@ -252,7 +252,7 @@ openclaw logs
 A:
 ```bash
 # 停止
-openclaw stop
+openclaw gateway stop
 
 # 或停止 Gateway
 openclaw gateway stop
@@ -274,7 +274,7 @@ openclaw status
 openclaw validate
 
 # Ping 测试
-openclaw ping
+openclaw health
 ```
 
 ---
@@ -370,7 +370,7 @@ openclaw config set channels.telegram.botToken YOUR_BOT_TOKEN
 
 4. **重启**
 ```bash
-openclaw restart
+openclaw gateway restart
 ```
 
 详见 [Telegram 配置教程](channels/telegram-guide.md)
@@ -417,7 +417,7 @@ openclaw config set channels.signal.signalCliPath "/usr/bin/signal-cli"
 
 3. **重启**
 ```bash
-openclaw restart
+openclaw gateway restart
 ```
 
 详见 [Signal 配置教程](channels/signal-guide.md)
@@ -440,7 +440,7 @@ openclaw logs --tail 50 | grep -i error
 
 3. **重启 Gateway**
 ```bash
-openclaw restart
+openclaw gateway restart
 ```
 
 4. **验证 API Key**
@@ -551,7 +551,7 @@ openclaw validate
 
 4. **重启 Gateway**
 ```bash
-openclaw restart
+openclaw gateway restart
 ```
 
 5. **查看详细日志**

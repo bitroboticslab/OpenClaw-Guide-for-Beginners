@@ -146,7 +146,7 @@ openclaw onboard --install-daemon
 
 ```bash
 # 启动 OpenClaw
-openclaw start
+openclaw gateway start
 
 # 查看运行状态
 openclaw status
@@ -155,7 +155,7 @@ openclaw status
 openclaw logs
 
 # 停止服务
-openclaw stop
+openclaw gateway stop
 ```
 
 ### 访问 Web 界面
@@ -241,7 +241,7 @@ lsof -i :3000
 kill -9 <PID>
 
 # 或更改端口
-openclaw start --port 3001
+openclaw gateway start --port 3001
 ```
 
 ### 问题4：M1/M2 芯片兼容性

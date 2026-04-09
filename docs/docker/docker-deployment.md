@@ -247,7 +247,7 @@ docker-compose version
 docker pull openclaw/openclaw:latest
 
 # 拉取指定版本
-docker pull openclaw/openclaw:v2026.2.13
+docker pull openclaw/openclaw:v2026.3.28
 
 # 查看已拉取的镜像
 docker images | grep openclaw
@@ -260,7 +260,7 @@ docker images | grep openclaw
 | 版本标签 | 说明 | 推荐场景 |
 |---------|------|---------|
 | `latest` | 最新稳定版本 | 生产环境 |
-| `v2026.2.13` | 特定版本 | 稳定环境 |
+| `v2026.3.28` | 特定版本 | 稳定环境 |
 | `dev` | 开发版本 | 测试环境 |
 | `alpine` | Alpine Linux版本 | 轻量级部署 |
 

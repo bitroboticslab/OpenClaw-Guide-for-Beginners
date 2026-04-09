@@ -153,7 +153,7 @@ openclaw onboard --install-daemon
 
 ```bash
 # 启动 OpenClaw
-openclaw start
+openclaw gateway start
 
 # 查看状态
 openclaw status

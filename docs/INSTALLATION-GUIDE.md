@@ -70,10 +70,10 @@
 1. **下载脚本**
    ```powershell
    # 方式1: 使用 PowerShell
-   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-windows.bat" -OutFile "install-windows.bat"
+   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-windows.bat" -OutFile "install-windows.bat"
 
    # 方式2: 手动浏览器下载
-   # 访问: https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners/blob/main/scripts/install-windows.bat
+   # 访问: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/blob/main/scripts/install-windows.bat
    ```
 
 2. **以管理员身份运行**
@@ -106,7 +106,7 @@ openclaw status
 
 1. **下载脚本**
    ```bash
-   curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-macos.sh
+   curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-macos.sh
    ```
 
 2. **运行脚本**
@@ -143,7 +143,7 @@ openclaw status
 
 1. **下载脚本**
    ```bash
-   curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
+   curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
    ```
 
 2. **运行脚本**
@@ -187,7 +187,7 @@ openclaw status
 
 1. **下载脚本**
    ```powershell
-   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-wsl.ps1" -OutFile "install-wsl.ps1"
+   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-wsl.ps1" -OutFile "install-wsl.ps1"
    ```
 
 2. **以管理员身份运行 PowerShell**
@@ -224,7 +224,7 @@ wsl -d Ubuntu -- openclaw status
 
 1. **下载脚本**
    ```bash
-   curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-docker.sh
+   curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-docker.sh
    ```
 
 2. **运行脚本**
@@ -389,7 +389,7 @@ openclaw config set channels.signal.signalCliPath "/usr/bin/signal-cli"
 
 **命令行启动**:
 ```bash
-openclaw start
+openclaw gateway start
 ```
 
 **后台启动**:
@@ -585,7 +585,7 @@ openclaw config get
 sudo lsof -i :18789
 
 # 重启 Gateway
-openclaw restart
+openclaw gateway restart
 
 # 如果仍有问题，尝试完全重置
 openclaw gateway stop
@@ -600,7 +600,7 @@ openclaw gateway start
 
 ```bash
 # 停止 Gateway
-openclaw stop
+openclaw gateway stop
 
 # 删除 OpenClaw CLI
 rm -rf ~/.local/bin/openclaw
@@ -624,7 +624,7 @@ which openclaw  # 应无输出
 
 ```powershell
 # 停止 Gateway
-openclaw stop
+openclaw gateway stop
 
 # 删除 OpenClaw CLI
 Remove-Item -Path "$env:LOCALAPPDATA\openclaw" -Recurse -Force

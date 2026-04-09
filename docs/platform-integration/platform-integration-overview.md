@@ -82,7 +82,7 @@
 
 5. **启动服务**
    ```bash
-   openclaw start
+   openclaw gateway start
    ```
 
 ---

@@ -45,7 +45,7 @@
 1. **下载脚本**
    ```powershell
    # 使用 PowerShell 下载
-   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-windows.bat" -OutFile "install-windows.bat"
+   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-windows.bat" -OutFile "install-windows.bat"
    ```
 
 2. **以管理员身份运行**
@@ -100,7 +100,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","User") + ";" + 
 
 1. **下载脚本**
    ```bash
-   curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-macos.sh
+   curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-macos.sh
    ```
 
 2. **运行脚本**
@@ -153,7 +153,7 @@ source ~/.zprofile
 
 1. **下载脚本**
    ```bash
-   curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
+   curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
    ```
 
 2. **运行脚本**
@@ -202,7 +202,7 @@ source ~/.zprofile
 
 1. **下载脚本**
    ```powershell
-   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-wsl.ps1" -OutFile "install-wsl.ps1"
+   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-wsl.ps1" -OutFile "install-wsl.ps1"
    ```
 
 2. **以管理员身份运行**
@@ -258,7 +258,7 @@ A: 从 Microsoft Store 手动安装:
 
 1. **下载脚本**
    ```bash
-   curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-docker.sh
+   curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-docker.sh
    ```
 
 2. **运行脚本**
@@ -430,7 +430,7 @@ export https_proxy=http://proxy.example.com:8080
 1. 检查 [故障排除](#-故障排除) 部分
 2. 查看 OpenClaw [常见问题](../FAQ.md)
 3. 加入 [Discord 社区](https://discord.com/invite/clawd) 寻求帮助
-4. 在 GitHub 提交 [Issue](https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners/issues)
+4. 在 GitHub 提交 [Issue](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/issues)
 
 ---
 
@@ -446,7 +446,7 @@ export https_proxy=http://proxy.example.com:8080
 
 2. **启动 OpenClaw**
    ```bash
-   openclaw start
+   openclaw gateway start
    ```
 
 3. **查看状态**

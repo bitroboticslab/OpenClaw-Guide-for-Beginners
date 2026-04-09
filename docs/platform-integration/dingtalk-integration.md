@@ -131,7 +131,7 @@ Enter EncodingAESKey: xxx
 ### 5.1 启动服务
 
 ```bash
-openclaw start
+openclaw gateway start
 
 # 查看日志确认连接成功
 openclaw logs -f

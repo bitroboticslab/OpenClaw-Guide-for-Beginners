@@ -62,7 +62,7 @@ npm install -g openclaw@latest
 openclaw --version
 ```
 
-✅ 预期输出: `OpenClaw CLI v2026.2.x`
+✅ 预期输出: `OpenClaw CLI v2026.3.x`
 
 </details>
 
@@ -81,7 +81,7 @@ npm install -g openclaw@latest
 openclaw --version
 ```
 
-✅ 预期输出: `OpenClaw CLI v2026.2.x`
+✅ 预期输出: `OpenClaw CLI v2026.3.x`
 
 </details>
 
@@ -103,7 +103,7 @@ openclaw gateway gateway status
 ```
 
 ✅ 成功标志:
-- 看到版本号（如 `OpenClaw CLI v2026.2.x`）
+- 看到版本号（如 `OpenClaw CLI v2026.3.x`）
 - 配置验证通过
 - Gateway状态显示为running
 

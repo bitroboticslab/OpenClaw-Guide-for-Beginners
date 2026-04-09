@@ -144,7 +144,7 @@ npm install -g openclaw@latest
 openclaw --version
 ```
 
-✅ **成功输出**: `OpenClaw CLI v2026.2.x`
+✅ **成功输出**: `OpenClaw CLI v2026.3.x`
 
 ❌ **失败处理**:
 - 确保 Node.js 版本 ≥ v22.0
@@ -477,6 +477,6 @@ openclaw telegram init
 **创建时间**: 2026-02-22
 **最后更新**: 2026-02-22 (视觉优化 v2.0)
 **版本**: 2.0
-**适用版本**: OpenClaw 2026.2.x
+**适用版本**: OpenClaw 2026.3.x
 
 <!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

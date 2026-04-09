@@ -128,7 +128,7 @@ npm install -g openclaw@latest
 openclaw --version
 ```
 
-✅ **成功示例**: `OpenClaw CLI v2026.2.x`
+✅ **成功示例**: `OpenClaw CLI v2026.3.x`
 
 ---
 

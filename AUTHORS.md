@@ -28,8 +28,8 @@
 
 ## 联系方式
 
-- 📧 GitHub Issues: [提交问题](https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners/issues)
-- 📚 教程仓库: [OpenClaw-Guide-for-Beginners](https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners)
+- 📧 GitHub Issues: [提交问题](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/issues)
+- 📚 教程仓库: [OpenClaw-Guide-for-Beginners](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners)
 
 ---
 

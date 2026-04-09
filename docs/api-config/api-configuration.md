@@ -42,7 +42,7 @@ openclaw onboard --install-daemon
 
 ```bash
 # 1. 克隆或下载教程仓库
-git clone https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners.git
+git clone https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners.git
 cd OpenClaw-Guide-for-Beginners
 
 # 2. 查看模板目录

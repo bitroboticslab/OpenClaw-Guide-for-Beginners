@@ -4,21 +4,23 @@
 
 > 从零开始，手把手教你部署属于自己的 24 小时在线 AI 助手
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-218K%2B%20Stars-blue)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-247K%2B%20Stars-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![更新时间](https://img.shields.io/badge/更新时间-2026年2月-orange)
+![更新时间](https://img.shields.io/badge/更新时间-2026年4月-orange)
 
 ## 📖 项目简介
 
-OpenClaw（原名 Clawdbot、Moltbot）是一个开源的个人 AI 助手平台，具有硬件操作权限，在短短 3 周内突破 190,000+ Stars，成为 GitHub 历史上增长最快的开源项目之一。
+OpenClaw 是一个开源的自托管 AI Agent 网关平台，支持 Discord、飞书、Telegram、WhatsApp、Signal、Slack、iMessage 等 10+ 消息渠道，247,000+ GitHub Stars。
 
 **核心特性：**
 
-- 🤖 真正的 AI Agent —— 不只是聊天，还能执行操作
-- 🔒 本地运行 —— 数据完全由你掌控
-- 🌐 多平台对接 —— 支持飞书、钉钉、微信、Telegram 等
+- 🤖 真正的 AI Agent —— 不只是聊天，还能执行操作、操控浏览器、生成图片/视频
+- 🔒 自托管 —— 数据完全由你掌控，本地或云服务器部署
+- 🌐 多平台对接 —— 内置 + 插件支持 Discord、飞书、钉钉、微信、Telegram、WhatsApp、Signal、Slack、iMessage、QQ、LINE、Matrix 等
 - ⚡ 24小时在线 —— 云服务器部署全天候待命
-- 🛠️ 1700+ Skills —— 丰富的技能扩展库
+- 🛠️ 1500+ Skills —— 丰富的技能扩展库 ([ClawHub](https://clawhub.com))
+- 🎬 多媒体支持 —— 图片/视频/语音生成、语音转写、TTS
+- 📱 移动节点 —— iOS/Android 配对，随时随地对话
 
 ## 🚀 快速开始
 
@@ -47,8 +49,6 @@ OpenClaw 需要接入大模型 API 才能运行。以下是各平台的优惠信
 | [MiniMax](https://platform.minimaxi.com/subscribe/coding-plan) | 注册送百万token体验 |lite套餐29元/月 |受邀9折 | ⭐⭐⭐ |
 
 💡 **新手建议**：先注册[硅基流动](https://cloud.siliconflow.cn/i/lva59yow)体验免费额度，再根据需求选择其他平台。
-
-🚀 **限时2.24-3.25活动送54元代金券**：硅基流动[开工即享狂欢月活动](https://siliconflow.cn/2026bonus)，先[受邀注册](https://cloud.siliconflow.cn/i/lva59yow)拿16元代金券，调用指定模型即可获赠54元代金券，总计70元，数亿token足够玩openclaw很长时间了！
 
 👉 [查看详细 API 配置教程](docs/api-config/api-configuration.md) | [模型选择指南](docs/api-config/model-comparison.md) | [成本优化](docs/api-config/cost-optimization.md)
 
@@ -97,7 +97,13 @@ OpenClaw 支持对接多种消息平台：
 | 飞书 | ⭐⭐ | [飞书对接教程](docs/platform-integration/feishu-integration.md) |
 | 钉钉 | ⭐⭐ | [钉钉对接教程](docs/platform-integration/dingtalk-integration.md) |
 | Telegram | ⭐ | [Telegram对接教程](docs/platform-integration/telegram-integration.md) |
+| Discord | ⭐ | Discord Developer Portal 创建 Bot |
+| WhatsApp | ⭐⭐ | 内置支持 |
+| Signal | ⭐⭐ | 内置支持 |
+| QQ | ⭐⭐ | 内置 QQ Bot 插件 |
+| LINE | ⭐⭐ | 内置 LINE 插件 |
 | 微信 | ⭐⭐⭐ | [微信对接教程](docs/platform-integration/wechat-integration.md) |
+| Matrix | ⭐⭐ | 内置 Matrix 插件 |
 
 ## 🎯 学习路径
 
@@ -252,10 +258,10 @@ Claw环境的用户
 
 ```bash
 # 下载并运行
-curl -fsSL https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh | bash
+curl -fsSL https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh | bash
 
 # 或分步执行
-curl -O https://raw.githubusercontent.com/Mr-tooth/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
+curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
 chmod +x install-linux.sh
 ./install-linux.sh
 ```
@@ -286,8 +292,8 @@ openclaw gateway status
 
 **预期输出**:
 ```
-✅ OpenClaw CLI: 已安装 v2026.2.19
-✅ Node.js: 已安装 v22.22.0
+✅ OpenClaw CLI: 已安装 v2026.3.23+
+✅ Node.js: 已安装 v24.x
 ✅ Gateway: 运行中
 ✅ 模型配置: 正常
 ```
@@ -368,7 +374,7 @@ openclaw onboard --install-daemon
 **作者**: [junhang lai](https://github.com/Mr-tooth)
 
 - GitHub: [Mr. Tooth](https://github.com/Mr-tooth)
-- 教程仓库: [OpenClaw-Guide-for-Beginners](https://github.com/Mr-tooth/OpenClaw-Guide-for-Beginners)
+- 教程仓库: [OpenClaw-Guide-for-Beginners](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners)
 - 作者信息: [查看 AUTHORS.md](AUTHORS.md)
 - 欢迎关注微信公众号, 后续会输出更多新手和进阶实战教程！
 
@@ -382,6 +388,6 @@ openclaw onboard --install-daemon
 
 *本教程包含推荐链接，通过链接注册可享受额外优惠，同时也支持作者持续产出优质内容。*
 
-*作者: junhang lai | 最后更新: 2026-03-07*
+*作者: junhang lai | 最后更新: 2026-04-09*
 
 <!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->

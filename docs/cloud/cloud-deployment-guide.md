@@ -63,7 +63,7 @@
 **购买步骤**：
 1. 访问 [腾讯云轻量服务器 (4核4G3M一年79元)](
 https://cloud.tencent.com/act/cps/redirect?redirect=1079&cps_key=d427af70c58018a013008ba30489f688&from=console&cps_promotion_id=102390)
-2. 直接按腾讯云教程选择 OpenClaw(Clawdbot) 镜像 （OpenCloudOS 系统） 
+2. 直接按腾讯云教程选择 OpenClaw 镜像 （OpenCloudOS 系统） 
 建议选择 Ubuntu 22.04 镜像，按照本教程自己部署openclaw
 3. 参考 [腾讯云官方教程](https://cloud.tencent.com/document/product/1207/127874)
 
@@ -202,7 +202,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/root/.openclaw
-ExecStart=/usr/local/bin/openclaw start
+ExecStart=/usr/local/bin/openclaw gateway start
 Restart=on-failure
 RestartSec=10
 

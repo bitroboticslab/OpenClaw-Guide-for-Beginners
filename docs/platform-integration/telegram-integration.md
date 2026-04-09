@@ -115,7 +115,7 @@ Select Mode:
 
 ```bash
 # 确保 OpenClaw 服务已启动
-openclaw start
+openclaw gateway start
 
 # 自动设置 Webhook
 openclaw telegram set-webhook https://你的域名/webhook/telegram
@@ -144,7 +144,7 @@ curl "https://api.telegram.org/bot你的TOKEN/getWebhookInfo"
 ### 4.1 启动服务
 
 ```bash
-openclaw start
+openclaw gateway start
 
 # 查看日志
 openclaw logs -f

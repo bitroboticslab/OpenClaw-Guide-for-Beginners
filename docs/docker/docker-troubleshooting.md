@@ -414,7 +414,7 @@ docker inspect openclaw | grep -A 10 Networks
 docker exec openclaw nslookup google.com
 
 # 或使用ping
-docker exec openclaw ping -c 4 8.8.8.8
+docker exec openclaw health -c 4 8.8.8.8
 ```
 
 ---

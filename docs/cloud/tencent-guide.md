@@ -478,6 +478,6 @@ scp root@服务器IP:~/openclaw-backup-*.tar.gz ./
 
 **创建时间**: 2026-02-22
 **版本**: 1.0
-**适用版本**: OpenClaw 2026.2.x
+**适用版本**: OpenClaw 2026.3.x
 
 <!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
