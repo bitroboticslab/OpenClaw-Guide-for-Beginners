@@ -1,0 +1,76 @@
+name: 安全检查（密钥/敏感文件扫描）
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 拉取全量历史用于Gitleaks扫描
+
+      - name: 安装Gitleaks密钥扫描工具
+        run: |
+          wget https://github.com/gitleaks/gitleaks/releases/download/v8.18.4/gitleaks_8.18.4_linux_x64.tar.gz
+          tar xzf gitleaks_8.18.4_linux_x64.tar.gz
+          chmod +x gitleaks
+          sudo mv gitleaks /usr/local/bin/
+
+      - name: 运行Gitleaks全量密钥扫描
+        run: |
+          gitleaks detect --source . --verbose --no-banner
+          if [ $? -ne 0 ]; then
+            echo "❌ 检测到硬编码密钥/敏感信息，请修复后再提交"
+            exit 1
+          fi
+          echo "✅ Gitleaks密钥扫描通过"
+
+      - name: 自定义敏感文件扫描
+        run: |
+          SENSITIVE_FILES=(".env" "id_rsa" "id_dsa" "*.pem" "*.key" "credentials" "secret" "access_key")
+          FOUND=0
+          for FILE in "${SENSITIVE_FILES[@]}"; do
+            if find . -name "$FILE" -type f | grep -q .; then
+              echo "❌ 检测到敏感文件: $(find . -name "$FILE" -type f)"
+              FOUND=1
+            fi
+          done
+          if [ $FOUND -ne 0 ]; then
+            exit 1
+          fi
+          echo "✅ 敏感文件扫描通过"
+
+      - name: 自定义API密钥硬编码扫描
+        run: |
+          # 扫描真实密钥，排除占位符
+          FOUND=0
+          # 扫描sk-开头的长度>=20的真实密钥（排除sk-xxxxx、sk-xxxxxxxxxxxxxxxxxxxx这类占位符）
+          if grep -rE "sk-[a-zA-Z0-9]{20,}" --include="*.md" --include="*.sh" --include="*.json" --include="*.yml" --include="*.yaml" . | grep -vE "(sk-xx|sk-.*占位符|sk-你的|sk-your|sk-xxxxxxxx)" | grep -q .; then
+            echo "❌ 检测到硬编码的sk-开头真实密钥:"
+            grep -rE "sk-[a-zA-Z0-9]{20,}" --include="*.md" --include="*.sh" --include="*.json" --include="*.yml" --include="*.yaml" . | grep -vE "(sk-xx|sk-.*占位符|sk-你的|sk-your|sk-xxxxxxxx)"
+            FOUND=1
+          fi
+          # 扫描ark-开头的真实密钥
+          if grep -rE "ark-[a-zA-Z0-9]{20,}" --include="*.md" --include="*.sh" --include="*.json" . | grep -vE "(ark-xx|ark-.*占位符|ark-xxxxxxxx)" | grep -q .; then
+            echo "❌ 检测到硬编码的ark-开头真实密钥:"
+            grep -rE "ark-[a-zA-Z0-9]{20,}" --include="*.md" --include="*.sh" --include="*.json" . | grep -vE "(ark-xx|ark-.*占位符|ark-xxxxxxxx)"
+            FOUND=1
+          fi
+          # 扫描AKIA开头的AWS密钥
+          if grep -rE "AKIA[a-zA-Z0-9]{16,}" --include="*.md" --include="*.sh" --include="*.json" . | grep -q .; then
+            echo "❌ 检测到硬编码的AWS AK密钥:"
+            grep -rE "AKIA[a-zA-Z0-9]{16,}" --include="*.md" --include="*.sh" --include="*.json" .
+            FOUND=1
+          fi
+          if [ $FOUND -ne 0 ]; then
+            exit 1
+          fi
+          echo "✅ API密钥硬编码扫描通过"
+
+      - name: 所有安全检查通过
+        run: echo "🎉 所有安全检查通过，可正常合并/提交"
