@@ -1,393 +1,426 @@
-<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
-
-# OpenClaw 新手完全指南
-
-> 从零开始，手把手教你部署属于自己的 24 小时在线 AI 助手
-
-![OpenClaw](https://img.shields.io/badge/OpenClaw-247K%2B%20Stars-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![更新时间](https://img.shields.io/badge/更新时间-2026年4月-orange)
-
-## 📖 项目简介
-
-OpenClaw 是一个开源的自托管 AI Agent 网关平台，支持 Discord、飞书、Telegram、WhatsApp、Signal、Slack、iMessage 等 10+ 消息渠道，247,000+ GitHub Stars。
-
-**核心特性：**
-
-- 🤖 真正的 AI Agent —— 不只是聊天，还能执行操作、操控浏览器、生成图片/视频
-- 🔒 自托管 —— 数据完全由你掌控，本地或云服务器部署
-- 🌐 多平台对接 —— 内置 + 插件支持 Discord、飞书、钉钉、微信、Telegram、WhatsApp、Signal、Slack、iMessage、QQ、LINE、Matrix 等
-- ⚡ 24小时在线 —— 云服务器部署全天候待命
-- 🛠️ 1500+ Skills —— 丰富的技能扩展库 ([ClawHub](https://clawhub.com))
-- 🎬 多媒体支持 —— 图片/视频/语音生成、语音转写、TTS
-- 📱 移动节点 —— iOS/Android 配对，随时随地对话
-
-## 🚀 快速开始
-
-根据你的平台选择对应教程：
-
-| 平台 | 难度 | 推荐指数 | 教程链接 |
-|------|------|----------|----------|
-| Windows | ⭐⭐ | ⭐⭐⭐ | [Windows 安装指南](docs/windows/windows-install-guide.md) |
-| WSL | ⭐⭐ | ⭐⭐⭐⭐ | [WSL 安装教程](docs/wsl/wsl-setup.md) |
-| macOS | ⭐⭐ | ⭐⭐⭐⭐⭐ | [macOS 安装指南](docs/macos/macos-install-guide.md) |
-| Linux | ⭐ | ⭐⭐⭐⭐⭐ | [Linux 安装指南](docs/linux/linux-install-guide.md) |
-| Docker | ⭐⭐⭐ | ⭐⭐⭐⭐ | [Docker 部署教程](docs/docker/docker-deployment.md) |
-| 云服务器 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | [云服务器部署指南](docs/cloud/cloud-deployment-guide.md) |
-| Android | ⭐⭐⭐⭐ | ⭐⭐⭐ | [Android 部署指南](docs/android/android-deployment-guide.md) |
-
-## 💰 API 平台推荐
-
-OpenClaw 需要接入大模型 API 才能运行。以下是各平台的优惠信息，使用我的邀请链接注册可以获得**代金券或折扣优惠**，我也能得代金券，欢迎尝试，谢谢各位朋友支持！
-
-| 平台(链接直达) | 基本情况 |价格信息| 注册奖励 | 推荐指数 |
-|------|-----------|---------|---------|----------|
-| [硅基流动](https://cloud.siliconflow.cn/i/lva59yow) | 注册送 2000万 Tokens |注册+活动可得70元代金券| 受邀16元代金券 | ⭐⭐⭐⭐⭐ |
-| [火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/) | 数亿token, 支持Doubao/MiniMax/GLM/DeepSeek/Kimi旗舰| lite套餐首月9.9元 | 受邀9折 | ⭐⭐⭐⭐⭐ |
-| [阿里百炼套餐](https://www.aliyun.com/benefit/scene/codingplan) | 量大管饱, 已限量，需准点抢购 | lite套餐首月7.9元 |邀请活动结束 | ⭐⭐⭐⭐
-| [智谱 GLM Coding](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH) | 量大管饱，Claude Code、Cline等20+工具无缝支持 |lite套餐折后44元/月| 受邀95折 | ⭐⭐⭐⭐ |
-| [MiniMax](https://platform.minimaxi.com/subscribe/coding-plan) | 注册送百万token体验 |lite套餐29元/月 |受邀9折 | ⭐⭐⭐ |
-
-💡 **新手建议**：先注册[硅基流动](https://cloud.siliconflow.cn/i/lva59yow)体验免费额度，再根据需求选择其他平台。
-
-👉 [查看详细 API 配置教程](docs/api-config/api-configuration.md) | [模型选择指南](docs/api-config/model-comparison.md) | [成本优化](docs/api-config/cost-optimization.md)
-
-我个人正在使用以下两个API平台，性价比都很高，感兴趣可以试试：
-
-[硅基流动](https://cloud.siliconflow.cn/i/lva59yow)邀请码：lva59yow
-
-2026-03-15
-[火山引擎方舟](https://volcengine.com/L/oqijuWrltl0/)邀请码(Coding Plan)：XCWPZTHW， 也限量了，每天早上十点半抢购。
-
-2026-03-15
-[智谱Coding Plan](https://www.bigmodel.cn/glm-coding?ic=BUDVTRHUYH)更新了，从9折变成了95折！有需要也可以每天上午十点限量抢购，可以配置MCP。
-
-## ☁️ 云服务器推荐
-
-想要 24 小时在线的 AI 助手？推荐使用云服务器部署：
-
-### 阿里云（推荐）
-
-**OpenClaw 专属活动页**，通过我的链接注册享受独家优惠：
-
-[🔗 立即部署 - 半小时搞定](https://www.aliyun.com/activity/ecs/clawdbot?userCode=yyzsc1al)
-
-**专属福利**:
-- 🎁 普惠套餐（2核2G不限流量，99元/年，新用户 68元/年 起）
-- 🔗 阿里百炼 AI 大模型 88% 折扣
-- 💎 建站三件套（域名+服务器+AI建站，百元搞定）
-- ⏰ 半小时内完成部署
-
-### 云服务商对比
-
-| 云服务商 | 套餐价格 | OpenClaw 支持 | 推荐指数 |
-|----------|----------|---------------|----------|
-| [阿里云](https://www.aliyun.com/activity/ecs/clawdbot?userCode=yyzsc1al) | 68元/年起 | 一键镜像部署 | ⭐⭐⭐⭐⭐ |
-| [腾讯云](https://curl.qcloud.com/JnWPPHIH) | [79元起](https://cloud.tencent.com/act/cps/redirect?redirect=1079&cps_key=d427af70c58018a013008ba30489f688&from=console&cps_promotion_id=102390)| 官方教程支持 | ⭐⭐⭐⭐ |
-| [百度智能云](https://cloud.baidu.com) | 多种套餐 | 一键部署教程 | ⭐⭐⭐ |
-
-👉 [查看云服务器部署教程](docs/cloud/cloud-deployment-guide.md) | [阿里云专属教程](docs/cloud/aliyun-guide.md) | [腾讯云专属教程](docs/cloud/tencent-guide.md)
-
-## 📱 平台对接
-
-OpenClaw 支持对接多种消息平台：
-
-| 平台 | 对接难度 | 教程链接 |
-|------|----------|----------|
-| 飞书 | ⭐⭐ | [飞书对接教程](docs/platform-integration/feishu-integration.md) |
-| 钉钉 | ⭐⭐ | [钉钉对接教程](docs/platform-integration/dingtalk-integration.md) |
-| Telegram | ⭐ | [Telegram对接教程](docs/platform-integration/telegram-integration.md) |
-| Discord | ⭐ | Discord Developer Portal 创建 Bot |
-| WhatsApp | ⭐⭐ | 内置支持 |
-| Signal | ⭐⭐ | 内置支持 |
-| QQ | ⭐⭐ | 内置 QQ Bot 插件 |
-| LINE | ⭐⭐ | 内置 LINE 插件 |
-| 微信 | ⭐⭐⭐ | [微信对接教程](docs/platform-integration/wechat-integration.md) |
-| Matrix | ⭐⭐ | 内置 Matrix 插件 |
-
-## 🎯 学习路径
-
-根据你的经验选择合适的学习路径：
-
-### 🌱 新手入门路径
-
-1. 阅读 [5分钟快速上手](docs/start/quickstart.md)
-2. 根据系统选择安装教程（Windows/macOS/Linux）
-3. 配置 API ([API配置详解](docs/api-config/api-configuration.md))
-4. 对接第一个平台（推荐钉钉或飞书）
-5. 遇到问题查看 [FAQ](FAQ.md)
-
-### 🚀 服务器部署路径
-
-1. 阅读 [云服务器部署指南](docs/cloud/cloud-deployment-guide.md)
-2. 选择云服务商（推荐[阿里云](https://www.aliyun.com/activity/ecs/clawdbot?userCode=yyzsc1al)）
-3. 配置服务器和域名
-4. 部署 OpenClaw
-5. 对接消息平台
-
-### 🔧 进阶开发路径
-
-1. 熟悉基础配置
-2. 学习 [技能开发](docs/advanced/skills.md)
-3. 研究 [安全配置](docs/advanced/security.md)
-4. 掌握 [故障排查](docs/advanced/troubleshooting.md)
-
----
-
-## 📚 目录结构
+# Gitleaks
 
 ```
-OpenClaw-Guide-for-Beginners/
-├── README.md                    # 项目首页（本文件）
-├── AUTHORS.md                   # 作者信息
-├── FAQ.md                       # 常见问题解答
-├── RESOURCES.md                 # 资源汇总
-├── docs/                        # 教程文档目录
-│   ├── start/                   # 快速开始
-│   │   └── quickstart.md        # 5分钟快速上手
-│   ├── windows/                 # Windows 相关教程
-│   │   └── windows-install-guide.md
-│   ├── wsl/                     # WSL 相关教程
-│   │   ├── wsl-setup.md         # WSL 安装配置
-│   │   ├── wsl-troubleshooting.md
-│   │   └── wsl-advanced.md      # WSL 高级配置
-│   ├── macos/                   # macOS 相关教程
-│   │   └── macos-install-guide.md
-│   ├── linux/                   # Linux 相关教程
-│   │   └── linux-install-guide.md
-│   ├── docker/                  # Docker 部署教程
-│   │   ├── docker-deployment.md      # Docker 基础部署
-│   │   ├── docker-production.md      # Docker 生产部署
-│   │   ├── docker-cloud-deployment.md # Docker Cloud 部署
-│   │   └── docker-troubleshooting.md
-│   ├── cloud/                   # 云服务器相关教程
-│   │   ├── cloud-deployment-guide.md
-│   │   ├── aliyun-guide.md      # 阿里云专属教程
-│   │   └── tencent-guide.md    # 腾讯云教程
-│   ├── android/                 # Android 相关教程
-│   │   └── android-deployment-guide.md
-│   ├── api-config/              # API 配置教程
-│   │   ├── api-configuration.md
-│   │   ├── model-comparison.md  # 模型选择指南
-│   │   └── cost-optimization.md # 成本优化指南
-│   ├── platform-integration/    # 平台对接教程
-│   │   ├── platform-integration-overview.md
-│   │   ├── feishu-integration.md
-│   │   ├── dingtalk-integration.md
-│   │   ├── telegram-integration.md
-│   │   └── wechat-integration.md
-│   └── advanced/                # 进阶主题
-│       ├── security.md          # 安全配置指南
-│       ├── skills.md            # 技能开发与使用
-│       └── troubleshooting.md   # 故障排除
-├── scripts/                     # 安装脚本
-│   ├── install-windows.bat      # Windows 安装脚本
-│   ├── install-wsl.ps1          # WSL 安装脚本
-│   ├── install-linux.sh         # Linux 安装脚本
-│   ├── install-macos.sh         # macOS 安装脚本
-│   └── install-docker.sh        # Docker 安装脚本
-├── images/                      # 教程图片
-└── templates/                   # 配置模板
-    ├── README.md                # 模板使用指南
-    ├── openclaw-template.json   # 主配置模板
-    └── env-template.txt         # 环境变量模板
+┌─○───┐
+│ │╲  │
+│ │ ○ │
+│ ○ ░ │
+└─░───┘
 ```
 
+<p align="left">
+  <p align="left">
+	  <a href="https://github.com/zricethezav/gitleaks/actions/workflows/test.yml">
+		  <img alt="Github Test" src="https://github.com/zricethezav/gitleaks/actions/workflows/test.yml/badge.svg">
+	  </a>
+	  <a href="https://hub.docker.com/r/zricethezav/gitleaks">
+		  <img src="https://img.shields.io/docker/pulls/zricethezav/gitleaks.svg" />
+	  </a>
+	  <a href="https://github.com/zricethezav/gitleaks-action">
+        	<img alt="gitleaks badge" src="https://img.shields.io/badge/protected%20by-gitleaks-blue">
+    	 </a>
+	  <a href="https://twitter.com/intent/follow?screen_name=zricethezav">
+		  <img src="https://img.shields.io/twitter/follow/zricethezav?label=Follow%20zricethezav&style=social&color=blue" alt="Follow @zricethezav" />
+	  </a>
+  </p>
+</p>
+
+### Join our Discord! [![Discord](https://img.shields.io/discord/1102689410522284044.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/8Hzbrnkr7E)
+
+Gitleaks is a SAST tool for **detecting** and **preventing** hardcoded secrets like passwords, api keys, and tokens in git repos. Gitleaks is an **easy-to-use, all-in-one solution** for detecting secrets, past or present, in your code.
+
+```
+➜  ~/code(master) gitleaks detect --source . -v
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
 
 
-## ⚙️ 配置模板和脚本
+Finding:     "export BUNDLE_ENTERPRISE__CONTRIBSYS__COM=cafebabe:deadbeef",
+Secret:      cafebabe:deadbeef
+RuleID:      sidekiq-secret
+Entropy:     2.609850
+File:        cmd/generate/config/rules/sidekiq.go
+Line:        23
+Commit:      cd5226711335c68be1e720b318b7bc3135a30eb2
+Author:      John
+Email:       john@users.noreply.github.com
+Date:        2022-08-03T12:31:40Z
+Fingerprint: cd5226711335c68be1e720b318b7bc3135a30eb2:cmd/generate/config/rules/sidekiq.go:sidekiq-secret:23
+```
 
-> ⚠️ **重要**: 模板文件仅供参考，请勿直接覆盖你的配置文件！！！
+## Getting Started
 
----
+Gitleaks can be installed using Homebrew, Docker, or Go. Gitleaks is also available in binary form for many popular platforms and OS types on the [releases page](https://github.com/zricethezav/gitleaks/releases). In addition, Gitleaks can be implemented as a pre-commit hook directly in your repo or as a GitHub action using [Gitleaks-Action](https://github.com/gitleaks/gitleaks-action).
 
-### 📋 配置模板
+### Installing
 
-项目提供了配置模板供参考，**适用于理解配置结构**，**粘贴局部内容**，**不推荐直接覆盖使用**。
+```bash
+# MacOS
+brew install gitleaks
 
-| 模板文件 | 说明 | 用途 |
-|---------|------|------|
-| `templates/openclaw-template.json` | 主配置参考模板 | 了解配置结构，提取配置片段 |
-| `templates/env-template.txt` | 环境变量模板 | 参考环境变量配置格式 |
+# Docker (DockerHub)
+docker pull zricethezav/gitleaks:latest
+docker run -v ${path_to_host_folder_to_scan}:/path zricethezav/gitleaks:latest [COMMAND] --source="/path" [OPTIONS]
 
-**⚠️ 为什么不能直接覆盖？**
+# Docker (ghcr.io)
+docker pull ghcr.io/gitleaks/gitleaks:latest
+docker run -v ${path_to_host_folder_to_scan}:/path ghcr.io/gitleaks/gitleaks:latest [COMMAND] --source="/path" [OPTIONS]
 
-模板文件缺少系统配置（`meta`、`wizard`、`browser`、`auth`），直接覆盖会导致：
-- ❌ `openclaw doctor` 报错
-- ❌ Gateway 启动失败
-- ❌ 丢失浏览器和认证配置
+# From Source
+git clone https://github.com/gitleaks/gitleaks.git
+cd gitleaks
+make build
+```
 
-**✅ 推荐的使用方法：**
+### GitHub Action
 
-1. **使用配置向导（推荐新手）**
-   ```bash
-   openclaw onboard --install-daemon
+Check out the official [Gitleaks GitHub Action](https://github.com/gitleaks/gitleaks-action)
+
+```
+name: gitleaks
+on: [pull_request, push, workflow_dispatch]
+jobs:
+  scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.
+```
+
+### Pre-Commit
+
+1. Install pre-commit from https://pre-commit.com/#install
+2. Create a `.pre-commit-config.yaml` file at the root of your repository with the following content:
+
+   ```
+   repos:
+     - repo: https://github.com/gitleaks/gitleaks
+       rev: v8.16.1
+       hooks:
+         - id: gitleaks
    ```
 
-2. **使用命令行配置**
-   ```bash
-   openclaw config set provider siliconflow
-   openclaw config set api_key sk-xxxxxxxx
-   ```
+   for a [native execution of GitLeaks](https://github.com/zricethezav/gitleaks/releases) or use the [`gitleaks-docker` pre-commit ID](https://github.com/zricethezav/gitleaks/blob/master/.pre-commit-hooks.yaml) for executing GitLeaks using the [official Docker images](#docker)
 
-3. **手动编辑配置文件**
-   ```bash
-   nano ~/.openclaw/openclaw.json
-   # 只修改需要的字段，不要删除系统字段！
-   ```
+3. Auto-update the config to the latest repos' versions by executing `pre-commit autoupdate`
+4. Install with `pre-commit install`
+5. Now you're all set!
 
-**详细使用指南**: [查看模板使用指南](templates/README.md)
-
----
-
-### 🛠️ 一键安装脚本
-
-> ⚠️ **慎重使用**: 适用于全新安装，不适用于已有Open
-
-Claw环境的用户
-
-| 脚本 | 平台 | 下载方式 |
-|------|------|---------|
-| `install-windows.bat` | Windows | [下载](scripts/install-windows.bat) |
-| `install-wsl.ps1` | WSL | [下载](scripts/install-wsl.ps1) |
-| `install-linux.sh` | Linux | [下载](scripts/install-linux.sh) |
-| `install-macos.sh` | macOS | [下载](scripts/install-macos.sh) |
-| `install-docker.sh` | Docker | [下载](scripts/install-docker.sh) |
-
-**使用方法（以Linux为例）**:
-
-```bash
-# 下载并运行
-curl -fsSL https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh | bash
-
-# 或分步执行
-curl -O https://raw.githubusercontent.com/bitroboticslab/OpenClaw-Guide-for-Beginners/main/scripts/install-linux.sh
-chmod +x install-linux.sh
-./install-linux.sh
+```
+➜ git commit -m "this commit contains a secret"
+Detect hardcoded secrets.................................................Failed
 ```
 
-**脚本功能**:
-- ✅ 自动检测系统环境
-- ✅ 安装 Node.js（如未安装）
-- ✅ 安装 OpenClaw
-- ✅ 运行配置向导
-- ✅ 提供后续配置指导
+Note: to disable the gitleaks pre-commit hook you can prepend `SKIP=gitleaks` to the commit command
+and it will skip running gitleaks
 
----
-
-### 🔐 配置验证
-
-无论使用哪种方法配置，最后都要验证：
-
-```bash
-# 运行诊断
-openclaw doctor
-
-# 检查模型配置
-openclaw models list
-
-# 检查 Gateway 状态
-openclaw gateway status
+```
+➜ SKIP=gitleaks git commit -m "skip gitleaks check"
+Detect hardcoded secrets................................................Skipped
 ```
 
-**预期输出**:
+## Usage
+
 ```
-✅ OpenClaw CLI: 已安装 v2026.3.23+
-✅ Node.js: 已安装 v24.x
-✅ Gateway: 运行中
-✅ 模型配置: 正常
-```
+Usage:
+  gitleaks [command]
 
----
+Available Commands:
+  completion  generate the autocompletion script for the specified shell
+  detect      detect secrets in code
+  help        Help about any command
+  protect     protect secrets in code
+  version     display gitleaks version
 
-**详细教程**: [API配置](docs/api-config/api-configuration.md) | [快速上手](docs/start/quickstart.md)
-## ❓ 常见问题
+Flags:
+  -b, --baseline-path string       path to baseline with issues that can be ignored
+  -c, --config string              config file path
+                                   order of precedence:
+                                   1. --config/-c
+                                   2. env var GITLEAKS_CONFIG
+                                   3. (--source/-s)/.gitleaks.toml
+                                   If none of the three options are used, then gitleaks will use the default config
+      --exit-code int              exit code when leaks have been encountered (default 1)
+  -h, --help                       help for gitleaks
+  -l, --log-level string           log level (trace, debug, info, warn, error, fatal) (default "info")
+      --max-target-megabytes int   files larger than this will be skipped
+      --no-color                   turn off color for verbose output
+      --no-banner                  suppress banner
+      --redact                     redact secrets from logs and stdout
+  -f, --report-format string       output format (json, csv, junit, sarif) (default "json")
+  -r, --report-path string         report file
+  -s, --source string              path to source (default ".")
+  -v, --verbose                    show verbose output from scan
 
-### Q: 哪个 API 平台最推荐？
-
-**A:**
-推荐根据你的需求选择：
-- **新手入门**：硅基流动（免费额度多，上手简单）
-- **性价比优先**：火山方舟 Coding Plan（首月仅8.91元）
-- **长期使用**：智谱 GLM Coding Plan（年付优惠力度大）
-- **阿里生态用户**：阿里百炼（与阿里云整合好）
-
-### Q: 配置文件在哪里？
-
-**A:**
-- 主配置: `~/.openclaw/openclaw.json`
-- 环境变量: `~/.openclaw/.env`
-- 工作空间: `~/.openclaw/workspace`
-
-### Q: 如何重置配置？
-
-**A:**
-```bash
-# 删除配置文件（⚠️ 慎重操作）
-rm ~/.openclaw/openclaw.json
-
-# 重新运行配置向导
-openclaw onboard --install-daemon
+Use "gitleaks [command] --help" for more information about a command.
 ```
 
-### Q: 如何备份配置？
+### Commands
 
-**A:**
-```bash
-# 备份到当前目录
-cp ~/.openclaw/openclaw.json ./openclaw-backup.json
-cp ~/.openclaw/.env ./env-backup.txt 2>/dev/null || true
+There are two commands you will use to detect secrets; `detect` and `protect`.
 
-# 或创建备份目录
-mkdir -p ~/openclaw-backup
-cp -r ~/.openclaw/* ~/openclaw-backup/
+#### Detect
+
+The `detect` command is used to scan repos, directories, and files. This command can be used on developer machines and in CI environments.
+
+When running `detect` on a git repository, gitleaks will parse the output of a `git log -p` command (you can see how this executed
+[here](https://github.com/zricethezav/gitleaks/blob/7240e16769b92d2a1b137c17d6bf9d55a8562899/git/git.go#L17-L25)).
+[`git log -p` generates patches](https://git-scm.com/docs/git-log#_generating_patch_text_with_p) which gitleaks will use to detect secrets.
+You can configure what commits `git log` will range over by using the `--log-opts` flag. `--log-opts` accepts any option for `git log -p`.
+For example, if you wanted to run gitleaks on a range of commits you could use the following command: `gitleaks detect --source . --log-opts="--all commitA..commitB"`.
+See the `git log` [documentation](https://git-scm.com/docs/git-log) for more information.
+
+You can scan files and directories by using the `--no-git` option.
+
+If you want to run only specific rules you can do so by using the `--enable-rule` option (with a rule ID as a parameter), this flag can be used multiple times. For example: `--enable-rule=atlassian-api-token` will only apply that rule. You can find a list of rules [here](config/gitleaks.toml).
+
+#### Protect
+
+The `protect` command is used to scan uncommitted changes in a git repo. This command should be used on developer machines in accordance with
+[shifting left on security](https://cloud.google.com/architecture/devops/devops-tech-shifting-left-on-security).
+When running `protect` on a git repository, gitleaks will parse the output of a `git diff` command (you can see how this executed
+[here](https://github.com/zricethezav/gitleaks/blob/7240e16769b92d2a1b137c17d6bf9d55a8562899/git/git.go#L48-L49)). You can set the
+`--staged` flag to check for changes in commits that have been `git add`ed. The `--staged` flag should be used when running Gitleaks
+as a pre-commit.
+
+**NOTE**: the `protect` command can only be used on git repos, running `protect` on files or directories will result in an error message.
+
+### Creating a baseline
+
+When scanning large repositories or repositories with a long history, it can be convenient to use a baseline. When using a baseline,
+gitleaks will ignore any old findings that are present in the baseline. A baseline can be any gitleaks report. To create a gitleaks report, run gitleaks with the `--report-path` parameter.
+
+```
+gitleaks detect --report-path gitleaks-report.json # This will save the report in a file called gitleaks-report.json
 ```
 
-### Q: 配置文件格式错误怎么办？
+Once as baseline is created it can be applied when running the detect command again:
 
-**A:**
-```bash
-# 1. 使用 openclaw doctor 诊断
-openclaw doctor
-
-# 2. 使用 JSON 验证工具
-cat ~/.openclaw/openclaw.json | python3 -m json.tool
-
-# 3. 如果无法修复，备份并重新初始化
-cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.broken
-openclaw onboard --install-daemon
+```
+gitleaks detect --baseline-path gitleaks-report.json --report-path findings.json
 ```
 
----
+After running the detect command with the --baseline-path parameter, report output (findings.json) will only contain new issues.
 
-**详细使用说明**: [查看模板使用指南](templates/README.md) | [API配置教程](docs/api-config/api-configuration.md)
-## 🤝 贡献指南
+### Verify Findings
 
-欢迎提交 Issue 和 Pull Request 帮助完善教程！
+You can verify a finding found by gitleaks using a `git log` command.
+Example output:
 
-## 📄 许可证
+```
+Finding:     aws_secret="AKIAXXXXXXXXXXXXXXXX"
+RuleID:      aws-access-token
+Secret       AKIAXXXXXXXXXXXXXXXX
+Entropy:     3.65
+File:        checks_test.go
+Line:        37
+Commit:      ec2fc9d6cb0954fb3b57201cf6133c48d8ca0d29
+Author:      Zachary Rice
+Email:       z@email.com
+Date:        2018-01-28T17:39:00Z
+Fingerprint: ec2fc9d6cb0954fb3b57201cf6133c48d8ca0d29:checks_test.go:aws-access-token:37
+```
 
-本项目采用 MIT 许可证。
+We can use the following format to verify the leak:
 
-## 👨‍💻 作者信息
+```
+git log -L {StartLine,EndLine}:{File} {Commit}
+```
 
-**作者**: [junhang lai](https://github.com/Mr-tooth)
+So in this example it would look like:
 
-- GitHub: [Mr. Tooth](https://github.com/Mr-tooth)
-- 教程仓库: [OpenClaw-Guide-for-Beginners](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners)
-- 作者信息: [查看 AUTHORS.md](AUTHORS.md)
-- 欢迎关注微信公众号, 后续会输出更多新手和进阶实战教程！
+```
+git log -L 37,37:checks_test.go ec2fc9d6cb0954fb3b57201cf6133c48d8ca0d29
+```
 
-![微信公众号二维码](assets/wechat_oa.jpg)
+Which gives us:
 
----
+```
+commit ec2fc9d6cb0954fb3b57201cf6133c48d8ca0d29
+Author: zricethezav <thisispublicanyways@gmail.com>
+Date:   Sun Jan 28 17:39:00 2018 -0500
 
-**⭐ 创作不易，如果这个教程对你有帮助，请给个 Star 支持一下！**
+    [update] entropy check
 
----
+diff --git a/checks_test.go b/checks_test.go
+--- a/checks_test.go
++++ b/checks_test.go
+@@ -28,0 +37,1 @@
++               "aws_secret= \"AKIAXXXXXXXXXXXXXXXX\"":          true,
 
-*本教程包含推荐链接，通过链接注册可享受额外优惠，同时也支持作者持续产出优质内容。*
+```
 
-*作者: junhang lai | 最后更新: 2026-04-09*
+## Pre-Commit hook
 
-<!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+You can run Gitleaks as a pre-commit hook by copying the example `pre-commit.py` script into
+your `.git/hooks/` directory.
+
+## Configuration
+
+Gitleaks offers a configuration format you can follow to write your own secret detection rules:
+
+```toml
+# Title for the gitleaks configuration file.
+title = "Gitleaks title"
+
+# Extend the base (this) configuration. When you extend a configuration
+# the base rules take precedence over the extended rules. I.e., if there are
+# duplicate rules in both the base configuration and the extended configuration
+# the base rules will override the extended rules.
+# Another thing to know with extending configurations is you can chain together
+# multiple configuration files to a depth of 2. Allowlist arrays are appended
+# and can contain duplicates.
+# useDefault and path can NOT be used at the same time. Choose one.
+[extend]
+# useDefault will extend the base configuration with the default gitleaks config:
+# https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml
+useDefault = true
+# or you can supply a path to a configuration. Path is relative to where gitleaks
+# was invoked, not the location of the base config.
+path = "common_config.toml"
+
+# An array of tables that contain information that define instructions
+# on how to detect secrets
+[[rules]]
+
+# Unique identifier for this rule
+id = "awesome-rule-1"
+
+# Short human readable description of the rule.
+description = "awesome rule 1"
+
+# Golang regular expression used to detect secrets. Note Golang's regex engine
+# does not support lookaheads.
+regex = '''one-go-style-regex-for-this-rule'''
+
+# Golang regular expression used to match paths. This can be used as a standalone rule or it can be used
+# in conjunction with a valid `regex` entry.
+path = '''a-file-path-regex'''
+
+# Array of strings used for metadata and reporting purposes.
+tags = ["tag","another tag"]
+
+# Int used to extract secret from regex match and used as the group that will have
+# its entropy checked if `entropy` is set.
+secretGroup = 3
+
+# Float representing the minimum shannon entropy a regex group must have to be considered a secret.
+entropy = 3.5
+
+# Keywords are used for pre-regex check filtering. Rules that contain
+# keywords will perform a quick string compare check to make sure the
+# keyword(s) are in the content being scanned. Ideally these values should
+# either be part of the idenitifer or unique strings specific to the rule's regex
+# (introduced in v8.6.0)
+keywords = [
+  "auth",
+  "password",
+  "token",
+]
+
+# You can include an allowlist table for a single rule to reduce false positives or ignore commits
+# with known/rotated secrets
+[rules.allowlist]
+description = "ignore commit A"
+commits = [ "commit-A", "commit-B"]
+paths = [
+  '''go\.mod''',
+  '''go\.sum'''
+]
+# note: (rule) regexTarget defaults to check the _Secret_ in the finding.
+# if regexTarget is not specified then _Secret_ will be used.
+# Acceptable values for regexTarget are "match" and "line"
+regexTarget = "match"
+regexes = [
+  '''process''',
+  '''getenv''',
+]
+# note: stopwords targets the extracted secret, not the entire regex match
+# like 'regexes' does. (stopwords introduced in 8.8.0)
+stopwords = [
+  '''client''',
+  '''endpoint''',
+]
+
+
+# This is a global allowlist which has a higher order of precedence than rule-specific allowlists.
+# If a commit listed in the `commits` field below is encountered then that commit will be skipped and no
+# secrets will be detected for said commit. The same logic applies for regexes and paths.
+[allowlist]
+description = "global allow list"
+commits = [ "commit-A", "commit-B", "commit-C"]
+paths = [
+  '''gitleaks\.toml''',
+  '''(.*?)(jpg|gif|doc)'''
+]
+
+# note: (global) regexTarget defaults to check the _Secret_ in the finding.
+# if regexTarget is not specified then _Secret_ will be used.
+# Acceptable values for regexTarget are "match" and "line"
+regexTarget = "match"
+
+regexes = [
+  '''219-09-9999''',
+  '''078-05-1120''',
+  '''(9[0-9]{2}|666)-\d{2}-\d{4}''',
+]
+# note: stopwords targets the extracted secret, not the entire regex match
+# like 'regexes' does. (stopwords introduced in 8.8.0)
+stopwords = [
+  '''client''',
+  '''endpoint''',
+]
+```
+
+Refer to the default [gitleaks config](https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml) for examples or follow the [contributing guidelines](https://github.com/gitleaks/gitleaks/blob/master/CONTRIBUTING.md) if you would like to contribute to the default configuration. Additionally, you can check out [this gitleaks blog post](https://blog.gitleaks.io/stop-leaking-secrets-configuration-2-3-aeed293b1fbf) which covers advanced configuration setups.
+
+### Additional Configuration
+
+#### gitleaks:allow
+
+If you are knowingly committing a test secret that gitleaks will catch you can add a `gitleaks:allow` comment to that line which will instruct gitleaks
+to ignore that secret. Ex:
+
+```
+class CustomClass:
+    discord_client_secret = '8dyfuiRyq=vVc3RRr_edRk-fK__JItpZ'  #gitleaks:allow
+
+```
+
+#### .gitleaksignore
+
+You can ignore specific findings by creating a `.gitleaksignore` file at the root of your repo. In release v8.10.0 Gitleaks added a `Fingerprint` value to the Gitleaks report. Each leak, or finding, has a Fingerprint that uniquely identifies a secret. Add this fingerprint to the `.gitleaksignore` file to ignore that specific secret. See Gitleaks' [.gitleaksignore](https://github.com/zricethezav/gitleaks/blob/master/.gitleaksignore) for an example. Note: this feature is experimental and is subject to change in the future.
+
+## Sponsorships
+<p align="left">
+	<h3><a href="https://coderabbit.ai/?utm_source=oss&utm_medium=sponsorship&utm_campaign=gitleaks">coderabbit.ai</h3>
+	  <a href="https://coderabbit.ai/?utm_source=oss&utm_medium=sponsorship&utm_campaign=gitleaks">
+		  <img alt="CodeRabbit.ai Sponsorship" src="https://github.com/gitleaks/gitleaks/assets/15034943/76c30a85-887b-47ca-9956-17a8e55c6c41" width=200>
+	  </a>
+</p>
+<p align="left">
+	  <a href="https://www.tines.com/?utm_source=oss&utm_medium=sponsorship&utm_campaign=gitleaks">
+		  <img alt="Tines Sponsorship" src="https://user-images.githubusercontent.com/15034943/146411864-4878f936-b4f7-49a0-b625-f9f40c704bfa.png" width=200>
+	  </a>
+  </p>
+
+
+## Exit Codes
+
+You can always set the exit code when leaks are encountered with the --exit-code flag. Default exit codes below:
+
+```
+0 - no leaks present
+1 - leaks or error encountered
+126 - unknown flag
+```
