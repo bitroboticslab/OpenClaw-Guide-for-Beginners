@@ -274,20 +274,18 @@ wsl -d Ubuntu-22.04
 ```bash
 # 更新包管理器
 sudo apt update
-
-# 安装Node.js 22（使用NodeSource）
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+# 安装 Node.js 24（官方要求最低版本，推荐使用）
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 sudo apt install -y nodejs
-
 # 验证安装
 node --version
 npm --version
 ```
-
 ✅ **成功输出**:
 ```
-v22.x.x
-9.x.x
+v24.x.x
+10.x.x
+```
 ```
 
 ---
@@ -302,7 +300,7 @@ npm install -g openclaw@latest
 openclaw --version
 ```
 
-✅ **成功输出**: `OpenClaw CLI v2026.3.x`
+✅ **成功输出**: `OpenClaw CLI v2026.4.14+`
 
 ---
 
@@ -310,7 +308,7 @@ openclaw --version
 
 ### 配置API
 OpenClaw 需要配置大模型 API 才能运行。推荐新手先使用硅基流动，注册送2000万Tokens：
-👉 [API配置教程](../api-config/api-configuration.md)
+👉 [API配置教程](../../configuration/api-config/api-configuration.md)
 
 ### 配置飞书（一键安装，官方推荐）✨
 
@@ -325,7 +323,7 @@ npx -y https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8ab6e7a04c17db1bec
 
 > 👉 查看[飞书官方详细教程](http://feishu.cn/content/article/7613711414611463386)
 >
-> 手动配置请参考 [飞书对接文档](../platform-integration/feishu-integration.md)
+> 手动配置请参考 [飞书对接文档](../../integration/platform-integration/feishu-integration.md)
 
 ---
 

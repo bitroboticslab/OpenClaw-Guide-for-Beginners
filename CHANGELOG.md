@@ -2,14 +2,30 @@
 
 本项目的所有重要变更都会记录在此文件中，格式遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
-## [Unreleased]
-### 新增
-- 新增工程规范文档：CONTRIBUTING.md、RELEASING.md、CHANGELOG.md
-- 新增OpenClaw版本自动跟踪脚本与cron任务配置
-### 优化
-- 全文档内容对齐OpenClaw 2026.4.16最新版本
-
+## [1.1.0] - 2026-04-16
+### 🌟 新增功能
+- ✅ 新增工程规范体系：贡献指南、发布流程、更新日志、完整工作流规范
+- ✅ 新增版本自动跟踪系统：自动检测OpenClaw官方版本更新，自动创建PR
+- ✅ 新增版本变更记录目录，记录OpenClaw各版本的重要变更
+- ✅ 新增安全运行重要提示文档，重点提示WSL安装的安全优势
+- ✅ 新增版本选择说明文档，帮助用户选择适合的版本
+### 🔒 安全优化
+- ✅ 所有Windows相关页面突出WSL为新手首选安装方式，避免本地安装误操作风险
+- ✅ 新增沙箱安全特性说明，提示用户启用沙箱模式限制文件系统访问
+- ✅ 强化安全最佳实践，提醒用户遵循最小权限原则
+### 📖 内容优化
+- ✅ 所有教程对齐OpenClaw最新稳定版v2026.4.14
+- ✅ Node.js版本要求统一升级到24，符合官方最低要求
+- ✅ 所有平台教程新增飞书官方一键安装支持，5分钟完成对接
+- ✅ 优化目录结构，重新组织为快速开始、安装教程、配置指南、平台对接等分类
+- ✅ 修复所有失效链接，统一路径规范
+- ✅ 优化表述，提升新手友好度
+### 🛠️ 工程化
+- ✅ 配置每周自动检测OpenClaw版本更新的Cron任务
+- ✅ 完善提交规范、PR规范、版本发布规范
+- ✅ 新增版本兼容性说明
 ---
+## [1.0.0] - 2026-04-09
 
 ## [1.1.0] - 2026-04-16
 ### 新增
@@ -18,15 +34,7 @@
 ### 优化
 - 优化README快速开始部分，突出WSL是Windows新手首选安装方式，推荐指数提升为5星
 - 调整平台列表顺序，WSL放到Windows前面，新增适用人群说明
-- Windows安装指南开头增加WSL推荐提示与跳转链接，引导新手优先使用WSL安装
-- Windows安装指南飞书配置部分将手动配置折叠，默认展示官方一键安装方案
-- 修正WSL安装教程中的"安OpenOpenClaw"错别字
-- 所有飞书相关内容链接到官方最新教程，保证内容及时性
-### 安全
-- 明确引导用户使用WSL安装，避免Windows本地安装可能带来的误操作安全风险
-
 ---
-
 ## [1.0.0] - 2026-04-09
 ### 新增
 - 初始版本发布，包含完整的多平台安装教程
@@ -41,12 +49,12 @@
 - 安装方式更新：官方`curl -fsSL https://openclaw.ai/install.sh | bash`作为QUICKSTART首选
 - 定位描述更新："AI助手框架" → "自托管AI Agent网关"
 - 删除过时的硅基流动限时活动内容
-- README/QUICKSTART补充多媒体生成、ACP、Cron、记忆系统等特性说明
+- README/QUICKSTART补充多媒体生成、ACP、Cron、记忆系统等特性
 ### 修复
 - 修正所有失效链接与过时命令
-
 ---
-
 [Unreleased]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/releases/tag/v1.0.0
 [1.1.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/releases/tag/v1.0.0

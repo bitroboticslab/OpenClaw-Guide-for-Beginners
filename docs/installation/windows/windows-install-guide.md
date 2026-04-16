@@ -15,29 +15,29 @@
 - 稳定的网络连接
 
 ## 🔧 第一步：安装 Node.js
-
-OpenClaw 需要 Node.js 22+ 版本。
-
+OpenClaw 需要 Node.js 24+ 版本。
 ### 方法一：使用 nvm 安装（推荐）
-
 1. 下载 nvm-windows 安装包
    - 访问 [nvm-windows Releases](https://github.com/coreybutler/nvm-windows/releases)
    - 下载最新的 `nvm-setup.exe`
-
 2. 以管理员身份运行安装程序
-
 3. 打开 PowerShell（管理员模式），执行以下命令：
-
 ```powershell
-# 安装 Node.js 22
-nvm install 22
-
-# 切换到 Node.js 22
-nvm use 22
-
+# 安装 Node.js 24
+nvm install 24
+# 切换到 Node.js 24
+nvm use 24
 # 验证安装
 node -v
-# 应显示 v22.x.x
+# 应显示 v24.x.x
+```
+### 方法二：直接安装 Node.js
+1. 访问 [Node.js 官网](https://nodejs.org/)
+2. 下载 LTS 版本（24.x）
+3. 运行安装程序，一路 Next
+4. 重启 PowerShell 后验证：
+```powershell
+node -v
 ```
 
 ### 方法二：直接安装 Node.js
