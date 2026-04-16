@@ -1,7 +1,6 @@
 <!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
 
 # OpenClaw 新手完全指南
-# OpenClaw 新手完全指南
 > 从零开始，手把手教你部署属于自己的 24 小时在线 AI 助手
 ⚠️ **最新安全提示**：Windows用户优先推荐使用WSL安装，避免本地安装可能带来的误操作安全风险，查看 [安全运行重要提示](docs/getting-started/security-notice.md)
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.4.14%20最新稳定版-blue)
@@ -12,7 +11,6 @@
 
 OpenClaw 是一个开源的自托管 AI Agent 网关平台，支持 Discord、飞书、Telegram、WhatsApp、Signal、Slack、iMessage 等 10+ 消息渠道，247,000+ GitHub Stars。
 
-**核心特性：**
 **核心特性：**
 - 🤖 真正的 AI Agent —— 不只是聊天，还能执行操作、操控浏览器、生成图片/视频
 - 🔒 安全沙箱 —— 新版本默认开启沙箱模式，限制文件系统访问，避免误操作风险
@@ -197,8 +195,6 @@ OpenClaw-Guide-for-Beginners/
     ├── openclaw-template.json   # 主配置模板
     └── env-template.txt         # 环境变量模板
 ```
-
-
 
 ## ⚙️ 配置模板和脚本
 
