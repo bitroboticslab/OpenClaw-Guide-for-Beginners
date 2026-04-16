@@ -2,7 +2,9 @@
 
 # OpenClaw 新手完全指南
 > 从零开始，手把手教你部署属于自己的 24 小时在线 AI 助手
+
 ⚠️ **最新安全提示**：Windows用户优先推荐使用WSL安装，避免本地安装可能带来的误操作安全风险，查看 [安全运行重要提示](docs/getting-started/security-notice.md)
+
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.4.14%20最新稳定版-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![更新时间](https://img.shields.io/badge/更新时间-2026年4月16日-orange)
