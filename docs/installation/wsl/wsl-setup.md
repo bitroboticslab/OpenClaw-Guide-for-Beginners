@@ -307,7 +307,7 @@ openclaw --version
 
 ### 配置API
 OpenClaw 需要配置大模型 API 才能运行。推荐新手先使用硅基流动，注册送2000万Tokens：
-👉 [API配置教程](../../configuration/api-config/api-configuration.md)
+👉 [API配置教程](../../configuration/api-configuration.md)
 
 ### 配置飞书（一键安装，官方推荐）✨
 
@@ -322,7 +322,7 @@ npx -y https://sf3-cn.feishucdn.com/obj/open-platform-opendoc/8ab6e7a04c17db1bec
 
 > 👉 查看[飞书官方详细教程](http://feishu.cn/content/article/7613711414611463386)
 >
-> 手动配置请参考 [飞书对接文档](../../integration/platform-integration/feishu-integration.md)
+> 手动配置请参考 [飞书对接文档](../../integration/feishu-integration.md)
 
 ---
 

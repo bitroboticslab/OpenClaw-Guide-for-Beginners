@@ -390,7 +390,7 @@ cp ~/.openclaw/openclaw.json.backup ~/.openclaw/openclaw.json
 <details>
 <summary><b>📚 详细教程</b></summary>
 
-查看[钉钉对接完整教程](docs/platform-integration/dingtalk-integration.md)
+查看[钉钉对接完整教程](docs/integration/dingtalk-integration.md)
 </details>
 
 ---
@@ -419,7 +419,7 @@ cp ~/.openclaw/openclaw.json.backup ~/.openclaw/openclaw.json
 <details>
 <summary><b>📚 详细教程</b></summary>
 
-查看[飞书对接完整教程](docs/platform-integration/feishu-integration.md)
+查看[飞书对接完整教程](docs/integration/feishu-integration.md)
 </details>
 
 ---
@@ -455,9 +455,9 @@ cp ~/.openclaw/openclaw.json.backup ~/.openclaw/openclaw.json
 
 | 模型 | 响应速度 | 适用场景 | 链接 |
 |------|---------|---------|------|
-| `Qwen/Qwen2.5-7B` | ⚡⚡⚡⚡⚡ | 轻量任务 | [查看](docs/api-config/model-comparison.md) |
-| `Qwen/Qwen2.5-14B` | ⚡⚡⚡⚡ | 日常对话 | [查看](docs/api-config/model-comparison.md) |
-| `Qwen/Qwen2.5-72B` | ⚡⚡⚡ | 复杂推理 | [查看](docs/api-config/model-comparison.md) |
+| `Qwen/Qwen2.5-7B` | ⚡⚡⚡⚡⚡ | 轻量任务 | [查看](docs/configuration/model-comparison.md) |
+| `Qwen/Qwen2.5-14B` | ⚡⚡⚡⚡ | 日常对话 | [查看](docs/configuration/model-comparison.md) |
+| `Qwen/Qwen2.5-72B` | ⚡⚡⚡ | 复杂推理 | [查看](docs/configuration/model-comparison.md) |
 
 ---
 
@@ -519,7 +519,7 @@ ping api.siliconflow.cn
 <details>
 <summary><b>💰 详细成本对比</b></summary>
 
-查看[成本优化完整指南](docs/api-config/cost-optimization.md)
+查看[成本优化完整指南](docs/configuration/cost-optimization.md)
 </details>
 
 ---
@@ -793,10 +793,10 @@ openclaw logs --follow
 | 类别 | 教程 | 难度 |
 |------|------|------|
 | 快速开始 | [5分钟快速上手](docs/start/quickstart.md) | ⭐ |
-| API配置 | [API配置详解](docs/api-config/api-configuration.md) | ⭐⭐ |
-| 模型选择 | [模型选择指南](docs/api-config/model-comparison.md) | ⭐⭐ |
-| 成本优化 | [成本优化指南](docs/api-config/cost-optimization.md) | ⭐⭐⭐ |
-| 云部署 | [云服务器部署](docs/cloud/cloud-deployment-guide.md) | ⭐⭐⭐ |
+| API配置 | [API配置详解](docs/configuration/api-configuration.md) | ⭐⭐ |
+| 模型选择 | [模型选择指南](docs/configuration/model-comparison.md) | ⭐⭐ |
+| 成本优化 | [成本优化指南](docs/configuration/cost-optimization.md) | ⭐⭐⭐ |
+| 云部署 | [云服务器部署](docs/installation/cloud/cloud-deployment-guide.md) | ⭐⭐⭐ |
 | 安全配置 | [安全配置指南](docs/advanced/security.md) | ⭐⭐⭐ |
 | 技能开发 | [技能开发](docs/advanced/skills.md) | ⭐⭐⭐⭐ |
 | 故障排除 | [故障排除指南](docs/advanced/troubleshooting.md) | ⭐⭐⭐ |

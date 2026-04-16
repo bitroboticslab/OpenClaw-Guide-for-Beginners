@@ -29,8 +29,8 @@
 
 | 云服务商 | 教程 | 优惠活动 | 推荐指数 |
 |---------|------|---------|----------|
-| 阿里云 | [教程](./docs/cloud/aliyun-guide.md) | [99元专属套餐](https://www.aliyun.com/activity/ecs/clawdbot?userCode=yyzsc1al) | ⭐⭐⭐⭐⭐ |
-| 腾讯云 | [教程](./docs/cloud/cloud-deployment-guide.md) | [推广大使特惠](https://curl.qcloud.com/JnWPPHIH) | ⭐⭐⭐⭐ |
+| 阿里云 | [教程](./docs/installation/cloud/aliyun-guide.md) | [99元专属套餐](https://www.aliyun.com/activity/ecs/clawdbot?userCode=yyzsc1al) | ⭐⭐⭐⭐⭐ |
+| 腾讯云 | [教程](./docs/installation/cloud/cloud-deployment-guide.md) | [推广大使特惠](https://curl.qcloud.com/JnWPPHIH) | ⭐⭐⭐⭐ |
 
 ### 推荐配置
 
@@ -87,10 +87,10 @@
 | 平台 | 教程 | 状态 |
 |------|------|------|
 | 飞书 | [教程](./docs/platform-int/egration/feishu-integration.md) | ✅ 稳定 |
-| 钉钉 | [教程](./docs/platform-integration/dingtalk-integration.md) | ✅ 稳定 |
-| 微信（企业） | [教程](./docs/platform-integration/wecom-integration.md) | ✅ 稳定 |
-| Telegram | [教程](./docs/platform-integration/telegram-integration.md) | ✅ 稳定 |
-| Discord | [教程](./docs/platform-integration/discord-integration.md) | 🚧 开发中 |
+| 钉钉 | [教程](./docs/integration/dingtalk-integration.md) | ✅ 稳定 |
+| 微信（企业） | [教程](./docs/integration/wecom-integration.md) | ✅ 稳定 |
+| Telegram | [教程](./docs/integration/telegram-integration.md) | ✅ 稳定 |
+| Discord | [教程](./docs/integration/discord-integration.md) | 🚧 开发中 |
 | Slack | - | 🚧 开发中 |
 | Signal | - | 🚧 开发中 |
 
@@ -101,11 +101,11 @@
 ### 教程
 
 - [5分钟快速上手](docs/start/quickstart.md)
-- [API配置教程](docs/api-config/api-configuration.md)
-- [模型选择指南](docs/api-config/model-comparison.md)
-- [成本优化指南](docs/api-config/cost-optimization.md)
-- [云服务器部署](docs/cloud/cloud-deployment-guide.md)
-- [阿里云专属教程](docs/cloud/aliyun-guide.md)
+- [API配置教程](docs/configuration/api-configuration.md)
+- [模型选择指南](docs/configuration/model-comparison.md)
+- [成本优化指南](docs/configuration/cost-optimization.md)
+- [云服务器部署](docs/installation/cloud/cloud-deployment-guide.md)
+- [阿里云专属教程](docs/installation/cloud/aliyun-guide.md)
 
 ### 进阶指南
 
@@ -141,8 +141,8 @@
 ### 安全最佳实践
 
 - [安全配置指南](docs/advanced/security.md)
-- [API Key安全](docs/api-config/api-configuration.md#api-key安全)
-- [防火墙配置](docs/cloud/aliyun-guide.md#配置防火墙)
+- [API Key安全](docs/configuration/api-configuration.md#api-key安全)
+- [防火墙配置](docs/installation/cloud/aliyun-guide.md#配置防火墙)
 
 ### 安全工具
 

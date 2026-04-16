@@ -55,7 +55,7 @@ OpenClaw 需要接入大模型 API 才能运行。以下是各平台的优惠信
 
 💡 **新手建议**：先注册[硅基流动](https://cloud.siliconflow.cn/i/lva59yow)体验免费额度，再根据需求选择其他平台。
 
-👉 [查看详细 API 配置教程](docs/configuration/api-config/api-configuration.md) | [模型选择指南](docs/configuration/api-config/model-comparison.md) | [成本优化](docs/configuration/api-config/cost-optimization.md)
+👉 [查看详细 API 配置教程](docs/configuration/api-configuration.md) | [模型选择指南](docs/configuration/model-comparison.md) | [成本优化](docs/configuration/cost-optimization.md)
 
 我个人正在使用以下两个API平台，性价比都很高，感兴趣可以试试：
 
@@ -99,15 +99,15 @@ OpenClaw 支持对接多种消息平台：
 
 | 平台 | 对接难度 | 教程链接 |
 |------|----------|----------|
-| 飞书 | ⭐ | [飞书对接教程](docs/integration/platform-integration/feishu-integration.md)（官方一键对接，5分钟完成） |
-| 钉钉 | ⭐⭐ | [钉钉对接教程](docs/integration/platform-integration/dingtalk-integration.md) |
-| Telegram | ⭐ | [Telegram对接教程](docs/integration/platform-integration/telegram-integration.md) |
+| 飞书 | ⭐ | [飞书对接教程](docs/integration/feishu-integration.md)（官方一键对接，5分钟完成） |
+| 钉钉 | ⭐⭐ | [钉钉对接教程](docs/integration/dingtalk-integration.md) |
+| Telegram | ⭐ | [Telegram对接教程](docs/integration/telegram-integration.md) |
 | Discord | ⭐ | Discord Developer Portal 创建 Bot |
 | WhatsApp | ⭐⭐ | 内置支持 |
 | Signal | ⭐⭐ | 内置支持 |
 | QQ | ⭐⭐ | 内置 QQ Bot 插件 |
 | LINE | ⭐⭐ | 内置 LINE 插件 |
-| 微信 | ⭐⭐⭐ | [微信对接教程](docs/integration/platform-integration/wechat-integration.md) |
+| 微信 | ⭐⭐⭐ | [微信对接教程](docs/integration/wechat-integration.md) |
 | Matrix | ⭐⭐ | 内置 Matrix 插件 |
 
 ## 🎯 学习路径
@@ -118,13 +118,13 @@ OpenClaw 支持对接多种消息平台：
 
 1. 阅读 [5分钟快速上手](docs/start/quickstart.md)
 2. 根据系统选择安装教程（Windows/macOS/Linux）
-3. 配置 API ([API配置详解](docs/api-config/api-configuration.md))
+3. 配置 API ([API配置详解](docs/configuration/api-configuration.md))
 4. 对接第一个平台（推荐钉钉或飞书）
 5. 遇到问题查看 [FAQ](FAQ.md)
 
 ### 🚀 服务器部署路径
 
-1. 阅读 [云服务器部署指南](docs/cloud/cloud-deployment-guide.md)
+1. 阅读 [云服务器部署指南](docs/installation/cloud/cloud-deployment-guide.md)
 2. 选择云服务商（推荐[阿里云](https://www.aliyun.com/activity/ecs/clawdbot?userCode=yyzsc1al)）
 3. 配置服务器和域名
 4. 部署 OpenClaw
@@ -303,7 +303,7 @@ openclaw gateway status
 
 ---
 
-**详细教程**: [API配置](docs/api-config/api-configuration.md) | [快速上手](docs/start/quickstart.md)
+**详细教程**: [API配置](docs/configuration/api-configuration.md) | [快速上手](docs/start/quickstart.md)
 ## ❓ 常见问题
 
 ### Q: 哪个 API 平台最推荐？
@@ -363,7 +363,7 @@ openclaw onboard --install-daemon
 
 ---
 
-**详细使用说明**: [查看模板使用指南](templates/README.md) | [API配置教程](docs/api-config/api-configuration.md)
+**详细使用说明**: [查看模板使用指南](templates/README.md) | [API配置教程](docs/configuration/api-configuration.md)
 ## 🤝 贡献指南
 
 欢迎提交 Issue 和 Pull Request 帮助完善教程！

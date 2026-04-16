@@ -438,7 +438,7 @@ openclaw doctor
 openclaw gateway start
 
 # 4. 连接消息平台（如钉钉）
-#    按照 docs/platform-integration/dingtalk-integration.md 操作
+#    按照 docs/integration/dingtalk-integration.md 操作
 ```
 
 ### 高级用户流程
@@ -499,7 +499,7 @@ openclaw doctor
 
 ## 📚 相关文档
 
-- [API配置教程](../docs/api-config/api-configuration.md) - 详细的API提供商配置
+- [API配置教程](../docs/configuration/api-configuration.md) - 详细的API提供商配置
 - [快速上手](../docs/start/quickstart.md) - 5分钟快速上手
 - [Docker部署](../docs/docker/docker-deployment.md) - Docker容器化部署
 - [常见问题](../FAQ.md) - 教程常见问题解答
