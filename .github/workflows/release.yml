@@ -1,0 +1,69 @@
+name: 自动发布 Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 从 CHANGELOG.md 提取版本日志
+        id: changelog
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          echo "📦 处理版本: $TAG"
+
+          # 从 CHANGELOG.md 提取对应版本段落
+          # 匹配 ## [X.Y.Z] 到下一个 ## [ 或文件结尾
+          VERSION_BODY=$(awk -v ver="$TAG" '
+            BEGIN { found=0; capture=0 }
+            /^\#\# \[/ {
+              if (capture) exit
+              gsub(/[\[\]]/, "")
+              split($0, a, " ")
+              if (a[3] == ver || a[3] == ver"-") {
+                found=1; capture=1
+                next
+              }
+            }
+            capture { print }
+          ' CHANGELOG.md)
+
+          if [ -z "$VERSION_BODY" ]; then
+            echo "⚠️ 未在 CHANGELOG.md 中找到版本 $TAG 的日志，使用默认内容"
+            VERSION_BODY="Release $TAG"
+          fi
+
+          # 提取标题行（第一个非空行作为 subtitle）
+          SUBTITLE=$(echo "$VERSION_BODY" | grep -m1 -oP '(?<=### ).*' || echo "")
+
+          # 写入多行输出
+          {
+            echo "body<<CHANGELOG_EOF"
+            echo "$VERSION_BODY"
+            echo "CHANGELOG_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "subtitle=$SUBTITLE" >> "$GITHUB_OUTPUT"
+          echo "✅ 版本日志提取完成"
+
+      - name: 创建 GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "${{ github.ref_name }} - ${{ steps.changelog.outputs.subtitle }}"
+          body: ${{ steps.changelog.outputs.body }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
