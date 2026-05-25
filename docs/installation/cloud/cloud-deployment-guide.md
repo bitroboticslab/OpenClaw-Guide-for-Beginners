@@ -237,6 +237,46 @@ systemctl start openclaw
 
 ---
 
+## 🏥 健康检查与监控
+
+### /readyz 健康检查端点（v2026.5.18+）
+
+OpenClaw v2026.5.18 新增了 `/readyz` 健康检查端点，用于监控 Gateway 服务状态。
+
+#### 使用方法
+
+```bash
+# 检查 Gateway 是否就绪
+curl http://localhost:18789/readyz
+
+# 返回示例
+# 200 OK - 服务就绪
+# 503 Service Unavailable - 服务未就绪
+```
+
+#### 配合监控工具使用
+
+**使用 systemd 监控**：
+```bash
+# 在 systemd 服务中添加健康检查
+[Service]
+ExecStartPre=/bin/bash -c 'until curl -sf http://localhost:18789/readyz; do sleep 1; done'
+```
+
+**使用 cron 定期检查**：
+```bash
+# 添加到 crontab，每 5 分钟检查一次
+*/5 * * * * curl -sf http://localhost:18789/readyz || systemctl restart openclaw
+```
+
+**使用 Docker 健康检查**：
+```dockerfile
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:18789/readyz || exit 1
+```
+
+---
+
 ## 🔍 常见问题
 
 ### Q: 服务器连不上怎么办？

@@ -149,6 +149,70 @@
 
 ---
 
+### Slack 对接
+
+**准备工作**：
+- Slack 工作区管理员权限
+- 创建 Slack App
+
+**核心配置**：
+1. 在 [Slack API](https://api.slack.com/apps) 创建 App
+2. 配置 Bot Token Scopes 和 Event Subscriptions
+3. 安装到工作区并获取 Bot Token
+
+**高级配置（v2026.5.12+）**：
+```json
+{
+  "channels": {
+    "slack": {
+      "token": "xoxb-your-bot-token",
+      "appToken": "xapp-your-app-token",
+      "unfurlLinks": false,
+      "unfurlMedia": false,
+      "replyBroadcast": true
+    }
+  }
+}
+```
+
+| 配置项 | 说明 | 默认值 |
+|--------|------|--------|
+| `unfurlLinks` | Bot 回复时是否展开链接预览 | `false` |
+| `unfurlMedia` | Bot 回复时是否展开媒体预览 | `false` |
+| `replyBroadcast` | 线程回复是否广播到频道 | `false` |
+
+---
+
+### Discord 对接
+
+**准备工作**：
+- Discord 账号
+- 创建 Discord Bot
+
+**核心配置**：
+1. 在 [Discord Developer Portal](https://discord.com/developers/applications) 创建应用
+2. 创建 Bot 并获取 Token
+3. 邀请 Bot 到服务器
+
+**语音频道限制（v2026.5.12+）**：
+```json
+{
+  "channels": {
+    "discord": {
+      "token": "your-bot-token",
+      "voice": {
+        "enabled": true,
+        "allowedChannels": ["channel-id-1", "channel-id-2"]
+      }
+    }
+  }
+}
+```
+
+> 💡 使用 `voice.allowedChannels` 可以限制 Bot 只能加入指定的语音频道，避免误加入其他频道。
+
+---
+
 ## 🔧 高级配置
 
 ### 多平台同时对接
