@@ -6,6 +6,23 @@
 ### 待开发
 - 无
 
+## [1.8.0] - 2026-05-25
+### 🌟 新增功能
+- ✅ 对齐OpenClaw最新稳定版本v2026.5.18
+- ✅ 新增《v2026.5.8~5.12版本变更说明》独立文档
+- ✅ 新增《v2026.5.13~5.18版本变更说明》独立文档
+- ✅ 新增Plugin SDK插件开发工具包使用指南
+- ✅ 新增Skills全局安装和更新功能说明
+- ✅ 新增/stop和/btw交互命令使用说明
+- ✅ 新增QA测试工具和Obsidian集成说明
+### 🛠️ 优化
+- ✅ 更新README核心特性列表，新增任务控制和Plugin SDK特性
+- ✅ 更新版本徽章和更新时间
+### 📖 文档更新
+- ✅ 更新AGENT.md对齐版本号
+- ✅ 更新迁移指南版本引用
+- ✅ 更新技能开发文档，补充新功能章节
+
 ## [1.7.1] - 2026-05-19
 ### 🌟 新增功能
 - ✅ 对齐OpenClaw最新稳定版本v2026.5.7
@@ -139,7 +156,8 @@
 
 ---
 ## 版本对比链接
-[Unreleased]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.7.1...HEAD
+[Unreleased]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.8.0...HEAD
+[1.8.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.5.0...v1.6.0
