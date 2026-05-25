@@ -5,9 +5,9 @@
 
 ⚠️ **最新安全提示**：Windows用户优先推荐使用WSL安装，避免本地安装可能带来的误操作安全风险，查看 [安全运行重要提示](docs/getting-started/security-notice.md)
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.7%20最新稳定版-blue)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.18%20最新稳定版-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![更新时间](https://img.shields.io/badge/更新时间-2026年5月4日-orange)
+![更新时间](https://img.shields.io/badge/更新时间-2026年5月25日-orange)
 
 > 📌 **官方文档提示**：OpenClaw 官方文档已全面支持中英文版本
 > - 中文版文档路径：`https://docs.openclaw.ai/zh-CN/`（本指南已全部切换至此）
@@ -27,6 +27,8 @@ OpenClaw 是一个开源的自托管 AI Agent 网关平台，支持 Discord、�
 - 🛠️ 1500+ Skills —— 丰富的技能扩展库 ([ClawHub](https://clawhub.com))
 - 🎬 多媒体支持 —— 图片/视频/语音生成、语音转写、TTS
 - 📱 移动节点 —— iOS/Android 配对，随时随地对话
+- 🛑 任务控制 —— `/stop` 停止任务、`/btw` 插入旁白问题，掌控对话节奏
+- 🔌 Plugin SDK —— 自定义工具插件开发，扩展 Agent 能力
 
 ## 🚀 快速开始
 
@@ -205,7 +207,9 @@ OpenClaw-Guide-for-Beginners/
 │       ├── 2026.4.26.md         # v2026.4.26 变更说明
 │       ├── 2026.4.27.md         # v2026.4.27 变更说明
 │       ├── 2026.4.29.md         # v2026.4.29 变更说明
-│       └── 2026.5.7.md          # v2026.5.7 变更说明
+│       ├── 2026.5.7.md          # v2026.5.7 变更说明
+│       ├── 2026.5.12.md         # v2026.5.12 变更说明
+│       └── 2026.5.18.md         # v2026.5.18 变更说明
 ├── scripts/                     # 安装脚本
 │   ├── install-windows.bat      # Windows 安装脚本
 │   ├── install-wsl.ps1          # WSL 安装脚本
@@ -314,7 +318,7 @@ openclaw gateway status
 
 **预期输出**:
 ```
-✅ OpenClaw v2026.5.7+
+✅ OpenClaw v2026.5.18+
 ✅ Node.js: 已安装 v24.x
 ✅ Gateway: 运行中
 ✅ 模型配置: 正常

@@ -777,6 +777,155 @@ allowed-tools: Read,Write
 
 ---
 
+
+## 🆕 v2026.5.18 新功能
+
+### Plugin SDK（插件开发工具包）
+
+OpenClaw v2026.5.18 引入了全新的 Plugin SDK，支持开发自定义工具插件。
+
+#### 初始化插件项目
+
+```bash
+# 初始化新插件
+openclaw plugins init my-plugin
+
+# 进入插件目录
+cd my-plugin
+
+# 查看插件结构
+ls -la
+```
+
+#### 插件目录结构
+
+```
+my-plugin/
+├── plugin.json          # 插件配置文件
+├── index.ts             # 插件入口文件
+├── tools/               # 工具定义目录
+│   └── my-tool.ts
+├── tests/               # 测试文件
+└── package.json         # 依赖配置
+```
+
+#### 定义工具插件
+
+```typescript
+// tools/my-tool.ts
+import { defineToolPlugin } from '@openclaw/plugin-sdk'
+
+export default defineToolPlugin({
+  name: 'my-tool',
+  description: '我的自定义工具',
+  parameters: {
+    type: 'object',
+    properties: {
+      input: {
+        type: 'string',
+        description: '输入参数'
+      }
+    },
+    required: ['input']
+  },
+  async execute({ input }) {
+    // 工具逻辑
+    return { result: `处理结果: ${input}` }
+  }
+})
+```
+
+#### 构建和验证插件
+
+```bash
+# 构建插件
+openclaw plugins build
+
+# 验证插件配置
+openclaw plugins validate
+
+# 发布插件（可选）
+openclaw plugins publish
+```
+
+---
+
+### Skills 管理增强
+
+v2026.5.18 增强了 Skills 管理命令，新增全局安装和更新功能。
+
+#### 全局安装技能
+
+```bash
+# 全局安装技能（所有工作区可用）
+openclaw skills install weather --global
+
+# 安装指定版本
+openclaw skills install weather@1.2.0 --global
+
+# 安装多个技能
+openclaw skills install weather healthcheck --global
+```
+
+#### 全局更新技能
+
+```bash
+# 更新所有全局技能
+openclaw skills update --global
+
+# 更新指定全局技能
+openclaw skills update weather --global
+```
+
+#### 查看技能版本
+
+```bash
+# 查看所有已安装技能及版本
+openclaw skills list --versions
+
+# 查看技能详情
+openclaw skills info weather
+```
+
+---
+
+### 新增交互命令
+
+#### /stop 命令
+
+用于停止当前正在运行的 Agent 任务：
+
+```
+你: 帮我分析这个数据集
+AI: 正在分析中...
+你: /stop
+AI: 已停止当前任务。
+```
+
+**使用场景**：
+- 任务运行时间过长
+- 发现任务方向错误
+- 需要重新调整任务参数
+
+#### /btw 命令
+
+用于在任务运行时插入旁白问题，不会中断当前任务：
+
+```
+你: 帮我写一篇关于AI的文章
+AI: 正在撰写中...
+你: /btw 这个任务还需要多久完成？
+AI: 预计还需要 2 分钟完成。
+你: （继续等待任务完成）
+```
+
+**使用场景**：
+- 查询任务进度
+- 询问任务相关问题
+- 提供额外信息而不中断任务
+
+---
+
 ## ❓ 常见问题
 
 ### Q: 技能安装失败怎么办？
