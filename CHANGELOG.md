@@ -6,6 +6,19 @@
 ### 待开发
 - 无
 
+## [1.8.1] - 2026-05-25
+### 🛠️ 补充更新
+- ✅ 补充 Per-sender 工具策略配置说明（v2026.5.12+）
+- ✅ 补充 /context map 上下文可视化命令说明
+- ✅ 补充 Slack 增强配置（unfurlLinks/unfurlMedia/replyBroadcast）
+- ✅ 补充 Discord 语音频道限制配置（voice.allowedChannels）
+- ✅ 补充 /readyz 健康检查端点说明（v2026.5.18+）
+### 📖 文档更新
+- ✅ 更新安全文档，新增按发送者限制工具权限章节
+- ✅ 更新故障排查文档，新增 /context map 命令
+- ✅ 更新平台对接概览，新增 Slack 和 Discord 配置说明
+- ✅ 更新云服务器部署文档，新增健康检查与监控章节
+
 ## [1.8.0] - 2026-05-25
 ### 🌟 新增功能
 - ✅ 对齐OpenClaw最新稳定版本v2026.5.18
@@ -156,7 +169,8 @@
 
 ---
 ## 版本对比链接
-[Unreleased]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.8.0...HEAD
+[Unreleased]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.8.1...HEAD
+[1.8.1]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.8.0...v1.8.1
 [1.8.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.6.0...v1.7.0

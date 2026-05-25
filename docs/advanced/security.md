@@ -629,6 +629,57 @@ openclaw config set tools.fs.deniedPaths '["/etc", "/var"]'
 
 ---
 
+## 👤 按发送者限制工具权限 (v2026.5.12+)
+
+OpenClaw v2026.5.12 新增了按发送者身份限制工具使用的功能，允许管理员为不同用户设置不同的工具权限。
+
+### 功能说明
+
+在群组或多用户场景下，可以针对不同发送者设置不同的工具策略，避免非管理员用户执行危险操作。
+
+### 配置示例
+
+```json
+{
+  "tools": {
+    "exec": {
+      "enabled": true,
+      "senderPolicies": {
+        "admin_user": {
+          "allowed": true,
+          "allowedCommands": ["*"]
+        },
+        "normal_user": {
+          "allowed": true,
+          "allowedCommands": ["git", "npm", "ls"],
+          "deniedCommands": ["rm", "sudo", "chmod"]
+        },
+        "guest_user": {
+          "allowed": false
+        }
+      }
+    }
+  }
+}
+```
+
+### 配置说明
+
+| 字段 | 说明 |
+|------|------|
+| `senderPolicies` | 发送者策略配置，key 为发送者标识 |
+| `allowed` | 是否允许使用该工具 |
+| `allowedCommands` | 允许执行的命令列表 |
+| `deniedCommands` | 禁止执行的命令列表 |
+
+### 使用场景
+
+- **群聊场景**：仅管理员可执行系统命令，普通用户只能执行查询命令
+- **企业环境**：按角色分配不同工具权限
+- **公共服务**：限制访客用户的工具访问
+
+---
+
 ## 📊 安全监控
 
 ### 安全日志
