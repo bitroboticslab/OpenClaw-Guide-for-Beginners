@@ -6,6 +6,28 @@
 ### 待开发
 - 无
 
+## [1.9.0] - 2026-06-27
+### 🌟 新增功能
+- ✅ 对齐OpenClaw最新稳定版本v2026.6.1
+- ✅ 新增《v2026.5.19~6.1版本变更说明》独立文档
+- ✅ 新增Skill Workshop技能工作坊使用指南
+- ✅ 新增SQLite队列系统配置说明
+- ✅ 新增MiniMax M3模型配置指南
+- ✅ 新增外部化插件安装说明（Tokenjuice、Copilot）
+### 🛠️ 优化
+- ✅ 全文档默认版本统一更新为v2026.6.1
+- ✅ 更新README版本徽章和更新时间
+- ✅ 优化升级指南，补充多种部署方式
+### 📖 文档更新
+- ✅ 更新AGENT.md，新增渐进式版本对齐策略
+- ✅ 更新质量保障体系文档
+- ✅ 更新应急响应预案文档
+### 🤖 基础设施
+- ✅ 新增CI持续集成测试workflow（链接验证、格式检查、命令语法验证）
+- ✅ 增强Release workflow（发布前验证、自动Release说明生成）
+- ✅ 新增版本监控脚本和定时任务
+- ✅ 新增质量保障测试脚本
+
 ## [1.8.1] - 2026-05-25
 ### 🛠️ 补充更新
 - ✅ 补充 Per-sender 工具策略配置说明（v2026.5.12+）
@@ -169,7 +191,8 @@
 
 ---
 ## 版本对比链接
-[Unreleased]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.8.1...HEAD
+[Unreleased]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.8.1...v1.9.0
 [1.8.1]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.8.0...v1.8.1
 [1.8.0]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/compare/v1.7.0...v1.7.1
