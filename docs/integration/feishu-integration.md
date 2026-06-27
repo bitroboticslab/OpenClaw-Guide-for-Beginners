@@ -12,7 +12,7 @@
 
 ---
 
-## 最新方法 飞书官方Openclaw插件超方便！
+## 最新方法 飞书官方 OpenClaw 插件超方便！
 - 检查 OpenClaw 版本限制：
 - Linux/MacOS：openclaw 2026.3.2 及以上；
 - Windows：openclaw 2026.3.2 及以上

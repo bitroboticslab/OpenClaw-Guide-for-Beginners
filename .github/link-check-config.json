@@ -1,0 +1,43 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://openclaw\\.ai"
+    },
+    {
+      "pattern": "^https://clawhub\\.com"
+    },
+    {
+      "pattern": "^https://cloud\\.siliconflow\\.cn"
+    },
+    {
+      "pattern": "^https://volcengine\\.com"
+    },
+    {
+      "pattern": "^https://www\\.bigmodel\\.cn"
+    },
+    {
+      "pattern": "^https://www\\.aliyun\\.com"
+    },
+    {
+      "pattern": "^https://cloud\\.tencent\\.com"
+    },
+    {
+      "pattern": "^https://platform\\.xiaomimimo\\.com"
+    },
+    {
+      "pattern": "^https://platform\\.minimaxi\\.com"
+    }
+  ],
+  "retryOn429": true,
+  "retryCount": 3,
+  "aliveStatusCodes": [200, 206, 301, 302],
+  "timeout": "30s",
+  "httpHeaders": [
+    {
+      "urls": ["https://github.com"],
+      "headers": {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+      }
+    }
+  ]
+}

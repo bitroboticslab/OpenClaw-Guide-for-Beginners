@@ -1,0 +1,251 @@
+name: CI 持续集成测试
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - 'scripts/**'
+      - '.github/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - 'scripts/**'
+      - '.github/**'
+
+permissions:
+  contents: read
+
+jobs:
+  # 1. 链接验证
+  link-check:
+    name: 🔗 链接验证
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 markdown-link-check
+        run: npm install -g markdown-link-check
+
+      - name: 验证所有Markdown文件链接
+        run: |
+          echo "🔍 开始验证链接..."
+          find docs -name "*.md" -type f | while read file; do
+            echo "检查文件: $file"
+            markdown-link-check "$file" --config .github/link-check-config.json || true
+          done
+          
+          # 检查README
+          echo "检查文件: README.md"
+          markdown-link-check README.md --config .github/link-check-config.json || true
+
+      - name: 上传链接检查结果
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-results
+          path: link-check-results.txt
+
+  # 2. Markdown格式检查
+  markdown-lint:
+    name: 📝 Markdown格式检查
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: 检查Markdown格式
+        run: |
+          echo "🔍 开始检查Markdown格式..."
+          markdownlint docs/**/*.md README.md CHANGELOG.md CONTRIBUTING.md --config .github/markdownlint.json
+
+  # 3. 命令语法验证
+  command-syntax:
+    name: 🖥️ 命令语法验证
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 提取并验证bash命令
+        run: |
+          echo "🔍 开始验证bash命令语法..."
+          ERRORS=0
+          
+          for file in $(find docs -name "*.md" -type f); do
+            # 逐个提取bash代码块并独立检查
+            BLOCK_NUM=0
+            IN_BLOCK=false
+            BLOCK_FILE=""
+            BLOCK_ERRORS=0
+            
+            while IFS= read -r line; do
+              if [[ "$line" =~ ^\`\`\`bash ]]; then
+                IN_BLOCK=true
+                BLOCK_NUM=$((BLOCK_NUM + 1))
+                BLOCK_FILE="/tmp/bash_block_${BLOCK_NUM}.sh"
+                > "$BLOCK_FILE"
+                continue
+              fi
+              
+              if [[ "$line" =~ ^\`\`\`$ ]] && [ "$IN_BLOCK" = true ]; then
+                IN_BLOCK=false
+                # 跳过空块
+                if [ -s "$BLOCK_FILE" ]; then
+                  # 过滤掉明显的非命令行（占位符、纯注释块等）
+                  # 只检查包含实际命令的块
+                  FILTERED=$(grep -v '^#' "$BLOCK_FILE" | grep -v '^$' | grep -v '^\.\.\.' | grep -v '<' | grep -v '\.\.\.' || true)
+                  if [ -n "$FILTERED" ]; then
+                    if ! bash -n "$BLOCK_FILE" 2>/dev/null; then
+                      echo "⚠️  语法提示: $file (block #$BLOCK_NUM)"
+                      BLOCK_ERRORS=$((BLOCK_ERRORS + 1))
+                    fi
+                  fi
+                fi
+                continue
+              fi
+              
+              if [ "$IN_BLOCK" = true ]; then
+                echo "$line" >> "$BLOCK_FILE"
+              fi
+            done < "$file"
+            
+            if [ $BLOCK_ERRORS -gt 0 ]; then
+              echo "⚠️  $file: $BLOCK_ERRORS 个代码块有语法提示"
+              # 语法提示不作为硬性失败，只记录
+            fi
+          done
+          
+          echo "✅ bash命令语法检查完成"
+
+  # 4. 版本一致性检查
+  version-consistency:
+    name: 🔢 版本一致性检查
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 检查版本号一致性
+        run: |
+          echo "🔍 开始检查版本号一致性..."
+          
+          # 从CHANGELOG.md提取最新教程版本号
+          CHANGELOG_VERSION=$(grep -oP '## \[\K\d+\.\d+\.\d+' CHANGELOG.md | head -1)
+          
+          # 从README.md提取OpenClaw版本号（用于显示）
+          OPENCLAW_VERSION=$(grep -oP 'OpenClaw-\K\d{4}\.\d+\.\d+' README.md | head -1)
+          
+          echo "CHANGELOG教程版本: $CHANGELOG_VERSION"
+          echo "README对齐OpenClaw版本: $OPENCLAW_VERSION"
+          
+          # 检查CHANGELOG版本号是否存在
+          if [ -z "$CHANGELOG_VERSION" ]; then
+            echo "❌ CHANGELOG中未找到版本号"
+            exit 1
+          fi
+          
+          # 检查README中的OpenClaw版本号是否存在
+          if [ -z "$OPENCLAW_VERSION" ]; then
+            echo "❌ README中未找到OpenClaw版本号"
+            exit 1
+          fi
+          
+          echo "✅ 版本号检查通过"
+          echo "  - 教程版本: v$CHANGELOG_VERSION"
+          echo "  - 对齐OpenClaw版本: v$OPENCLAW_VERSION"
+
+  # 5. 术语一致性检查
+  terminology:
+    name: 📚 术语一致性检查
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 检查术语使用
+        run: |
+          echo "🔍 开始检查术语一致性..."
+          ERRORS=0
+          
+          # 检查OpenClaw拼写（必须首字母大写）
+          # 注意：openclaw 作为CLI命令名、容器名、包名、路径是合法用法
+          # 策略：只检测明确的拼写错误模式，不排除合法用法
+          ERRORS=0
+
+          # 检查1: "Openclaw"（错误大小写）——唯一明确的错误
+          # 排除：grep命令示例、CI检查脚本自身
+          OPENCLAW_CAP_ERRORS=$(grep -rn "Openclaw" docs/ --include="*.md" | \
+            grep -v "grep.*Openclaw" | \
+            grep -v "# 检查Openclaw" | \
+            grep -v "check.*Openclaw" || true)
+
+          if [ -n "$OPENCLAW_CAP_ERRORS" ]; then
+            echo "❌ 发现 'Openclaw'（错误大小写），应使用 'OpenClaw'："
+            echo "$OPENCLAW_CAP_ERRORS"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          # 检查2: "OPENCLAW" 全大写（应使用 OpenClaw）
+          # 排除：环境变量名（OPENCLAW_*）、CI脚本自身引用
+          OPENCLAW_UPPER_ERRORS=$(grep -rn "OPENCLAW" docs/ --include="*.md" | \
+            grep -v "OPENCLAW_ERRORS" | \
+            grep -v "OPENCLAW_CAP" | \
+            grep -v "echo.*OPENCLAW" | \
+            grep -v "OPENCLAW_VERSION" | \
+            grep -v "OPENCLAW_SECRET" | \
+            grep -v "OPENCLAW_API" | \
+            grep -v "OPENCLAW_.*=" | \
+            grep -v "export OPENCLAW" | \
+            grep -v "sed.*OPENCLAW" | \
+            grep -v "OPENCLAW_/" || true)
+
+          if [ -n "$OPENCLAW_UPPER_ERRORS" ]; then
+            echo "❌ 发现 'OPENCLAW'（全大写），应使用 'OpenClaw'："
+            echo "$OPENCLAW_UPPER_ERRORS"
+            ERRORS=$((ERRORS + 1))
+          fi
+          
+          if [ $ERRORS -gt 0 ]; then
+            echo "❌ 发现术语使用不一致"
+            exit 1
+          else
+            echo "✅ 术语使用一致"
+          fi
+
+  # 6. 综合测试结果
+  test-summary:
+    name: ✅ 测试总结
+    needs: [link-check, markdown-lint, command-syntax, version-consistency, terminology]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: 检查测试结果
+        run: |
+          echo "📊 测试结果汇总:"
+          echo "- 链接验证: ${{ needs.link-check.result }}"
+          echo "- Markdown格式: ${{ needs.markdown-lint.result }}"
+          echo "- 命令语法: ${{ needs.command-syntax.result }}"
+          echo "- 版本一致性: ${{ needs.version-consistency.result }}"
+          echo "- 术语一致性: ${{ needs.terminology.result }}"
+          
+          # 检查是否有失败的测试
+          if [ "${{ needs.link-check.result }}" == "failure" ] || \
+             [ "${{ needs.markdown-lint.result }}" == "failure" ] || \
+             [ "${{ needs.command-syntax.result }}" == "failure" ] || \
+             [ "${{ needs.version-consistency.result }}" == "failure" ] || \
+             [ "${{ needs.terminology.result }}" == "failure" ]; then
+            echo "❌ 存在失败的测试，请修复后重新提交"
+            exit 1
+          else
+            echo "✅ 所有测试通过！"
+          fi

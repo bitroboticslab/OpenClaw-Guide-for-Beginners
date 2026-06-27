@@ -1,0 +1,94 @@
+name: 版本监控
+
+on:
+  schedule:
+    # 每周一运行一次
+    - cron: '0 0 * * 1'
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  version-monitor:
+    name: 🔍 版本监控
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 运行版本监控脚本
+        id: monitor
+        run: |
+          chmod +x scripts/version-monitor.sh
+          bash scripts/version-monitor.sh > /tmp/monitor-report.txt 2>&1
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          
+          # 提取关键信息
+          LATEST=$(grep "OpenClaw最新版本:" /tmp/monitor-report.txt | awk '{print $NF}')
+          GUIDE=$(grep "教程当前版本:" /tmp/monitor-report.txt | awk '{print $NF}')
+          
+          echo "latest_version=$LATEST" >> $GITHUB_OUTPUT
+          echo "guide_version=$GUIDE" >> $GITHUB_OUTPUT
+          
+          cat /tmp/monitor-report.txt
+
+      - name: 检查是否需要更新
+        id: check
+        run: |
+          if [ "${{ steps.monitor.outputs.exit_code }}" == "1" ]; then
+            echo "needs_update=true" >> $GITHUB_OUTPUT
+          else
+            echo "needs_update=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 创建Issue（如果需要更新）
+        if: steps.check.outputs.needs_update == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const latest = '${{ steps.monitor.outputs.latest_version }}';
+            const guide = '${{ steps.monitor.outputs.guide_version }}';
+            
+            const body = `## 🔄 版本更新提醒
+            
+            **检测时间**: ${new Date().toISOString()}
+            
+            **版本信息**:
+            - OpenClaw最新版本: ${latest}
+            - 教程当前版本: ${guide}
+            
+            **更新建议**:
+            
+            根据AGENT.md中的渐进式版本对齐策略，建议按以下步骤更新:
+            
+            1. 查看OpenClaw官方Release Notes
+            2. 评估对教程的影响程度
+            3. 制定版本对齐计划
+            4. 按计划逐步更新教程
+            
+            **参考文档**:
+            - [AGENT.md](AGENT.md) - 版本对齐策略
+            - [quality-assurance.md](docs/internal/quality-assurance.md) - 质量保障体系
+            - [emergency-response.md](docs/internal/emergency-response.md) - 应急响应预案
+            
+            ---
+            
+            *此Issue由版本监控脚本自动创建*`;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🔄 版本更新提醒: OpenClaw ${latest}`,
+              body: body,
+              labels: ['version-update', 'automated']
+            });
+
+      - name: 上传监控报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-monitor-report
+          path: /tmp/monitor-report.txt
+          retention-days: 30

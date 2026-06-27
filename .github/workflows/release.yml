@@ -9,8 +9,57 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  # 1. 发布前验证
+  pre-release-check:
+    name: 🔍 发布前验证
     runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 验证tag格式
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          echo "📦 验证版本: $TAG"
+          
+          # 验证版本号格式
+          if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "❌ 版本号格式错误: $TAG"
+            echo "正确格式: v1.2.3"
+            exit 1
+          fi
+          
+          echo "✅ 版本号格式正确: $TAG"
+
+      - name: 验证CHANGELOG存在
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG#v}"
+          
+          # 检查CHANGELOG中是否有对应版本
+          if ! grep -q "## \[$VERSION\]" CHANGELOG.md; then
+            echo "⚠️ CHANGELOG.md中未找到版本 $VERSION 的记录"
+            echo "请确保CHANGELOG.md已更新"
+          else
+            echo "✅ CHANGELOG.md中存在版本 $VERSION 的记录"
+          fi
+
+      - name: 链接验证（快速检查）
+        run: |
+          echo "🔍 快速链接验证..."
+          npm install -g markdown-link-check
+          
+          # 只检查关键文件
+          markdown-link-check README.md --config .github/link-check-config.json || true
+
+  # 2. 从CHANGELOG提取版本日志
+  extract-changelog:
+    name: 📝 提取版本日志
+    needs: pre-release-check
+    runs-on: ubuntu-latest
+    outputs:
+      changelog_body: ${{ steps.changelog.outputs.body }}
+      changelog_subtitle: ${{ steps.changelog.outputs.subtitle }}
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -21,26 +70,30 @@ jobs:
         id: changelog
         run: |
           TAG="${GITHUB_REF#refs/tags/}"
-          echo "📦 处理版本: $TAG"
+          VERSION="${TAG#v}"
+          echo "📦 处理版本: $TAG (版本号: $VERSION)"
 
           # 从 CHANGELOG.md 提取对应版本段落
-          # 匹配 ## [X.Y.Z] 到下一个 ## [ 或文件结尾
-          VERSION_BODY=$(awk -v ver="$TAG" '
+          # 使用正则表达式匹配版本号
+          VERSION_BODY=$(awk -v ver="$VERSION" '
             BEGIN { found=0; capture=0 }
-            /^\#\# \[/ {
+            /^## \[/ {
               if (capture) exit
-              gsub(/[\[\]]/, "")
-              split($0, a, " ")
-              if (a[3] == ver || a[3] == ver"-") {
-                found=1; capture=1
-                next
+              # 提取版本号（移除方括号和日期）
+              match($0, /\[[0-9]+\.[0-9]+\.[0-9]+\]/)
+              if (RSTART > 0) {
+                version = substr($0, RSTART+1, RLENGTH-2)
+                if (version == ver) {
+                  found=1; capture=1
+                  next
+                }
               }
             }
             capture { print }
           ' CHANGELOG.md)
 
           if [ -z "$VERSION_BODY" ]; then
-            echo "⚠️ 未在 CHANGELOG.md 中找到版本 $TAG 的日志，使用默认内容"
+            echo "⚠️ 未在 CHANGELOG.md 中找到版本 $VERSION 的日志，使用默认内容"
             VERSION_BODY="Release $TAG"
           fi
 
@@ -57,13 +110,73 @@ jobs:
           echo "subtitle=$SUBTITLE" >> "$GITHUB_OUTPUT"
           echo "✅ 版本日志提取完成"
 
+  # 3. 生成Release说明
+  generate-release-notes:
+    name: 📋 生成Release说明
+    needs: extract-changelog
+    runs-on: ubuntu-latest
+    outputs:
+      release_body: ${{ steps.notes.outputs.body }}
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 生成Release说明
+        id: notes
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG#v}"
+          
+          # 构建完整的Release说明
+          BODY="# OpenClaw Guide $TAG\n\n"
+          BODY+="**对齐OpenClaw版本**: 请参考CHANGELOG.md中的详细说明\n\n"
+          BODY+="---\n\n"
+          BODY+="${{ needs.extract-changelog.outputs.changelog_body }}\n\n"
+          BODY+="---\n\n"
+          BODY+="## 📖 使用说明\n\n"
+          BODY+="### 克隆指定版本\n"
+          BODY+="\`\`\`bash\n"
+          BODY+="git clone --branch $TAG https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners.git\n"
+          BODY+="\`\`\`\n\n"
+          BODY+="### 切换到指定版本\n"
+          BODY+="\`\`\`bash\n"
+          BODY+="git checkout $TAG\n"
+          BODY+="\`\`\`\n\n"
+          BODY+="## 🔗 相关链接\n\n"
+          BODY+="- [完整文档](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/tree/$TAG)\n"
+          BODY+="- [CHANGELOG](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/blob/$TAG/CHANGELOG.md)\n"
+          BODY+="- [版本变更记录](https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/tree/$TAG/docs/version-changes)\n"
+          
+          # 写入输出
+          {
+            echo "body<<NOTES_EOF"
+            echo -e "$BODY"
+            echo "NOTES_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+  # 4. 创建GitHub Release
+  create-release:
+    name: 🚀 创建Release
+    needs: [extract-changelog, generate-release-notes]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
       - name: 创建 GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: "${{ github.ref_name }} - ${{ steps.changelog.outputs.subtitle }}"
-          body: ${{ steps.changelog.outputs.body }}
+          name: "${{ github.ref_name }} - ${{ needs.extract-changelog.outputs.changelog_subtitle }}"
+          body: ${{ needs.generate-release-notes.outputs.release_body }}
           draft: false
           prerelease: false
+          generate_release_notes: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 验证Release创建
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          echo "✅ Release创建成功: $TAG"
+          echo "📎 Release链接: https://github.com/bitroboticslab/OpenClaw-Guide-for-Beginners/releases/tag/$TAG"

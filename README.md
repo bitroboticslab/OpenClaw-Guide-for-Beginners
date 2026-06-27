@@ -5,9 +5,9 @@
 
 ⚠️ **最新安全提示**：Windows用户优先推荐使用WSL安装，避免本地安装可能带来的误操作安全风险，查看 [安全运行重要提示](docs/getting-started/security-notice.md)
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.5.18%20最新稳定版-blue)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.9%20最新稳定版-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![更新时间](https://img.shields.io/badge/更新时间-2026年5月25日-orange)
+![更新时间](https://img.shields.io/badge/更新时间-2026年6月27日-orange)
 
 > 📌 **官方文档提示**：OpenClaw 官方文档已全面支持中英文版本
 > - 中文版文档路径：`https://docs.openclaw.ai/zh-CN/`（本指南已全部切换至此）
@@ -419,3 +419,4 @@ openclaw onboard --install-daemon
 *作者: junhang lai | 最后更新: 2026-05-02*
 
 <!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
