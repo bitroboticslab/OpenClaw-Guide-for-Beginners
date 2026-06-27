@@ -151,19 +151,11 @@ jobs:
           
           # 检查OpenClaw拼写（必须首字母大写）
           # 排除：openclaw.ai域名、命令行中的openclaw命令、配置文件路径
+          # 注意：openclaw作为CLI命令名是正确的用法
           OPENCLAW_ERRORS=$(grep -rn "openclaw" docs/ --include="*.md" | \
             grep -v "openclaw.ai" | \
-            grep -v "openclaw config" | \
-            grep -v "openclaw gateway" | \
-            grep -v "openclaw skills" | \
-            grep -v "openclaw plugins" | \
-            grep -v "openclaw doctor" | \
-            grep -v "openclaw update" | \
-            grep -v "openclaw start" | \
-            grep -v "openclaw stop" | \
-            grep -v "openclaw restart" | \
-            grep -v "openclaw version" | \
-            grep -v "openclaw agents" | \
+            grep -v "^[^:]*:[^:]*:openclaw " | \
+            grep -v "^[^:]*:[^:]*: *openclaw " | \
             grep -v "~/.openclaw" | \
             grep -v "openclaw.json" | \
             grep -v "# openclaw" | \
