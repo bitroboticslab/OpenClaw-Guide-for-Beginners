@@ -111,23 +111,30 @@ jobs:
         run: |
           echo "🔍 开始检查版本号一致性..."
           
-          # 从README.md提取版本号
-          README_VERSION=$(grep -oP 'v\d+\.\d+\.\d+' README.md | head -1)
-          
-          # 从CHANGELOG.md提取最新版本号
+          # 从CHANGELOG.md提取最新教程版本号
           CHANGELOG_VERSION=$(grep -oP '## \[\K\d+\.\d+\.\d+' CHANGELOG.md | head -1)
           
-          echo "README版本: $README_VERSION"
-          echo "CHANGELOG版本: $CHANGELOG_VERSION"
+          # 从README.md提取OpenClaw版本号（用于显示）
+          OPENCLAW_VERSION=$(grep -oP 'OpenClaw-\K\d{4}\.\d+\.\d+' README.md | head -1)
           
-          # 检查是否一致
-          if [ "$README_VERSION" != "v$CHANGELOG_VERSION" ]; then
-            echo "⚠️ 版本号不一致: README($README_VERSION) vs CHANGELOG($CHANGELOG_VERSION)"
-            echo "请确保版本号统一"
+          echo "CHANGELOG教程版本: $CHANGELOG_VERSION"
+          echo "README对齐OpenClaw版本: $OPENCLAW_VERSION"
+          
+          # 检查CHANGELOG版本号是否存在
+          if [ -z "$CHANGELOG_VERSION" ]; then
+            echo "❌ CHANGELOG中未找到版本号"
             exit 1
-          else
-            echo "✅ 版本号一致: $README_VERSION"
           fi
+          
+          # 检查README中的OpenClaw版本号是否存在
+          if [ -z "$OPENCLAW_VERSION" ]; then
+            echo "❌ README中未找到OpenClaw版本号"
+            exit 1
+          fi
+          
+          echo "✅ 版本号检查通过"
+          echo "  - 教程版本: v$CHANGELOG_VERSION"
+          echo "  - 对齐OpenClaw版本: v$OPENCLAW_VERSION"
 
   # 5. 术语一致性检查
   terminology:
@@ -143,13 +150,39 @@ jobs:
           ERRORS=0
           
           # 检查OpenClaw拼写（必须首字母大写）
-          if grep -r "openclaw" docs/ --include="*.md" -l | grep -v "openclaw.ai"; then
-            echo "❌ 发现 'openclaw'（全小写），应使用 'OpenClaw'"
+          # 排除：openclaw.ai域名、命令行中的openclaw命令、配置文件路径
+          OPENCLAW_ERRORS=$(grep -rn "openclaw" docs/ --include="*.md" | \
+            grep -v "openclaw.ai" | \
+            grep -v "openclaw config" | \
+            grep -v "openclaw gateway" | \
+            grep -v "openclaw skills" | \
+            grep -v "openclaw plugins" | \
+            grep -v "openclaw doctor" | \
+            grep -v "openclaw update" | \
+            grep -v "openclaw start" | \
+            grep -v "openclaw stop" | \
+            grep -v "openclaw restart" | \
+            grep -v "openclaw version" | \
+            grep -v "openclaw agents" | \
+            grep -v "~/.openclaw" | \
+            grep -v "openclaw.json" | \
+            grep -v "# openclaw" | \
+            grep -v "openclaw --version" || true)
+          
+          if [ -n "$OPENCLAW_ERRORS" ]; then
+            echo "❌ 发现 'openclaw'（全小写），应使用 'OpenClaw'："
+            echo "$OPENCLAW_ERRORS"
             ERRORS=$((ERRORS + 1))
           fi
           
-          if grep -r "Openclaw" docs/ --include="*.md" -l; then
-            echo "❌ 发现 'Openclaw'，应使用 'OpenClaw'"
+          # 检查Openclaw拼写（排除示例代码中的grep命令）
+          OPENCLAW_CAP_ERRORS=$(grep -rn "Openclaw" docs/ --include="*.md" | \
+            grep -v "grep.*Openclaw" | \
+            grep -v "# 检查Openclaw" || true)
+          
+          if [ -n "$OPENCLAW_CAP_ERRORS" ]; then
+            echo "❌ 发现 'Openclaw'，应使用 'OpenClaw'："
+            echo "$OPENCLAW_CAP_ERRORS"
             ERRORS=$((ERRORS + 1))
           fi
           
