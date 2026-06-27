@@ -5,7 +5,7 @@
 
 ⚠️ **最新安全提示**：Windows用户优先推荐使用WSL安装，避免本地安装可能带来的误操作安全风险，查看 [安全运行重要提示](docs/getting-started/security-notice.md)
 
-![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.8%20最新稳定版-blue)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-2026.6.9%20最新稳定版-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![更新时间](https://img.shields.io/badge/更新时间-2026年6月27日-orange)
 
