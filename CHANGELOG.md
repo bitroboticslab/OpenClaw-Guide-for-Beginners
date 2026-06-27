@@ -8,6 +8,35 @@
 - 无
 
 
+## [2.1.1] - 2026-06-27
+
+### 🐛 修复
+
+- ✅ 补充v1.9.0~v2.1.0缺失的14个功能文档
+- ✅ 修复CHANGELOG中声称新增但实际未创建的文档问题
+
+### 📝 补充文档清单
+
+**v1.9.0补充 (4个)**:
+- docs/advanced/skill-workshop.md
+- docs/configuration/sqlite-queue.md
+- docs/configuration/minimax-m3.md
+- docs/advanced/external-plugins.md
+
+**v2.0.0补充 (5个)**:
+- docs/integration/telegram-rich-text.md
+- docs/configuration/usage-footer.md
+- docs/configuration/provider-routing.md
+- docs/advanced/btw-command.md
+- docs/advanced/model-command.md
+
+**v2.1.0补充 (5个)**:
+- docs/integration/telegram-delivery.md
+- docs/advanced/codex-plugins.md
+- docs/advanced/channel-recovery.md
+- docs/configuration/provider-plugins.md
+- docs/advanced/exec-enhanced.md
+
 ## [2.1.0] - 2026-06-27
 
 ### 🌟 新增功能
