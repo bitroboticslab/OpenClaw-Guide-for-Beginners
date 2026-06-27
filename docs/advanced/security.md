@@ -733,3 +733,185 @@ openclaw security vuln-stats
 **版本**: 1.0
 
 <!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
+---
+
+## 🛡️ Exec审批机制（v2026.6.2+）
+
+### 功能说明
+
+Exec审批机制提供细粒度的命令执行控制，确保敏感操作经过授权确认。
+
+### 配置说明
+
+```json
+{
+  "exec": {
+    "approval": {
+      "enabled": true,
+      "timeout": 30000,
+      "failClosed": true,
+      "ownerVerification": true,
+      "mobilePush": true
+    }
+  }
+}
+```
+
+### 配置参数
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `enabled` | 是否启用Exec审批 | `false` |
+| `timeout` | 审批超时时间（毫秒） | `30000` |
+| `failClosed` | 超时时是否拒绝执行 | `true` |
+| `ownerVerification` | 是否验证执行者身份 | `true` |
+| `mobilePush` | 是否启用移动端推送审批 | `false` |
+
+### 使用场景
+
+1. **生产环境**：防止误操作导致服务中断
+2. **团队协作**：多人协作时的权限控制
+3. **敏感操作**：删除数据、修改配置等操作的二次确认
+
+### 示例：配置允许的命令白名单
+
+```json
+{
+  "exec": {
+    "approval": {
+      "enabled": true,
+      "allowedBins": [
+        "git",
+        "npm",
+        "node",
+        "python",
+        "curl"
+      ]
+    }
+  }
+}
+```
+
+---
+
+## 🔒 SSRF防护（v2026.6.2+）
+
+### 功能说明
+
+SSRF（服务端请求伪造）防护防止OpenClaw被利用访问内部网络或受限资源。
+
+### 配置说明
+
+```json
+{
+  "security": {
+    "ssrf": {
+      "enabled": true,
+      "allowlist": [
+        "https://api.openai.com",
+        "https://api.anthropic.com",
+        "https://api.github.com"
+      ],
+      "blockInternal": true,
+      "browserRecheck": true,
+      "timeout": 10000
+    }
+  }
+}
+```
+
+### 配置参数
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `enabled` | 是否启用SSRF防护 | `true` |
+| `allowlist` | URL白名单列表 | `[]` |
+| `blockInternal` | 是否阻止访问内部网络 | `true` |
+| `browserRecheck` | 浏览器操作前是否重新验证URL | `true` |
+| `timeout` | 请求超时时间（毫秒） | `10000` |
+
+### 白名单配置建议
+
+```json
+{
+  "security": {
+    "ssrf": {
+      "allowlist": [
+        "https://api.openai.com",
+        "https://api.anthropic.com",
+        "https://api.github.com",
+        "https://api.google.com",
+        "https://api.microsoft.com"
+      ]
+    }
+  }
+}
+```
+
+### 常见问题
+
+**Q: 为什么某些API请求被拦截？**
+A: 检查URL是否在白名单中，或者是否访问了内部网络地址。
+
+**Q: 如何临时禁用SSRF防护？**
+A: 设置 `security.ssrf.enabled` 为 `false`（不推荐在生产环境使用）。
+
+---
+
+## 🔐 Auth边界强化（v2026.6.2+）
+
+### 功能说明
+
+Auth边界强化提供更安全的认证和授权机制。
+
+### 配置说明
+
+```json
+{
+  "auth": {
+    "providerScoping": true,
+    "persistState": true,
+    "tokenEncryption": true,
+    "sessionIsolation": true
+  }
+}
+```
+
+### 配置参数
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `providerScoping` | 限制Provider API密钥的访问范围 | `true` |
+| `persistState` | 认证状态跨重启保持 | `true` |
+| `tokenEncryption` | Token加密存储 | `true` |
+| `sessionIsolation` | 不同会话的认证状态隔离 | `true` |
+
+---
+
+## 📋 安全检查清单
+
+### 升级前检查
+
+- [ ] 备份 `~/.openclaw/` 目录
+- [ ] 记录当前API密钥
+- [ ] 确认网络配置
+
+### 升级后检查
+
+- [ ] 验证版本号
+- [ ] 测试API连接
+- [ ] 检查安全日志
+- [ ] 验证Exec审批功能
+- [ ] 测试SSRF防护配置
+
+### 定期检查
+
+- [ ] 每周查看安全日志
+- [ ] 每月更新API密钥
+- [ ] 每季度审查白名单配置
+
+---
+
+**最后更新**: 2026-06-27
+
