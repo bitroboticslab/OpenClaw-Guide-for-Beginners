@@ -234,3 +234,70 @@
 **版本**: 1.0
 
 <!-- This file is part of OpenClaw Guide for Beginners. Licensed under the MIT License. See LICENSE file for details. -->
+
+---
+
+## 🆕 v2026.6.8 新增模型
+
+### GLM-5.2（智谱AI）
+
+**核心优势**：
+- ✅ 强大的中文理解能力
+- ✅ 多模态支持（文本+图像）
+- ✅ 长上下文处理能力强
+- ✅ 适合中文对话和文档处理
+
+**配置示例**：
+```json
+{
+  "providers": {
+    "zhipu": {
+      "apiKey": "YOUR_API_KEY",
+      "models": ["GLM-5.2"]
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "zhipu/GLM-5.2"
+      }
+    }
+  }
+}
+```
+
+**推荐场景**：中文对话、文档处理、内容生成
+
+### Claude Haiku 4.5（Anthropic）
+
+**核心优势**：
+- ✅ 快速响应，低延迟
+- ✅ 成本低廉，适合日常使用
+- ✅ 工具调用能力强
+- ✅ 适合Agent开发
+
+**配置示例**：
+```json
+{
+  "providers": {
+    "anthropic": {
+      "apiKey": "YOUR_API_KEY",
+      "models": ["claude-haiku-4.5"]
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-haiku-4.5"
+      }
+    }
+  }
+}
+```
+
+**推荐场景**：日常对话、快速任务、Agent开发
+
+---
+
+**最后更新**: 2026-06-27
+
