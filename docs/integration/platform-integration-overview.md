@@ -14,6 +14,8 @@
 | 微信 | ⭐⭐⭐ | ⭐⭐⭐ | [详细教程](wechat-integration.md) | 用户基数大，门槛较高 |
 | Discord | ⭐⭐ | ⭐⭐⭐ | [详细教程](discord.md) | 游戏社区，年轻用户 |
 | WhatsApp | ⭐⭐ | ⭐⭐⭐ | [详细教程](whatsapp.md) | 海外通讯主力 |
+| Slack | ⭐⭐ | ⭐⭐⭐⭐ | [详细教程](slack-integration.md) | Relay模式，团队协作 |
+| Mattermost | ⭐⭐ | ⭐⭐⭐ | [详细教程](mattermost-integration.md) | 开源自托管，原生支持 |
 
 ---
 
